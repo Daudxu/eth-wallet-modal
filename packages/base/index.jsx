@@ -186,7 +186,8 @@ export class Base {
     if (this.show) {
       await this._toggleModal();
     }
-    this.eventController.trigger(ERROR_EVENT, error);
+    console.log(error)
+    // this.eventController.trigger(ERROR_EVENT, error);
   };
 
   onConnect = async (provider) => {
