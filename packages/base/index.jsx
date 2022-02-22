@@ -10,13 +10,10 @@ import {
 
 import { themesList } from "../themes";
 
-// import Modal from "../components/Modal";
+import Modal from "../components/Modal";
 import { EventController, ProviderController } from "../controllers";
 
-const INITIAL_STATE = { show: true };
-window.updateWeb3Modal = {
-  ...INITIAL_STATE
-}
+const INITIAL_STATE = { show: false };
 const defaultOpt = {
   theme: themesList.default.name,
   cacheProvider: false,
@@ -60,6 +57,7 @@ export class Base {
   // --------------- PUBLIC METHODS --------------- //
 
   connect = () => {
+
     new Promise((resolve, reject) => {
       (async () => {
         try {
@@ -105,12 +103,15 @@ export class Base {
       return;
     }
 
+
     if (this.userOptions && this.userOptions.length === 1 && this.userOptions[0].name) {
       await this.userOptions[0].onClick();
-      console.log(this.userOptions)
+      const el = document.getElementById('eth-warp');
+      el.style.display="block"
+      // console.log(this.userOptions[0].onClick())
+      document.getElementsById()
       return;
     }
-
 
     await this._toggleModal();
   }
@@ -143,21 +144,6 @@ export class Base {
     this.providerController.setCachedProvider(id);
   }
 
-  async updateTheme (theme) {
-    console.log(theme)
-    // this.themeColors = getThemeColors(theme);
-    // await this.updateState({ themeColors: this.themeColors });
-  }
-
-  //   <Modal
-
-  //   show={INITIAL_STATE.show}
-  //   userOptions={_this.userOptions}
-  //   onClose={_this.onClose}
-  //   resetState={_this.resetState}>
-  // </Modal>
-
-
   // --------------- PRIVATE METHODS --------------- //
 
   renderModal () {
@@ -169,22 +155,21 @@ export class Base {
     const app = createApp({
 
       render () {
-        // console.log(_this.resetState)
+        console.log('_this.userOptions',_this.userOptions)
         return (
-          <div>
-            <span onClick={_this.onClose}> asdasd</span>
-
-          </div>
+           <Modal
+              show={INITIAL_STATE.show}
+              userOptions={_this.userOptions}
+              resetState={_this.resetState}>
+          </Modal>
         )
       }
     })
     app.mount("#" + ETH_DAPP_WALLET_CONNECT_MODAL_ID)
 
-
   }
 
   _toggleModal = async () => {
-
     const d = typeof window !== "undefined" ? document : "";
     const body = d ? d.body || d.getElementsByTagName("body")[0] : "";
     if (body) {
@@ -211,19 +196,13 @@ export class Base {
     this.eventController.trigger(CONNECT_EVENT, provider);
   };
 
-  onClose = async () => {
-    if (this.show) {
-      await this._toggleModal();
-    }
-    this.eventController.trigger(CLOSE_EVENT);
-  };
-
   updateState = async (state) => {
     Object.keys(state).forEach(key => {
       this[key] = state[key];
     });
     await window.updateWeb3Modal(state);
+    this.show = false
   };
-
+    
   resetState = () => this.updateState({ ...INITIAL_STATE });
 }

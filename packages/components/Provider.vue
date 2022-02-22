@@ -1,10 +1,12 @@
+
 <template>
   <div>
     <div class="cl-connect"
-         v-for="(item, index) in userOptions"
+         v-for="(item, index) in userOptions.userOptions"
          :key="index">
       <button class="cl-connect-btu"
-              @click="connect('MetaMask')">
+                onClick={item.onClick}>
+               <img :src="item.logo" alt={item.name}     class="img-WalletConnect">
         MetaMask
       </button>
     </div>
@@ -20,14 +22,28 @@ export default {
       default: () => ({})
     },
   },
-
+  mounted(){
+  console.log('userOptions',this.userOptions.userOptions)
+  },
   methods: {
-    connectModel () {
+  on (event, callback) {
+    this.eventController.on({
+      event,
+      callback
+    });
 
-    },
-    connect () {
-
-    }
+    return () =>
+      this.eventController.off({
+        event,
+        callback
+      });
+  },
+  off (event, callback) {
+    this.eventController.off({
+      event,
+      callback
+    });
+  }
   }
 }
 

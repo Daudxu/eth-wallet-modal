@@ -1,19 +1,19 @@
 <template>
-  <div class="eth-warp"
-       v-if="show">
-    <div class="eth-main">
+  <div class="eth-warp" id="eth-warp"
+       v-show="isShow" >
+    <div class="eth-main" >
       <div class="eth-close"> <span class="eth-close-box"
-              onClick={onClose}> </span></div>
+              @click="closeModel"> </span></div>
       <div class="eth-main-wallet">
-        <Provider userOptions={userOptions}>
-
+        <Provider :userOptions={userOptions}>
         </Provider>
       </div>
     </div>
   </div>
-
 </template>
 <script>
+
+
 import Provider from "../components/Provider";
 export default {
   name: 'Modal',
@@ -29,10 +29,6 @@ export default {
       type: Object,
       default: () => ({})
     },
-    onClose: {
-      type: Object,
-      default: () => ({})
-    },
     resetState: {
       type: Object,
       default: () => ({})
@@ -40,13 +36,13 @@ export default {
   },
   data () {
     return {
-      isShow: false,
+      isShow: this.show,
       walletType: '',
     };
   },
   methods: {
-    connectModel () {
-
+    closeModel () {
+       this.isShow = false
     },
     connect () {
 
@@ -81,7 +77,7 @@ export default {
   margin-bottom: 20px;
 }
 .eth-warp .eth-main .eth-close span {
-  /* background: url("../../assets/images/close.png") no-repeat; */
+  background: url("../assets/images/close.png") no-repeat;
   height: 24px;
   width: 24px;
   cursor: pointer;
