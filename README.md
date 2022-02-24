@@ -2,11 +2,13 @@
 <h1 align="center">
    ETH Wallet Model
 </h1>
-##  Ethereum provider solution for metamask/walletconnect Wallets
 
+<p align="center">
 [![npm][npm]][npm-url]
 [![node][node]][node-url]
+</p>
 
+##  Ethereum provider solution for metamask/walletconnect Wallets
 ## Installation
 
 ```
