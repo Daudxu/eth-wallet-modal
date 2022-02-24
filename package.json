@@ -35,7 +35,6 @@
     "@metamask/detect-provider": "^1.2.0",
     "@walletconnect/web3-provider": "^1.7.1",
     "core-js": "^3.6.5",
-    "eth-wallet-modal": "^1.0.4",
     "jquery": "^3.6.0",
     "vue": "^3.0.0",
     "vue-class-component": "^7.2.6",
