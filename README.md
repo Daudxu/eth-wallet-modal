@@ -1,5 +1,5 @@
 <h1 align="center">
-   ETH Wallet Model
+   ETH Wallet Modal
 </h1>
 
 [![npm][npm]][npm-url]
