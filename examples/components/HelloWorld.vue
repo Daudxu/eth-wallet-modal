@@ -19,6 +19,7 @@
 // import Base from '../../lib/vue-eth-wallet-model.umd.min.js'
 import Base from '../../packages/index'
 
+import WalletConnectLogo from "../assets/walletconnect-circle.svg";
 
 export default {
   name: 'HelloWorld',
@@ -30,6 +31,9 @@ export default {
       baseModel: '',
       provider: '',
       providerOptions: {
+        sysOptions: {
+          logp: WalletConnectLogo
+        },
         walletconnect: {
           rpc: {
             1: 'https://mainnet.infura.io/v3/9aa3d95b3bc440fa88ea12eaa4456161',

@@ -20,6 +20,7 @@ export class Base {
   provider = null;
   constructor(opts = defaultOpt) {
     this.opts = opts
+
     this.renderModal();
   }
 
@@ -93,6 +94,7 @@ export class Base {
 
 
   renderModal () {
+
     const el = document.createElement("div");
     el.id = ETH_DAPP_WALLET_CONNECT_MODAL;
     document.body.appendChild(el);
@@ -103,17 +105,19 @@ export class Base {
                   <span class="eth-close-box" onclock="closeethModel"> </span>
               </div>
               <div class="eth-main-wallet">
-              
+                  <div class="eth-main-wallet-logo"> 
+                       <img src="${this.opts.sysOptions.logp}" width="100px" class="img-MetaMask"> 
+                  </div>
                   <div class="cl-connect ${CONNECT_EVENT}" >
                     <button class="cl-connect-btu" alt='${providers.METAMASK.name}'>
-                      <img src="${providers.METAMASK.logo}" width="30x"
+                      <img src="${providers.METAMASK.logo}" width="30px"
                             class="img-MetaMask">
                       MetaMask
                     </button>
                   </div>
                   <div class="cl-connect ${CONNECT_EVENT}" >
                     <button class="cl-connect-btu" alt='${providers.WALLETCONNECT.name}'>
-                      <img src="${providers.WALLETCONNECT.logo}" width="30x"
+                      <img src="${providers.WALLETCONNECT.logo}" width="30px"
                             class="img-WalletConnect">
                       WalletConnect
                     </button>
@@ -147,6 +151,9 @@ export class Base {
           display: flex;
           justify-content: center;
       }
+        .eth-warp .eth-main .eth-main-wallet{      
+            text-align: center;
+        }
         }
         .eth-warp .eth-main .eth-close {
           display: flex;

@@ -1,4 +1,5 @@
 import { getChainId } from "../../tools";
+import $ from 'jquery';
 import WalletConnectProvider from "@walletconnect/web3-provider";
 const ConnectToWalletConnect = (
   opts
@@ -36,6 +37,7 @@ const ConnectToWalletConnect = (
         resolve(provider);
       } catch (e) {
         localStorage.removeItem('injected')
+        $("#ETH_DAPP_WALLET_CONNECT_MODAL").hide()
         reject(e);
       }
     })().catch(e => console.log("Caught: " + e));

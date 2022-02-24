@@ -1,3 +1,4 @@
+import $ from 'jquery';
 const ConnectToMetamask = async () => {
   return new Promise((resolve, reject) => {
     (async () => {
@@ -8,6 +9,7 @@ const ConnectToMetamask = async () => {
           await provider.request({ method: 'eth_requestAccounts' })
         } catch (error) {
           localStorage.removeItem('injected')
+          $("#ETH_DAPP_WALLET_CONNECT_MODAL").hide()
           reject("User Rejected")
           throw new Error("User Rejected");
 
@@ -18,6 +20,7 @@ const ConnectToMetamask = async () => {
         provider = window.celo;
       } else {
         localStorage.removeItem('injected')
+        $("#ETH_DAPP_WALLET_CONNECT_MODAL").hide()
         reject("No Web3 Provider found")
         throw new Error("No Web3 Provider found");
       }
