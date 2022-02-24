@@ -9,6 +9,10 @@
 <h2 align="center">
   Ethereum provider solution for metamask/walletconnect Wallets
 </h2>
+
+## Preview
+
+![preview](./images/preview.png)
 ```
 npm install vue-eth-wallet-model
 ```
