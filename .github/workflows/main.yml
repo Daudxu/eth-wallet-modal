@@ -1,34 +1,39 @@
-name: Build and Deploy
+name: Build app and deploy to aliyun
 on:
+  #监听push操作
   push:
     branches:
+      # master分支，你也可以改成其他分支
       - master
 jobs:
-  build:
-
+  build-deploy-job:
+    # runs-on 指定job任务运行所需要的虚拟机环境
     runs-on: ubuntu-latest
     steps:
-    # 获取源码
-    - name: Checkout
-      # 使用action库  actions/checkout获取源码
-      uses: actions/checkout@v2
-    # 安装Node13
-    - name: use Node.js 16.13.1
-      # 使用action库  actions/setup-node安装node
-      uses: actions/setup-node@v1
-      with:
-        node-version: 16.13.1
-    # 安装依赖
-    - name: npm  install
-      run: npm install
-    # 打包
-    - name: npm run build
-      run: npm run build
-#     - name: All things angular
-#       uses: AhsanAyaz/angular-deploy-gh-pages-actions@[version] ## replace by latest version without it you will see Expected format {org}/{repo}[/path]@ref. Actual 'AhsanAyaz/angular-deploy-gh-pages-actions',Input string was not in a correct format.
-#       with:
-#         github_access_token: ${{ secrets.ACCESS_TOKEN }} # see the Configuration section for how you can create secrets
-#         build_configuration: staging # The build environment for the app. please look configurations in your angular.json
-#         base_href: /eth-wallet-modal/   # make sure this corresponds to https://<your_username>.github.io/<base_href>/
-#         deploy_branch: gh-pages # The branch the action should deploy to.
-#         angular_dist_build_folder: dist/ # The folder where your project is supposed to be after running ng build by the action.
+      # 获取源码
+      - name: Checkout
+        # 使用action库  actions/checkout获取源码
+        uses: actions/checkout@v2
+      # 安装Node13
+      - name: use Node.js 16.13.1
+        # 使用action库  actions/setup-node安装node
+        uses: actions/setup-node@v1
+        with:
+          node-version: 16.13.1
+      # 安装依赖
+      - name: npm  install
+        run: npm install
+      # 打包
+      - name: npm run build
+        run: npm run build
+      # 部署
+      - name: Sync files FTP
+        uses: SamKirkland/FTP-Deploy-Action@4.2.0
+        with:
+          server: ${{ secrets.FTP_HOST }}
+          username: ${{ secrets.FTP_USERNAME }}
+          password: ${{ secrets.FTP_PASSWORD }}
+          local-dir: './dist/'
+          server-dir: ${{ secrets.FTP_REMOTE_FOLDER }}
+        # src_account_type: org
+        # dst_account_type: org
