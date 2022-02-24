@@ -1,7 +1,7 @@
-import injected from "./injected";
+import metamask from "./metamask";
 import walletconnect from "./walletconnect";
 
 export {
-  injected,
-  walletconnect,
+  metamask,
+  walletconnect
 };

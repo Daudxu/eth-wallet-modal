@@ -2,7 +2,7 @@
   <div class="hello">
     <h1>{{ msg }}</h1>
     <p>
-      this plugin is Dapp wallet model Demo,
+      this plugin is Dapp wallet web3Model Demo,
     </p>
     <button @click="handleClickConnect">Click Connect</button>
 

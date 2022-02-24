@@ -1,6 +1,6 @@
 
 # Vue Eth Wallet Model Component
-##  Ethereum provider solution for matemask/walletconnect Wallets
+##  Ethereum provider solution for metamask/walletconnect Wallets
 
 [![npm][npm]][npm-url]
 [![node][node]][node-url]

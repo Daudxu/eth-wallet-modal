@@ -1,7 +1,8 @@
 
 import WalletConnectLogo from "../logos/walletconnect-circle.svg";
 
-export * from "../injected";
+import MetaMaskLogo from "../logos/metamask.svg";
+
 
 export const WALLETCONNECT = {
   id: "walletconnect",
@@ -12,4 +13,12 @@ export const WALLETCONNECT = {
   package: {
     required: [["infuraId", "rpc"]]
   }
+};
+
+export const METAMASK = {
+  id: "metamask",
+  name: "MetaMask",
+  logo: MetaMaskLogo,
+  type: "metamask",
+  check: "isMetaMask"
 };

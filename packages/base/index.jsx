@@ -1,5 +1,9 @@
 
-import { createApp } from 'vue'
+import $ from 'jquery';
+import { providers } from "../providers";
+// assets
+import bgBtShow from "../assets/images/bgBtHide.png";
+import bgBtHide from "../assets/images/bgBtShow.png";
 
 import {
   ETH_DAPP_WALLET_CONNECT_MODAL_ID,
@@ -8,14 +12,11 @@ import {
   CLOSE_EVENT
 } from "../constants";
 
-import { themesList } from "../themes";
-
-import Modal from "../components/Modal";
-import { EventController, ProviderController } from "../controllers";
+// import Modal from "../components/Modal";
+// import { ProviderController } from "../controllers";
 
 const INITIAL_STATE = { show: false };
 const defaultOpt = {
-  theme: themesList.default.name,
   cacheProvider: false,
   disableInjectedProvider: false,
   providerOptions: {},
@@ -24,29 +25,17 @@ const defaultOpt = {
 
 export class Base {
   show = INITIAL_STATE.show;
-  themeColors;
-  eventController = new EventController();
   providerController;
+  providerOptions;
   userOptions = [];
 
   constructor(opts = defaultOpt) {
     const options = {
       ...opts
     };
-
-    this.providerController = new ProviderController({
-      disableInjectedProvider: options.disableInjectedProvider,
-      cacheProvider: options.cacheProvider,
-      providerOptions: options.providerOptions,
-      network: options.network
-    });
-
-    this.providerController.on(CONNECT_EVENT, provider =>
-      this.onConnect(provider)
-    );
-    this.providerController.on(ERROR_EVENT, error => this.onError(error));
-
-    this.userOptions = this.providerController.getUserOptions();
+    console.log(options)
+    // this.userOptions = this.providerController.getUserOptions();
+    console.log(providers.METAMASK.logo)
     this.renderModal();
   }
 
@@ -57,19 +46,34 @@ export class Base {
   // --------------- PUBLIC METHODS --------------- //
 
   connect = () => {
-
+    $("#ETH_DAPP_WALLET_CONNECT_MODAL_ID").show()
     new Promise((resolve, reject) => {
       (async () => {
         try {
-          this.on(CONNECT_EVENT, provider => resolve(provider));
-          this.on(ERROR_EVENT, error => reject(error));
-          this.on(CLOSE_EVENT, () => reject("Modal closed by user"));
+          $(document).on('click', '.connect', function (e) {
+            console.log(e)
+          });
           await this.toggleModal();
         } catch (err) {
           reject(err)
         }
       })()
     });
+
+    // console.log(123123)
+    // this.on(CONNECT_EVENT, 123123123);
+    // new Promise((resolve, reject) => {
+    //   (async () => {
+    //     try {
+    //       this.on(CONNECT_EVENT, provider => resolve(provider));
+    //       this.on(ERROR_EVENT, error => reject(error));
+    //       this.on(CLOSE_EVENT, () => reject("Modal closed by user"));
+    //       await this.toggleModal();
+    //     } catch (err) {
+    //       reject(err)
+    //     }
+    //   })()
+    // });
   }
 
   connectTo = (id) => {
@@ -98,74 +102,126 @@ export class Base {
 
   async toggleModal () {
 
-    if (this.cachedProvider) {
-      await this.providerController.connectToCachedProvider();
-      return;
-    }
+    // if (this.cachedProvider) {
+    //   await this.providerController.connectToCachedProvider();
+    //   return;
+    // }
 
+    // if (this.userOptions && this.userOptions.length === 1 && this.userOptions[0].name) {
+    //   await this.userOptions[0].onClick();
+    //   return;
+    // }
 
-    if (this.userOptions && this.userOptions.length === 1 && this.userOptions[0].name) {
-      await this.userOptions[0].onClick();
-      const el = document.getElementById('eth-warp');
-      el.style.display="block"
-      // console.log(this.userOptions[0].onClick())
-      document.getElementsById()
-      return;
-    }
-
-    await this._toggleModal();
-  }
-
-  on (event, callback) {
-    this.eventController.on({
-      event,
-      callback
-    });
-
-    return () =>
-      this.eventController.off({
-        event,
-        callback
-      });
-  }
-
-  off (event, callback) {
-    this.eventController.off({
-      event,
-      callback
-    });
-  }
-
-  clearCachedProvider () {
-    this.providerController.clearCachedProvider();
-  }
-
-  setCachedProvider (id) {
-    this.providerController.setCachedProvider(id);
+    // await this._toggleModal();
   }
 
   // --------------- PRIVATE METHODS --------------- //
+  // tocTest () {
+  //   alert(1)
+  // }
 
   renderModal () {
-
     const el = document.createElement("div");
     el.id = ETH_DAPP_WALLET_CONNECT_MODAL_ID;
     document.body.appendChild(el);
-    var _this = this
-    const app = createApp({
 
-      render () {
-        console.log('_this.userOptions',_this.userOptions)
-        return (
-           <Modal
-              show={INITIAL_STATE.show}
-              userOptions={_this.userOptions}
-              resetState={_this.resetState}>
-          </Modal>
-        )
-      }
-    })
-    app.mount("#" + ETH_DAPP_WALLET_CONNECT_MODAL_ID)
+    // var _this = this
+    var htmllet =
+      `<div class="eth-warp">
+            <div class="eth-main">
+              <div class="eth-close"> 
+                  <span class="eth-close-box"> </span>
+              </div>
+              <div class="eth-main-wallet">
+              
+                  <div class="cl-connect ${CONNECT_EVENT}" alt='${providers.METAMASK.name}'>
+                    <button class="cl-connect-btu">
+                      <img src="${providers.METAMASK.logo}" width="30x"
+                            class="img-MetaMask">
+                      MetaMask
+                    </button>
+                  </div>
+                  <div class="cl-connect ${CONNECT_EVENT}" alt='${providers.WALLETCONNECT.name}'>
+                    <button class="cl-connect-btu">
+                      <img src="${providers.WALLETCONNECT.logo}" width="30x"
+                            class="img-WalletConnect">
+                      WalletConnect
+                    </button>
+                  </div>
+              </div>
+            </div>
+        </div>
+        <style> 
+        #ETH_DAPP_WALLET_CONNECT_MODAL_ID{
+          display:none
+        }
+        .eth-warp {
+          position: fixed;
+          top: 0;
+          left: 0;
+          right: 0;
+          bottom: 0;
+          background: rgb(30, 30, 30, 0.8);
+          display: flex;
+          align-items: center;
+          justify-content: center;
+        }
+        .eth-warp .eth-main {
+          display: flex;
+          border: 1px solid #faba30;
+          border-radius: 5px;
+          width: 450px;
+          padding: 30px;
+          background: #363636;
+        }
+        .eth-warp .eth-main .eth-close {
+          display: flex;
+          justify-content: right;
+          margin-bottom: 20px;
+        }
+        .eth-warp .eth-main .eth-close span {
+          background: url("../../assets/images/close.png") no-repeat;
+          height: 24px;
+          width: 24px;
+          cursor: pointer;
+        }
+        .eth-warp .eth-main .eth-main-wallet {
+          color: #faba30;
+        }
+        .eth-warp .eth-main .eth-main-wallet div:nth-child(n+2){
+          margin-top: 20px;
+        }
+        .cl-bottom {
+          margin-bottom: 20px;
+        }
+        .eth-main-wallet .cl-connect-btu {
+          display: flex;
+          align-items: center;
+          width: 390px;
+          height: 40px;
+          padding-left: 20px;
+          padding-right: 20px;
+          border: none;
+          color: #000000;
+          background: url("${bgBtShow}") no-repeat;
+          text-align: left;
+          color: #fff;
+          font-size: 16px;
+        }
+        .eth-main-wallet .cl-connect-btu:hover {
+          background: url("${bgBtHide}") no-repeat;
+        }
+        .eth-main-wallet .img-MetaMask {
+          margin-right: 17px;
+        }
+        .eth-main-wallet .img-WalletConnect {
+          margin-right: 14px;
+        }
+        </style>
+      `
+    document.getElementById(ETH_DAPP_WALLET_CONNECT_MODAL_ID).innerHTML = htmllet;
+
+
 
   }
 
@@ -204,6 +260,6 @@ export class Base {
     await window.updateWeb3Modal(state);
     this.show = false
   };
-    
+
   resetState = () => this.updateState({ ...INITIAL_STATE });
 }

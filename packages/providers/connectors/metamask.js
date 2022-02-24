@@ -1,4 +1,4 @@
-const ConnectToInjected = async () => {
+const ConnectToMetamask = async () => {
   let provider = null;
   if (typeof window.ethereum !== 'undefined') {
     provider = window.ethereum;
@@ -17,4 +17,4 @@ const ConnectToInjected = async () => {
   return provider;
 };
 
-export default ConnectToInjected;
+export default ConnectToMetamask;

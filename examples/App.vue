@@ -1,5 +1,5 @@
 <template>
-  <HelloWorld msg="Dapp wallet model plugin" />
+  <HelloWorld msg="Dapp wallet web3Model plugin" />
 </template>
 
 <script>
