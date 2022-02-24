@@ -1,7 +1,7 @@
 
-import WalletConnectLogo from "../logos/walletconnect-circle.svg";
+import WalletConnectLogo from "../../assets/logos/walletconnect-circle.svg";
 
-import MetaMaskLogo from "../logos/metamask.svg";
+import MetaMaskLogo from "../../assets/logos/metamask.svg";
 
 
 export const WALLETCONNECT = {

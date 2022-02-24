@@ -104,20 +104,25 @@ export class Base {
               <div class="eth-close"> 
                   <span class="eth-close-box" onclock="closeethModel"> </span>
               </div>
-              <div class="eth-main-wallet">
+              <div class="eth-main-wallet">`
+    if (typeof (this.opts.sysOptions.logp) !== undefined) {
+      `
                   <div class="eth-main-wallet-logo"> 
                        <img src="${this.opts.sysOptions.logp}" width="100px" class="img-MetaMask"> 
                   </div>
+                 `
+    }
+    `
                   <div class="cl-connect ${CONNECT_EVENT}" >
                     <button class="cl-connect-btu" alt='${providers.METAMASK.name}'>
-                      <img src="${providers.METAMASK.logo}" width="30px"
+                      <img src="https://theme.zdassets.com/theme_assets/2313093/fe875eef30ee9649f253e8188f3438bb3be27e96.png" width="30px"
                             class="img-MetaMask">
                       MetaMask
                     </button>
                   </div>
                   <div class="cl-connect ${CONNECT_EVENT}" >
                     <button class="cl-connect-btu" alt='${providers.WALLETCONNECT.name}'>
-                      <img src="${providers.WALLETCONNECT.logo}" width="30px"
+                      <img src="https://logowik.com/content/uploads/images/walletconnect9617.jpg" width="30px"
                             class="img-WalletConnect">
                       WalletConnect
                     </button>
