@@ -1,15 +1,13 @@
 
 import $ from 'jquery';
-import { providers } from "../providers";
-// assets
+import { providers, connectors } from "../providers";
+
 import bgBtShow from "../assets/images/bgBtHide.png";
 import bgBtHide from "../assets/images/bgBtShow.png";
 
 import {
   ETH_DAPP_WALLET_CONNECT_MODAL_ID,
   CONNECT_EVENT,
-  // ERROR_EVENT,
-  // CLOSE_EVENT
 } from "../constants";
 
 
@@ -26,12 +24,14 @@ export class Base {
   providerController;
   providerOptions;
   userOptions = [];
+  provider = null;
 
   constructor(opts = defaultOpt) {
     const options = {
       ...opts
     };
     console.log(options)
+    console.log('connectors', connectors)
     // this.userOptions = this.providerController.getUserOptions();
     console.log(providers.METAMASK.logo)
     this.renderModal();
@@ -43,54 +43,57 @@ export class Base {
 
   // --------------- PUBLIC METHODS --------------- //
 
-  connect = () => {
-    $("#ETH_DAPP_WALLET_CONNECT_MODAL_ID").show()
-    var _this = this
-    new Promise((resolve, reject) => {
-      (async () => {
-        try {
-          $('#ETH_DAPP_WALLET_CONNECT_MODAL_ID .connect').click(function () {
-            var index = $(".connect").index($(this));
-            var name = $(this).find('.cl-connect-btu').attr('alt')
-            console.log(index)
-            console.log(name)
-            _this.connectTo(1)
-          })
-          return await _this.toggleModal();
-        } catch (err) {
-          reject(err)
-        }
-      })()
-    });
+  connect = async () => {
+    $("#ETH_DAPP_WALLET_CONNECT_MODAL_ID")
+    var res = await this.test()
+    // console.log('res', res)
+    return res
+    // var _this = this
+    // var awaitPromise = new Promise(function (resolve) {
+
+    //   $('#ETH_DAPP_WALLET_CONNECT_MODAL_ID .connect').click(function () {
+    //     var name = $(this).find('.cl-connect-btu').attr('alt')
+    //     _this.connectTo(name)
+    //     resolve()
+    //   })
+    // })
+    // await awaitPromise
+    // console(1231231)
+    // return this.provider
+
+  }
+  test = () => {
+    return new Promise((resolve) => {
+      setTimeout(() => {
+        resolve({ 'name': 123123 })
+      }, 3000)
+    })
   }
 
-  connectTo = (name) => {
-    console.log(name)
-    // new Promise((resolve, reject) => {
-    //   (async () => {
-    //     try {
-    //       this.on(CONNECT_EVENT, provider => resolve(provider));
-    //       this.on(ERROR_EVENT, error => reject(error));
-    //       this.on(CLOSE_EVENT, () => reject("Modal closed by user"));
-    //       const provider = this.providerController.getProvider(id);
-    //       if (!provider) {
-    //         return reject(
-    //           new Error(
-    //             `Cannot connect to provider (${id}), check provider options`
-    //           )
-    //         );
-    //       }
-    //       await this.providerController.connectTo(provider.id, provider.connector);
-    //     } catch (err) {
-    //       reject(err)
-    //     }
-    //   })()
-    // });
-
+  connectTo = async (name) => {
+    var _this = this
+    var awaitPromise = new Promise(function (resolve, reject) {
+      if (name.toLowerCase() === 'metamask') {
+        connectors.metamask().then((res) => {
+          _this.provider = res
+          resolve(res)
+        }).catch((err) => {
+          reject(err)
+        })
+      } else if (name.toLowerCase() === 'walletconnect') {
+        connectors.walletconnect().then((res) => {
+          _this.provider = res
+          resolve(res)
+        }).catch((err) => {
+          reject(err)
+        })
+      }
+    })
+    await awaitPromise
+    return this.provider
   }
 
   // async connectTo
-
   async toggleModal () {
 
     // if (this.cachedProvider) {

@@ -32,8 +32,9 @@ export default {
     connect (provider) {
       console.log(provider)
     },
-    handleClickConnect () {
-      this.baseModel.connect()
+    async handleClickConnect () {
+      var res = await this.baseModel.connect()
+      console.log('client', res)
       // this.$refs.ethWalletModelRef.connectModel();
     },
   }

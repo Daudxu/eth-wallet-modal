@@ -1,6 +1,5 @@
 import { Base } from "./base";
 
-export * from "./components";
 export * from "./constants";
 export * from "./controllers";
 export * from "./providers";
