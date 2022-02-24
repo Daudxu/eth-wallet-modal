@@ -14,7 +14,7 @@
   </div>
 </template>
 
-// <script>
+ <script>
 // import '../../lib/vue-eth-wallet-model.css'
 import Base from '../../lib/vue-eth-wallet-model.umd.min.js'
 // import Base from '../../packages/index'
@@ -55,8 +55,7 @@ export default {
       console.log("provider", provider)
     },
     handleClickDisconnect () {
-      var res = this.baseModel.disconnect(this.provider)
-      console.log('res:', res)
+      this.baseModel.disconnect(this.provider)
     },
   }
 }
