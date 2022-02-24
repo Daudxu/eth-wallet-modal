@@ -4,7 +4,12 @@
     <p>
       this plugin is Dapp wallet model Demo,
     </p>
-    <button @click="handleClickConnect">Click Connect</button>
+    <div class="ex-main">
+      <div class="ex-main-box">
+        <button @click="handleClickConnect">Click Connect</button>
+        <button @click="handleClickDisconnect">Click disconnect</button>
+      </div>
+    </div>
 
   </div>
 </template>
@@ -23,6 +28,7 @@ export default {
   data () {
     return {
       baseModel: '',
+      provider: '',
       providerOptions: {
         walletconnect: {
           rpc: {
@@ -39,13 +45,14 @@ export default {
     this.baseModel = new Base(this.providerOptions)
   },
   methods: {
-    connect (provider) {
-      console.log(provider)
-    },
     async handleClickConnect () {
       var provider = await this.baseModel.connect()
-      console.log(provider)
-      // this.$refs.ethWalletModelRef.connectModel();
+      this.provider = provider
+      console.log("provider", provider)
+    },
+    handleClickDisconnect () {
+      var res = this.baseModel.disconnect(this.provider)
+      console.log('res:', res)
     },
   }
 }
@@ -53,6 +60,22 @@ export default {
 
 <!-- Add "scoped" attribute to limit CSS to this component only -->
 <style scoped>
+.ex-main {
+  width: 100%;
+  margin: 0 auto;
+  text-align: center;
+  display: flex;
+  justify-content: center;
+}
+.ex-main .ex-main-box {
+  width: 300px;
+  display: flex;
+  justify-content: space-between;
+}
+.ex-main .ex-main-box button {
+  height: 30px;
+  background: #42b983;
+}
 h3 {
   margin: 40px 0 0;
 }

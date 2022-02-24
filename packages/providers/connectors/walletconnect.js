@@ -32,8 +32,10 @@ const ConnectToWalletConnect = (
       });
       try {
         await provider.enable();
+        localStorage.setItem("injected", 'walletconnect')
         resolve(provider);
       } catch (e) {
+        localStorage.removeItem('injected')
         reject(e);
       }
     })().catch(e => console.log("Caught: " + e));
