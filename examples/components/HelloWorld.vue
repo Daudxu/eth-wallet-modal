@@ -2,7 +2,7 @@
   <div class="hello">
     <h1>{{ msg }}</h1>
     <p>
-      Dapp ETH Wallet Model plugin.
+      Dapp ETH Wallet Modal plugin.
     </p>
     <div class="ex-main">
       <div class="ex-main-box">
@@ -17,8 +17,9 @@
  <script>
 // import '../../lib/eth-wallet-modal.css'
 // import Base from '../../lib/eth-wallet-modal.umd.min.js'
-// import Base from '../../packages/index'
-import aaamodal from 'eth-wallet-modal';
+import Base from '../../packages/index'
+import getUrlParameters from 'webpack-build-tools-test';
+// import Base from 'eth-wallet-modal';
 
 
 import WalletConnectLogo from "../assets/walletconnect-circle.svg";
@@ -34,7 +35,7 @@ export default {
       provider: '',
       providerOptions: {
         sysOptions: {
-          logp: WalletConnectLogo
+          logo: WalletConnectLogo
         },
         walletconnect: {
           rpc: {
@@ -48,6 +49,8 @@ export default {
     }
   },
   created () {
+    console.log(getUrlParameters("https://zhuanlan.zhihu.com/p/36921340"))
+    console.log(Base)
     this.baseModel = new Base(this.providerOptions)
   },
   methods: {

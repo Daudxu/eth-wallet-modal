@@ -20,7 +20,6 @@ export class Base {
   provider = null;
   constructor(opts = defaultOpt) {
     this.opts = opts
-
     this.renderModal();
   }
 
@@ -94,35 +93,31 @@ export class Base {
 
 
   renderModal () {
-
+    console.log(this.opts.sysOptions)
     const el = document.createElement("div");
     el.id = ETH_DAPP_WALLET_CONNECT_MODAL;
     document.body.appendChild(el);
+    console.log('aaa',this.opts.sysOptions)
     var htmllet =
       `<div class="eth-warp">
             <div class="eth-main">
               <div class="eth-close"> 
                   <span class="eth-close-box" onclock="closeethModel"> </span>
               </div>
-              <div class="eth-main-wallet">`
-    if (typeof (this.opts.sysOptions.logp) !== undefined) {
-      `
+              <div class="eth-main-wallet">
                   <div class="eth-main-wallet-logo"> 
-                       <img src="${this.opts.sysOptions.logp}" width="100px" class="img-MetaMask"> 
+                       <img src="${this.opts.sysOptions.logo}" width="100px" class="img-MetaMask"> 
                   </div>
-                 `
-    }
-    `
                   <div class="cl-connect ${CONNECT_EVENT}" >
                     <button class="cl-connect-btu" alt='${providers.METAMASK.name}'>
-                      <img src="https://theme.zdassets.com/theme_assets/2313093/fe875eef30ee9649f253e8188f3438bb3be27e96.png" width="30px"
+                      <img src="https://raw.githubusercontent.com/Daudxu/eth-wallet-modal/e080f0cafabc8fbdea313abd4d35aca8cc771c2e/packages/assets/logos/metamask.svg" width="30px"
                             class="img-MetaMask">
                       MetaMask
                     </button>
                   </div>
                   <div class="cl-connect ${CONNECT_EVENT}" >
                     <button class="cl-connect-btu" alt='${providers.WALLETCONNECT.name}'>
-                      <img src="https://logowik.com/content/uploads/images/walletconnect9617.jpg" width="30px"
+                      <img src="https://raw.githubusercontent.com/Daudxu/eth-wallet-modal/e080f0cafabc8fbdea313abd4d35aca8cc771c2e/packages/assets/logos/walletconnect-circle.svg" width="30px"
                             class="img-WalletConnect">
                       WalletConnect
                     </button>
