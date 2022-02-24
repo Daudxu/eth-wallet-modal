@@ -15,8 +15,8 @@
 </template>
 
  <script>
-// import '../../lib/eth-wallet-model.css'
-// import Base from '../../lib/eth-wallet-model.umd.min.js'
+// import '../../lib/eth-wallet-modal.css'
+// import Base from '../../lib/eth-wallet-modal.umd.min.js'
 import Base from '../../packages/index'
 
 import WalletConnectLogo from "../assets/walletconnect-circle.svg";

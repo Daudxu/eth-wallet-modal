@@ -4195,6 +4195,19 @@ eth-sig-util@^1.4.2:
     ethereumjs-abi "git+https://github.com/ethereumjs/ethereumjs-abi.git"
     ethereumjs-util "^5.1.1"
 
+eth-wallet-model@^1.0.2:
+  version "1.0.2"
+  resolved "https://registry.npmjs.org/eth-wallet-model/-/eth-wallet-model-1.0.2.tgz#ee9759adab44e911e4c10ae77e95ec11541d4ab1"
+  integrity sha512-xapmCDL03xyBsQrIemcw0lKZ0jqLatssm+jtHB6UQ1hdjItgk5Ehl0RO2/0Hunhr2cxVmFsvP7sOGi1oy06O9w==
+  dependencies:
+    "@metamask/detect-provider" "^1.2.0"
+    "@walletconnect/web3-provider" "^1.7.1"
+    core-js "^3.6.5"
+    jquery "^3.6.0"
+    vue "^3.0.0"
+    vue-class-component "^7.2.6"
+    vue-styled-components "^1.6.0"
+
 ethereum-common@0.2.0:
   version "0.2.0"
   resolved "https://registry.npmjs.org/ethereum-common/-/ethereum-common-0.2.0.tgz#13bf966131cce1eeade62a1b434249bb4cb120ca"

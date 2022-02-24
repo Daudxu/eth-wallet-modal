@@ -18,5 +18,10 @@ module.exports = {
       .use('url-loader')
       .loader('url-loader')
       .tap(options => Object.assign(options, { limit: 5000 }))
+  },
+  configureWebpack: {
+    output: {
+      libraryExport: 'default'
+    }
   }
 }

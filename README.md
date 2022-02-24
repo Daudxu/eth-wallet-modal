@@ -1,4 +1,3 @@
-
 <h1 align="center">
    ETH Wallet Model
 </h1>
@@ -16,29 +15,31 @@
 
 ## Usage
 
-### 1. Install eth-wallet-model NPM package
+### 1. Install eth-wallet-modal NPM package
 
 ```
 
-npm install --save eth-wallet-model
+npm install --save eth-wallet-modal
 
 # OR
 
-yarn add eth-wallet-model
+yarn add eth-wallet-modal
 
 ```
+
 ### 2. Install Provider packages
 
 ```
-import eth-wallet-model from 'eth-wallet-model';
+import eth-wallet-modal from 'eth-wallet-modal';
 
 
 ```
-### 3. Then you can add eth-wallet-model to your Dapp as follows
+
+### 3. Then you can add eth-wallet-modal to your Dapp as follows
 
 ```
 import Web3 from "web3";
-import eth-wallet-model from "eth-wallet-model";
+import ethWalletModal from "eth-wallet-modal";
 
 const providerOptions = {
        sysOptions: {
@@ -52,12 +53,12 @@ const providerOptions = {
           chainId: 4,
           bridge: 'https://bridge.walletconnect.org'
         }
-        .... 
+        ....
 };
 
-const eth-wallet-model = new eth-wallet-model(providerOptions);
+const eth-wallet-modal = new eth-wallet-modal(providerOptions);
 
-const provider = await eth-wallet-model.connect();
+const provider = await eth-wallet-modal.connect();
 
 const web3 = new Web3(provider);
 
@@ -83,7 +84,7 @@ const web3 = new Web3(provider);
 </template>
 
 <script>
-import eth-wallet-model from 'eth-wallet-model'
+import ethWalletModeal from 'eth-wallet-modal'
 
 import WalletConnectLogo from "../assets/walletconnect-circle.svg";
 
@@ -112,7 +113,7 @@ export default {
     }
   },
   created () {
-    this.baseModel = new eth-wallet-model(this.providerOptions)
+    this.baseModel = new eth-wallet-modal(this.providerOptions)
   },
   methods: {
     async handleClickConnect () {
@@ -164,18 +165,18 @@ a {
 
 ```
 
-
 ## Options
 
-|  name                  | type   | description                                                                          |
-| ----------------------- | -------- | ----------------------------------------------------------------------------- |
-| providerOptions        | object    |       see description below              |
-| connect        | function    |                                       |
-| disconnect     | function    | provider                              |
+| name            | type     | description           |
+| --------------- | -------- | --------------------- |
+| providerOptions | object   | see description below |
+| connect         | function |                       |
+| disconnect      | function | provider              |
 
 providerOptions providerOptions
+
 ```
-eg:  
+eg:
   providerOptions: {
         sysOptions: {
           logp: WalletConnectLogo
@@ -192,7 +193,8 @@ eg:
 
  walletconnect  config reference resources  https://docs.walletconnect.com/quick-start/dapps/web3-provider
 ```
-## Provider subscription Events 
+
+## Provider subscription Events
 
 ```
 // Subscribe to accounts change
@@ -218,13 +220,14 @@ provider.on("disconnect", (error: { code: number; message: string }) => {
 
 ## Features
 
-  - [X] Built for Ethereum using [Web3](https://github.com/ethereum/web3.js/).
-  - [X] Implements [Graph Protocol](https://github.com/graphprotocol) to read blockchain.
+- [x] Built for Ethereum using [Web3](https://github.com/ethereum/web3.js/).
+- [x] Implements [Graph Protocol](https://github.com/graphprotocol) to read blockchain.
+
 ## Changelog
 
 ### 2022.02.21
 
-> v1.0.0 \* init 
+> v1.0.0 \* init
 
 [npm]: https://img.shields.io/npm/v/postcss-load-config.svg
 [npm-url]: https://npmjs.com/package/postcss-load-config
