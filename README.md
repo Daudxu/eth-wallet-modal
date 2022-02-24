@@ -34,7 +34,7 @@ import eth-wallet-model from 'eth-wallet-model';
 
 
 ```
-### 3. Then you can add Web3Modal to your Dapp as follows
+### 3. Then you can add eth-wallet-model to your Dapp as follows
 
 ```
 import Web3 from "web3";

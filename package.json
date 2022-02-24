@@ -1,5 +1,5 @@
 {
-  "name": "vue-eth-wallet-model",
+  "name": "eth-wallet-model",
   "version": "1.0.0",
   "private": false,
   "scripts": {
@@ -7,7 +7,7 @@
     "serve": "vue-cli-service serve",
     "build": "vue-cli-service build",
     "lint": "vue-cli-service lint",
-    "lib": "vue-cli-service build --target lib --name vue-eth-wallet-model --dest lib packages/index.js"
+    "lib": "vue-cli-service build --target lib --name eth-wallet-model --dest lib packages/index.js"
   },
   "keyword": [
     "Dapp",

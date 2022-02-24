@@ -15,9 +15,9 @@
 </template>
 
  <script>
-// import '../../lib/vue-eth-wallet-model.css'
-import Base from '../../lib/vue-eth-wallet-model.umd.min.js'
-// import Base from '../../packages/index'
+// import '../../lib/eth-wallet-model.css'
+// import Base from '../../lib/eth-wallet-model.umd.min.js'
+import Base from '../../packages/index'
 
 import WalletConnectLogo from "../assets/walletconnect-circle.svg";
 
