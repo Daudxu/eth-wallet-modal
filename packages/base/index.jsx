@@ -8,12 +8,10 @@ import bgBtHide from "../assets/images/bgBtShow.png";
 import {
   ETH_DAPP_WALLET_CONNECT_MODAL_ID,
   CONNECT_EVENT,
-  ERROR_EVENT,
-  CLOSE_EVENT
+  // ERROR_EVENT,
+  // CLOSE_EVENT
 } from "../constants";
 
-// import Modal from "../components/Modal";
-// import { ProviderController } from "../controllers";
 
 const INITIAL_STATE = { show: false };
 const defaultOpt = {
@@ -47,58 +45,51 @@ export class Base {
 
   connect = () => {
     $("#ETH_DAPP_WALLET_CONNECT_MODAL_ID").show()
+    var _this = this
     new Promise((resolve, reject) => {
       (async () => {
         try {
-          $(document).on('click', '.connect', function (e) {
-            console.log(e)
-          });
-          await this.toggleModal();
+          $('#ETH_DAPP_WALLET_CONNECT_MODAL_ID .connect').click(function () {
+            var index = $(".connect").index($(this));
+            var name = $(this).find('.cl-connect-btu').attr('alt')
+            console.log(index)
+            console.log(name)
+            _this.connectTo(1)
+          })
+          return await _this.toggleModal();
         } catch (err) {
           reject(err)
         }
       })()
     });
+  }
 
-    // console.log(123123)
-    // this.on(CONNECT_EVENT, 123123123);
+  connectTo = (name) => {
+    console.log(name)
     // new Promise((resolve, reject) => {
     //   (async () => {
     //     try {
     //       this.on(CONNECT_EVENT, provider => resolve(provider));
     //       this.on(ERROR_EVENT, error => reject(error));
     //       this.on(CLOSE_EVENT, () => reject("Modal closed by user"));
-    //       await this.toggleModal();
+    //       const provider = this.providerController.getProvider(id);
+    //       if (!provider) {
+    //         return reject(
+    //           new Error(
+    //             `Cannot connect to provider (${id}), check provider options`
+    //           )
+    //         );
+    //       }
+    //       await this.providerController.connectTo(provider.id, provider.connector);
     //     } catch (err) {
     //       reject(err)
     //     }
     //   })()
     // });
-  }
-
-  connectTo = (id) => {
-    new Promise((resolve, reject) => {
-      (async () => {
-        try {
-          this.on(CONNECT_EVENT, provider => resolve(provider));
-          this.on(ERROR_EVENT, error => reject(error));
-          this.on(CLOSE_EVENT, () => reject("Modal closed by user"));
-          const provider = this.providerController.getProvider(id);
-          if (!provider) {
-            return reject(
-              new Error(
-                `Cannot connect to provider (${id}), check provider options`
-              )
-            );
-          }
-          await this.providerController.connectTo(provider.id, provider.connector);
-        } catch (err) {
-          reject(err)
-        }
-      })()
-    });
 
   }
+
+  // async connectTo
 
   async toggleModal () {
 
@@ -115,17 +106,10 @@ export class Base {
     // await this._toggleModal();
   }
 
-  // --------------- PRIVATE METHODS --------------- //
-  // tocTest () {
-  //   alert(1)
-  // }
-
   renderModal () {
     const el = document.createElement("div");
     el.id = ETH_DAPP_WALLET_CONNECT_MODAL_ID;
     document.body.appendChild(el);
-
-    // var _this = this
     var htmllet =
       `<div class="eth-warp">
             <div class="eth-main">
@@ -134,15 +118,15 @@ export class Base {
               </div>
               <div class="eth-main-wallet">
               
-                  <div class="cl-connect ${CONNECT_EVENT}" alt='${providers.METAMASK.name}'>
-                    <button class="cl-connect-btu">
+                  <div class="cl-connect ${CONNECT_EVENT}" >
+                    <button class="cl-connect-btu" alt='${providers.METAMASK.name}'>
                       <img src="${providers.METAMASK.logo}" width="30x"
                             class="img-MetaMask">
                       MetaMask
                     </button>
                   </div>
-                  <div class="cl-connect ${CONNECT_EVENT}" alt='${providers.WALLETCONNECT.name}'>
-                    <button class="cl-connect-btu">
+                  <div class="cl-connect ${CONNECT_EVENT}" >
+                    <button class="cl-connect-btu" alt='${providers.WALLETCONNECT.name}'>
                       <img src="${providers.WALLETCONNECT.logo}" width="30x"
                             class="img-WalletConnect">
                       WalletConnect
@@ -169,7 +153,7 @@ export class Base {
         .eth-warp .eth-main {
           display: flex;
           border: 1px solid #faba30;
-          border-radius: 5px;
+          border-radius: 18px;
           width: 450px;
           padding: 30px;
           background: #363636;
@@ -238,14 +222,6 @@ export class Base {
     await this.updateState({ show: !this.show });
   };
 
-  onError = async (error) => {
-    if (this.show) {
-      await this._toggleModal();
-    }
-    console.log(error)
-    // this.eventController.trigger(ERROR_EVENT, error);
-  };
-
   onConnect = async (provider) => {
     if (this.show) {
       await this._toggleModal();
@@ -253,13 +229,4 @@ export class Base {
     this.eventController.trigger(CONNECT_EVENT, provider);
   };
 
-  updateState = async (state) => {
-    Object.keys(state).forEach(key => {
-      this[key] = state[key];
-    });
-    await window.updateWeb3Modal(state);
-    this.show = false
-  };
-
-  resetState = () => this.updateState({ ...INITIAL_STATE });
 }
