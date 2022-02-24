@@ -13,65 +13,115 @@
 ## Preview
 
 ![preview](./images/preview.png)
-```
-npm install vue-eth-wallet-model
-```
+
 ## Usage
-### Import
+
+### 1. Install eth-wallet-model NPM package
 
 ```
-import 'vue-eth-wallet-model/vue-eth-wallet-model.min.css';
-import { EthWalletModel } from 'vue-eth-wallet-model';
+
+npm install --save eth-wallet-model
+
+# OR
+
+yarn add eth-wallet-model
+
 ```
-
-### demo
+### 2. Install Provider packages
 
 ```
- /src/main.js   
-
-
-import { createApp } from 'vue'
-import App from './App.vue'
-import '../lib/vue-eth-wallet-model.css'
-import 'vue-eth-wallet-model/vue-eth-wallet-model.min.css';
-import { EthWalletModel } from 'vue-eth-wallet-model';
-
-const app = createApp(App);
-app.use(EthWalletModel);
-app.mount("#app");
+import eth-wallet-model from 'eth-wallet-model';
 
 
 ```
+### 3. Then you can add Web3Modal to your Dapp as follows
+
+```
+import Web3 from "web3";
+import eth-wallet-model from "eth-wallet-model";
+
+const providerOptions = {
+       sysOptions: {
+          logp: 'your logo'
+        },
+        walletconnect: {
+          rpc: {
+            1: 'https://mainnet.infura.io/v3/9aa3d95b3bc440fa88ea12eaa4456161',
+            4: 'https://rinkeby.infura.io/v3/9aa3d95b3bc440fa88ea12eaa4456161'
+          },
+          chainId: 4,
+          bridge: 'https://bridge.walletconnect.org'
+        }
+        .... 
+};
+
+const eth-wallet-model = new eth-wallet-model(providerOptions);
+
+const provider = await eth-wallet-model.connect();
+
+const web3 = new Web3(provider);
+
+```
+
+## demo
 
 ```
 <template>
   <div class="hello">
     <h1>{{ msg }}</h1>
     <p>
-      this plugin is Dapp wallet model Demo,
+      Dapp ETH Wallet Model plugin.
     </p>
-    <button @click="handleClickConnect">Click Connect</button>
-    <eth-wallet-model ref="ethWalletModelRef"
-                      @connect="connect"
-                      @closeConnectModel="closeConnectModel"></eth-wallet-model>
+    <div class="ex-main">
+      <div class="ex-main-box">
+        <button @click="handleClickConnect">Click Connect</button>
+        <button @click="handleClickDisconnect">Click disconnect</button>
+      </div>
+    </div>
+
   </div>
 </template>
 
 <script>
-// import EthWalletModel from '../packages/index'
-// Vue.use(TagTextarea)
+import eth-wallet-model from 'eth-wallet-model'
+
+import WalletConnectLogo from "../assets/walletconnect-circle.svg";
 
 export default {
   name: 'HelloWorld',
   props: {
     msg: String
   },
+  data () {
+    return {
+      baseModel: '',
+      provider: '',
+      providerOptions: {
+        sysOptions: {
+          logp: WalletConnectLogo
+        },
+        walletconnect: {
+          rpc: {
+            1: 'https://mainnet.infura.io/v3/9aa3d95b3bc440fa88ea12eaa4456161',
+            4: 'https://rinkeby.infura.io/v3/9aa3d95b3bc440fa88ea12eaa4456161'
+          },
+          chainId: 4,
+          bridge: 'https://bridge.walletconnect.org'
+        }
+      }
+    }
+  },
+  created () {
+    this.baseModel = new eth-wallet-model(this.providerOptions)
+  },
   methods: {
-    connect (provider) {
-      console.log(provider)
+    async handleClickConnect () {
+      var provider = await this.baseModel.connect()
+      this.provider = provider
+      console.log("provider", provider)
     },
-    handleClickConnect () {
-      this.$refs.ethWalletModelRef.connectModel();
+    handleClickDisconnect () {
+      this.baseModel.disconnect(this.provider)
     },
   }
 }
@@ -79,6 +129,22 @@ export default {
 
 <!-- Add "scoped" attribute to limit CSS to this component only -->
 <style scoped>
+.ex-main {
+  width: 100%;
+  margin: 0 auto;
+  text-align: center;
+  display: flex;
+  justify-content: center;
+}
+.ex-main .ex-main-box {
+  width: 300px;
+  display: flex;
+  justify-content: space-between;
+}
+.ex-main .ex-main-box button {
+  height: 30px;
+  background: #42b983;
+}
 h3 {
   margin: 40px 0 0;
 }
@@ -98,37 +164,35 @@ a {
 
 ```
 
-具体使用可参考[该文件](../../examples/landsTileMap.vue)。
 
 ## Options
 
-| 配置项                  | 值类型   | 描述                                                                          |
+|  name                  | type   | description                                                                          |
 | ----------------------- | -------- | ----------------------------------------------------------------------------- |
-| providerOptions        | object    | providerOptions                                                  |
-| connect           | function | Click wallet login to return provider  object                                        |
-| closeConnectModel           | function | show/hide model box                                                 |
+| providerOptions        | object    |       see description below              |
+| connect        | function    |                                       |
+| disconnect     | function    | provider                              |
 
 providerOptions providerOptions
 ```
 eg:  
-var providerOptions =
-{
-        network: "mainnet", // optional
-        cacheProvider: true, // optional
+  providerOptions: {
+        sysOptions: {
+          logp: WalletConnectLogo
+        },
         walletconnect: {
-          options: {
-            rpc: {
-              1: 'https://mainnet.infura.io/v3/9aa3d95b3bc440fa88ea12eaa4456161',
-              4: 'https://rinkeby.infura.io/v3/9aa3d95b3bc440fa88ea12eaa4456161'
-            },
-            bridge: 'https://bridge.walletconnect.org'
-          }
+          rpc: {
+            1: 'https://mainnet.infura.io/v3/9aa3d95b3bc440fa88ea12eaa4456161',
+            4: 'https://rinkeby.infura.io/v3/9aa3d95b3bc440fa88ea12eaa4456161'
+          },
+          chainId: 4,
+          bridge: 'https://bridge.walletconnect.org'
         }
- }
+        ....
 
  walletconnect  config reference resources  https://docs.walletconnect.com/quick-start/dapps/web3-provider
 ```
-## Provider Events
+## Provider subscription Events 
 
 ```
 // Subscribe to accounts change
