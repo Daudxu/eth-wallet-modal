@@ -1,5 +1,7 @@
 
-# ETH Wallet Model
+<h1 align="center">
+   ETH Wallet Model
+</h1>
 ##  Ethereum provider solution for metamask/walletconnect Wallets
 
 [![npm][npm]][npm-url]
