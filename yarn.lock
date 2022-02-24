@@ -4433,6 +4433,21 @@ eth-wallet-modal@^1.0.3:
     vue-class-component "^7.2.6"
     vue-styled-components "^1.6.0"
 
+eth-wallet-modal@^1.0.4:
+  version "1.0.4"
+  resolved "https://registry.npmjs.org/eth-wallet-modal/-/eth-wallet-modal-1.0.4.tgz#452a0aac87d521cc3ae139e030b7777dcd028252"
+  integrity sha512-tIFmOQ/5Ba90mqiryrdvcdjmYlogWBiLLwlERwcpE/P1RuipRm6Y2RMikwXbWVLlSBCXtPX5w5yr8VViypcDjg==
+  dependencies:
+    "@metamask/detect-provider" "^1.2.0"
+    "@walletconnect/web3-provider" "^1.7.1"
+    core-js "^3.6.5"
+    eth-wallet-modal "^1.0.3"
+    jquery "^3.6.0"
+    vue "^3.0.0"
+    vue-class-component "^7.2.6"
+    vue-styled-components "^1.6.0"
+    webpack-build-tools-test "^1.0.0"
+
 ethereum-common@0.2.0:
   version "0.2.0"
   resolved "https://registry.npmjs.org/ethereum-common/-/ethereum-common-0.2.0.tgz#13bf966131cce1eeade62a1b434249bb4cb120ca"

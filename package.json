@@ -8,7 +8,7 @@
     "build": "vue-cli-service build",
     "lint": "vue-cli-service lint",
     "lib": "vue-cli-service build --target lib --name eth-wallet-modal --dest lib packages/index.js",
-    "tonpm": "npm version patch && npm publish"
+    "tonpm": "npm run lib && npm version patch && npm publish"
   },
   "keyword": [
     "Dapp",
@@ -35,7 +35,7 @@
     "@metamask/detect-provider": "^1.2.0",
     "@walletconnect/web3-provider": "^1.7.1",
     "core-js": "^3.6.5",
-    "eth-wallet-modal": "^1.0.3",
+    "eth-wallet-modal": "^1.0.4",
     "jquery": "^3.6.0",
     "vue": "^3.0.0",
     "vue-class-component": "^7.2.6",
