@@ -1,5 +1,5 @@
 
-# Vue Eth Wallet Model Component
+# ETH Wallet Model
 ##  Ethereum provider solution for metamask/walletconnect Wallets
 
 [![npm][npm]][npm-url]
