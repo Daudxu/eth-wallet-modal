@@ -5,68 +5,37 @@ import { providers, connectors } from "../providers";
 import bgBtShow from "../assets/images/bgBtHide.png";
 import bgBtHide from "../assets/images/bgBtShow.png";
 
-import {
-  ETH_DAPP_WALLET_CONNECT_MODAL_ID,
-  CONNECT_EVENT,
-} from "../constants";
+const ETH_DAPP_WALLET_CONNECT_MODAL = "ETH_DAPP_WALLET_CONNECT_MODAL";
+const CONNECT_EVENT = "connect";
 
-
-const INITIAL_STATE = { show: false };
 const defaultOpt = {
   cacheProvider: false,
   disableInjectedProvider: false,
-  providerOptions: {},
   network: ""
 };
 
 export class Base {
-  show = INITIAL_STATE.show;
-  providerController;
-  providerOptions;
   userOptions = [];
   provider = null;
-
   constructor(opts = defaultOpt) {
-    const options = {
-      ...opts
-    };
-    console.log(options)
-    console.log('connectors', connectors)
-    // this.userOptions = this.providerController.getUserOptions();
-    console.log(providers.METAMASK.logo)
+    this.opts = opts
     this.renderModal();
-  }
-
-  get cachedProvider () {
-    return this.providerController.cachedProvider;
   }
 
   // --------------- PUBLIC METHODS --------------- //
 
   connect = async () => {
-    $("#ETH_DAPP_WALLET_CONNECT_MODAL_ID")
-    var res = await this.test()
-    // console.log('res', res)
-    return res
-    // var _this = this
-    // var awaitPromise = new Promise(function (resolve) {
-
-    //   $('#ETH_DAPP_WALLET_CONNECT_MODAL_ID .connect').click(function () {
-    //     var name = $(this).find('.cl-connect-btu').attr('alt')
-    //     _this.connectTo(name)
-    //     resolve()
-    //   })
-    // })
-    // await awaitPromise
-    // console(1231231)
-    // return this.provider
-
+    $("#ETH_DAPP_WALLET_CONNECT_MODAL").show()
+    var provider = await this.monitoClick()
+    return provider
   }
-  test = () => {
+  monitoClick = () => {
+    var _this = this
     return new Promise((resolve) => {
-      setTimeout(() => {
-        resolve({ 'name': 123123 })
-      }, 3000)
+      $('#ETH_DAPP_WALLET_CONNECT_MODAL .connect').click(function () {
+        var name = $(this).find('.cl-connect-btu').attr('alt')
+        resolve(_this.connectTo(name))
+      })
     })
   }
 
@@ -81,7 +50,7 @@ export class Base {
           reject(err)
         })
       } else if (name.toLowerCase() === 'walletconnect') {
-        connectors.walletconnect().then((res) => {
+        connectors.walletconnect(_this.opts.walletconnect).then((res) => {
           _this.provider = res
           resolve(res)
         }).catch((err) => {
@@ -89,29 +58,13 @@ export class Base {
         })
       }
     })
-    await awaitPromise
-    return this.provider
-  }
-
-  // async connectTo
-  async toggleModal () {
-
-    // if (this.cachedProvider) {
-    //   await this.providerController.connectToCachedProvider();
-    //   return;
-    // }
-
-    // if (this.userOptions && this.userOptions.length === 1 && this.userOptions[0].name) {
-    //   await this.userOptions[0].onClick();
-    //   return;
-    // }
-
-    // await this._toggleModal();
+    var res = await awaitPromise
+    return res
   }
 
   renderModal () {
     const el = document.createElement("div");
-    el.id = ETH_DAPP_WALLET_CONNECT_MODAL_ID;
+    el.id = ETH_DAPP_WALLET_CONNECT_MODAL;
     document.body.appendChild(el);
     var htmllet =
       `<div class="eth-warp">
@@ -139,7 +92,7 @@ export class Base {
             </div>
         </div>
         <style> 
-        #ETH_DAPP_WALLET_CONNECT_MODAL_ID{
+        #ETH_DAPP_WALLET_CONNECT_MODAL{
           display:none
         }
         .eth-warp {
@@ -206,30 +159,11 @@ export class Base {
         }
         </style>
       `
-    document.getElementById(ETH_DAPP_WALLET_CONNECT_MODAL_ID).innerHTML = htmllet;
+    document.getElementById(ETH_DAPP_WALLET_CONNECT_MODAL).innerHTML = htmllet;
 
 
 
   }
 
-  _toggleModal = async () => {
-    const d = typeof window !== "undefined" ? document : "";
-    const body = d ? d.body || d.getElementsByTagName("body")[0] : "";
-    if (body) {
-      if (this.show) {
-        body.style.overflow = "";
-      } else {
-        body.style.overflow = "hidden";
-      }
-    }
-    await this.updateState({ show: !this.show });
-  };
-
-  onConnect = async (provider) => {
-    if (this.show) {
-      await this._toggleModal();
-    }
-    this.eventController.trigger(CONNECT_EVENT, provider);
-  };
 
 }

@@ -2,7 +2,7 @@
   <div class="hello">
     <h1>{{ msg }}</h1>
     <p>
-      this plugin is Dapp wallet web3Model Demo,
+      this plugin is Dapp wallet model Demo,
     </p>
     <button @click="handleClickConnect">Click Connect</button>
 
@@ -22,19 +22,29 @@ export default {
   },
   data () {
     return {
-      baseModel: ''
+      baseModel: '',
+      providerOptions: {
+        walletconnect: {
+          rpc: {
+            1: 'https://mainnet.infura.io/v3/9aa3d95b3bc440fa88ea12eaa4456161',
+            4: 'https://rinkeby.infura.io/v3/9aa3d95b3bc440fa88ea12eaa4456161'
+          },
+          chainId: 4,
+          bridge: 'https://bridge.walletconnect.org'
+        }
+      }
     }
   },
   created () {
-    this.baseModel = new Base()
+    this.baseModel = new Base(this.providerOptions)
   },
   methods: {
     connect (provider) {
       console.log(provider)
     },
     async handleClickConnect () {
-      var res = await this.baseModel.connect()
-      console.log('client', res)
+      var provider = await this.baseModel.connect()
+      console.log(provider)
       // this.$refs.ethWalletModelRef.connectModel();
     },
   }
