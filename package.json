@@ -1,6 +1,6 @@
 {
   "name": "eth-wallet-model",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "private": false,
   "scripts": {
     "dev": "vue-cli-service serve",
@@ -19,7 +19,8 @@
     "Provider",
     "ethers",
     "ethers.js",
-    "web3js"
+    "web3js",
+    "nft"
   ],
   "homepage": "https://github.com/Daudxu/eth-wallet-model-vue-component",
   "bugs": {
