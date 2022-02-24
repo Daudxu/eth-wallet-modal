@@ -3,14 +3,12 @@
    ETH Wallet Model
 </h1>
 
-<p align="center">
 [![npm][npm]][npm-url]
 [![node][node]][node-url]
-</p>
 
-##  Ethereum provider solution for metamask/walletconnect Wallets
-## Installation
-
+<h2 align="center">
+  Ethereum provider solution for metamask/walletconnect Wallets
+</h2>
 ```
 npm install vue-eth-wallet-model
 ```
