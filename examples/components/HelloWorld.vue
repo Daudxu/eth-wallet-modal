@@ -17,7 +17,9 @@
  <script>
 // import '../../lib/eth-wallet-modal.css'
 // import Base from '../../lib/eth-wallet-modal.umd.min.js'
-import Base from '../../packages/index'
+// import Base from '../../packages/index'
+import aaamodal from 'eth-wallet-modal';
+
 
 import WalletConnectLogo from "../assets/walletconnect-circle.svg";
 
@@ -50,6 +52,7 @@ export default {
   },
   methods: {
     async handleClickConnect () {
+          console.log("provider", 123123)
       var provider = await this.baseModel.connect()
       this.provider = provider
       console.log("provider", provider)

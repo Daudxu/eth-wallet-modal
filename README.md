@@ -30,7 +30,7 @@ yarn add eth-wallet-modal
 ### 2. Install Provider packages
 
 ```
-import eth-wallet-modal from 'eth-wallet-modal';
+import ethWalletModal from 'eth-wallet-modal';
 
 
 ```
