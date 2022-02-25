@@ -1,5 +1,5 @@
 <h1 align="center">
-   ETH Wallet Modal
+   ETH Wallet Modal 2020
 </h1>
 
 [![npm][npm]][npm-url]
