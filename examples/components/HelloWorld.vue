@@ -54,7 +54,7 @@ export default {
   },
   methods: {
     async handleClickConnect () {
-          console.log("provider", 123123)
+      console.log("provider", 123123)
       var provider = await this.baseModel.connect()
       this.provider = provider
       console.log("provider", provider)
