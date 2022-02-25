@@ -49,7 +49,6 @@ export default {
     }
   },
   created () {
-    console.log(getUrlParameters("https://zhuanlan.zhihu.com/p/36921340"))
     console.log(Base)
     this.baseModel = new Base(this.providerOptions)
   },
