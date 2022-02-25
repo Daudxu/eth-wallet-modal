@@ -12,6 +12,7 @@ module.exports = {
       filename: 'index.html'
     }
   },
+
   chainWebpack: config => {
     config.module
       .rule('images')
@@ -19,9 +20,13 @@ module.exports = {
       .loader('url-loader')
       .tap(options => Object.assign(options, { limit: 5000 }))
   },
+
   configureWebpack: {
     output: {
       libraryExport: 'default'
     }
-  }
+  },
+
+  publicPath: './',
+  assetsDir: 'static'
 }
