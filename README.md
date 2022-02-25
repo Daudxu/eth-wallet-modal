@@ -13,6 +13,12 @@
 
 ![preview](./images/preview.png)
 
+## example
+http://eth-wallet-modal.365coding.cn/
+
+## doc
+https://daudxu.github.io/eth-wallet-modal/ 
+
 ## Usage
 
 ### 1. Install eth-wallet-modal NPM package
