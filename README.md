@@ -14,10 +14,7 @@
 ![preview](./images/preview.png)
 
 ## example
-http://eth-wallet-modal.365coding.cn/
-
-## doc
-https://daudxu.github.io/eth-wallet-modal/ 
+https://daudxu.github.io/eth-wallet-modal/
 
 ## Usage
 
