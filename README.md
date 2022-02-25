@@ -232,6 +232,13 @@ provider.on("disconnect", (error: { code: number; message: string }) => {
 
 > v1.0.0 \* init
 
+## other
+
+Etherscan: https://etherscan.io/apis
+Infura: https://infura.io/
+ETH Gas Station: https://docs.ethgasstation.info/
+Imgix: https://www.imgix.com/
+
 [npm]: https://img.shields.io/npm/v/postcss-load-config.svg
 [npm-url]: https://npmjs.com/package/postcss-load-config
 [node]: https://img.shields.io/node/v/postcss-load-plugins.svg
