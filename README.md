@@ -234,10 +234,10 @@ provider.on("disconnect", (error: { code: number; message: string }) => {
 
 ## other
 
-Etherscan: https://etherscan.io/apis
-Infura: https://infura.io/
-ETH Gas Station: https://docs.ethgasstation.info/
-Imgix: https://www.imgix.com/
+- Etherscan: https://etherscan.io/apis
+- Infura: https://infura.io/
+- ETH Gas Station: https://docs.ethgasstation.info/
+- Imgix: https://www.imgix.com/
 
 [npm]: https://img.shields.io/npm/v/postcss-load-config.svg
 [npm-url]: https://npmjs.com/package/postcss-load-config
