@@ -40,8 +40,28 @@ export class Base {
 
     return provider
 
-
   }
+
+   on(event, callback) {
+    this.eventController.on({
+      event,
+      callback
+    });
+
+    return () =>
+      this.eventController.off({
+        event,
+        callback
+      });
+  }
+
+   off(event, callback) {
+    this.eventController.off({
+      event,
+      callback
+    });
+  }
+  
   async toLink (name) {
     return new Promise((resolve) => {
       resolve(this.connectTo(name))
