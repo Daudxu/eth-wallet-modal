@@ -37,9 +37,7 @@ export class Base {
     if (provider) {
       $("#ETH_DAPP_WALLET_CONNECT_MODAL").hide()
     }
-
     return provider
-
   }
 
    on(event, callback) {
@@ -61,7 +59,7 @@ export class Base {
       callback
     });
   }
-  
+
   async toLink (name) {
     return new Promise((resolve) => {
       resolve(this.connectTo(name))
