@@ -5,7 +5,7 @@ import WalletConnectProvider from "@walletconnect/web3-provider";
 const ConnectToWalletConnect = async (
   opts
 ) => {
-  return new Promise((resolve, reject) => {
+  return await new Promise((resolve, reject) => {
     (async () => {
       let bridge = "https://bridge.walletconnect.org";
       let qrcode = true;

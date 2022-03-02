@@ -6,8 +6,12 @@ import bgBtShow from "../assets/images/bgBtHide.png";
 import bgBtHide from "../assets/images/bgBtShow.png";
 import closeMode from "../assets/images/close.png";
 
+import { EventController } from "../controllers";
+
 const ETH_DAPP_WALLET_CONNECT_MODAL = "ETH_DAPP_WALLET_CONNECT_MODAL";
 const CONNECT_EVENT = "connect";
+
+const INITIAL_STATE = { show: false };
 
 const defaultOpt = {
   cacheProvider: false,
@@ -16,68 +20,75 @@ const defaultOpt = {
 };
 
 export class Base {
+  show = INITIAL_STATE.show;
   userOptions = [];
   provider = null;
+  eventController = new EventController();
+  // providerController;
   constructor(opts = defaultOpt) {
     this.opts = opts
     this.renderModal();
   }
 
   connect = async () => {
-    var provider = null
-    $("#ETH_DAPP_WALLET_CONNECT_MODAL .eth-close-box").click(function () {
-      $("#ETH_DAPP_WALLET_CONNECT_MODAL").hide()
-    })
-    if (localStorage.getItem("injected")) {
-      provider = await this.toLink(localStorage.getItem("injected"))
-    } else {
+    // this.addOnClose()
+    return await new Promise((resolve, reject) => {
+      (async () => {
+        // provider
+        $("#ETH_DAPP_WALLET_CONNECT_MODAL .eth-close-box").click(function () {
+          $("#ETH_DAPP_WALLET_CONNECT_MODAL").hide()
+        })
+        if (localStorage.getItem("injected")) {
+          await this.toLink(localStorage.getItem("injected")).then((res) => {
+            resolve(res)
+          }).catch((e) => {
+            reject(e)
+          })
+        } else {
+          $("#ETH_DAPP_WALLET_CONNECT_MODAL").show()
+          var _this = this
 
-      $("#ETH_DAPP_WALLET_CONNECT_MODAL").show()
-      provider = await this.monitoClick()
-
-    }
-    if (provider) {
-      $("#ETH_DAPP_WALLET_CONNECT_MODAL").hide()
-    }
-    return provider
-  }
-
-  on (event, callback) {
-    this.eventController.on({
-      event,
-      callback
+          $('#ETH_DAPP_WALLET_CONNECT_MODAL .connect').click(async function () {
+            console.log(1)
+            var name = $(this).find('.cl-connect-btu').attr('alt')
+            if (name.toLowerCase() === 'metamask') {
+              await connectors.metamask().then((res) => {
+                _this.provider = res
+                resolve(res)
+              }).catch((err) => {
+                $('#ETH_DAPP_WALLET_CONNECT_MODAL .connect').unbind();
+                reject(err)
+              })
+            } else if (name.toLowerCase() === 'walletconnect') {
+              await connectors.walletconnect(_this.opts.walletconnect).then((res) => {
+                _this.provider = res
+                resolve(res)
+              }).catch((err) => {
+                $('#ETH_DAPP_WALLET_CONNECT_MODAL .connect').unbind();
+                reject(err)
+              })
+            } else if (name.toLowerCase() === 'coinbase') {
+              await connectors.coinbase(_this.opts.coinbase).then((res) => {
+                _this.provider = res
+                resolve(res)
+              }).catch((err) => {
+                $('#ETH_DAPP_WALLET_CONNECT_MODAL .connect').unbind();
+                reject(err)
+              })
+            }
+            resolve(name)
+          })
+        }
+      })().catch(e => console.log("error: " + e));
     });
-
-    return () =>
-      this.eventController.off({
-        event,
-        callback
-      });
   }
 
-  off (event, callback) {
-    this.eventController.off({
-      event,
-      callback
-    });
-  }
 
   async toLink (name) {
     return new Promise((resolve) => {
       resolve(this.connectTo(name))
     })
   }
-  monitoClick = () => {
-    console.log(123123123)
-    var _this = this
-    return new Promise((resolve) => {
-      $('#ETH_DAPP_WALLET_CONNECT_MODAL .connect').click(function () {
-        var name = $(this).find('.cl-connect-btu').attr('alt')
-        resolve(_this.connectTo(name))
-      })
-    })
-  }
-
   connectTo = async (name) => {
     var _this = this
     var awaitPromise = new Promise(function (resolve, reject) {
@@ -121,16 +132,16 @@ export class Base {
   }
 
 
+
   renderModal () {
     const el = document.createElement("div");
     el.id = ETH_DAPP_WALLET_CONNECT_MODAL;
     document.body.appendChild(el);
-    console.log('providers', providers)
     var htmllet =
       `<div class="eth-warp">
             <div class="eth-main">
               <div class="eth-close"> 
-                  <span class="eth-close-box" onclock="closeethModel"> </span>
+                  <span class="eth-close-box" > </span>
               </div>
               <div class="eth-main-wallet">
                   <div class="eth-main-wallet-logo"> 

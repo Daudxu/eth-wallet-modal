@@ -1,5 +1,2 @@
-export class IndexController {
-    constructor(opts){
-        this.opts= opts
-    }
-}
+export * from "./events";
+export * from "./providers";
