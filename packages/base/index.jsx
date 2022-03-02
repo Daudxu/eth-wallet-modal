@@ -6,7 +6,7 @@ import bgBtShow from "../assets/images/bgBtHide.png";
 import bgBtHide from "../assets/images/bgBtShow.png";
 import closeMode from "../assets/images/close.png";
 
-import { EventController } from "../controllers";
+// import { EventController } from "../controllers";
 
 const ETH_DAPP_WALLET_CONNECT_MODAL = "ETH_DAPP_WALLET_CONNECT_MODAL";
 const CONNECT_EVENT = "connect";
@@ -23,10 +23,34 @@ export class Base {
   show = INITIAL_STATE.show;
   userOptions = [];
   provider = null;
-  eventController = new EventController();
   // providerController;
   constructor(opts = defaultOpt) {
     this.opts = opts
+
+    this.providers = Object.keys(connectors).map((id) => {
+      console.log(id)
+      // let providerInfo;
+      // if (id === INJECTED_PROVIDER_ID) {
+      //   providerInfo = this.injectedProvider || list.providers.FALLBACK;
+      // } else {
+      //   providerInfo = getProviderInfoById(id);
+      // }
+      // // parse custom display options
+      // if (this.providerOptions[id]) {
+      //   const options = this.providerOptions[id];
+      //   if (typeof options.display !== "undefined") {
+      //     providerInfo = {
+      //       ...providerInfo,
+      //       ...this.providerOptions[id].display
+      //     };
+      //   }
+      // }
+      // return {
+      //   ...providerInfo,
+      //   connector: list.connectors[id],
+      //   package: providerInfo.package
+      // };
+    });
     this.renderModal();
   }
 
@@ -34,6 +58,7 @@ export class Base {
     // this.addOnClose()
     return await new Promise((resolve, reject) => {
       (async () => {
+        console.log('connectors',connectors)
         // provider
         $("#ETH_DAPP_WALLET_CONNECT_MODAL .eth-close-box").click(function () {
           $("#ETH_DAPP_WALLET_CONNECT_MODAL").hide()

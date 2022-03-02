@@ -36,24 +36,45 @@ export default {
       baseModel: '',
       provider: '',
       providerOptions: {
-        sysOptions: {
-          logo: WalletConnectLogo
+        logo: WalletConnectLogo,
+        chainId : 4,
+        walletOptions: {
+            metamask:{
+               displayView: {
+                  logo: WalletConnectLogo,
+                  name: "metamask",
+              },
+              options:{}
+            },
+            walletconnect: {
+              displayView: {
+                  logo: WalletConnectLogo,
+                  name: "walletconnect",
+              },
+              options:{
+                rpc: {
+                  1: 'https://mainnet.infura.io/v3/9aa3d95b3bc440fa88ea12eaa4456161',
+                  4: 'https://rinkeby.infura.io/v3/9aa3d95b3bc440fa88ea12eaa4456161'
+                },
+                chainId: 4,
+                bridge: 'https://bridge.walletconnect.org'
+              }
+            },
+            coinbase: {
+              displayView: {
+                  logo: WalletConnectLogo,
+                  name: "coinbase",
+              },
+               options:{
+                  infuraId: '9aa3d95b3bc440fa88ea12eaa4456161',
+                  chainId: 4,
+                  appName: 'Digi',
+                  appLogoUrl: WalletConnectLogo,
+                  darkMode: false
+               }
+            }
         },
-        walletconnect: {
-          rpc: {
-            1: 'https://mainnet.infura.io/v3/9aa3d95b3bc440fa88ea12eaa4456161',
-            4: 'https://rinkeby.infura.io/v3/9aa3d95b3bc440fa88ea12eaa4456161'
-          },
-          chainId: 4,
-          bridge: 'https://bridge.walletconnect.org'
-        },
-        coinbase: {
-          infuraId: '9aa3d95b3bc440fa88ea12eaa4456161',
-          chainId: 4,
-          appName: 'Digi',
-          appLogoUrl: 'https://www.logodesign.net/logo/abstract-line-forming-two-trees-51ld.png?size=2&industry=nature',
-          darkMode: false
-        }
+
       }
     }
   },
