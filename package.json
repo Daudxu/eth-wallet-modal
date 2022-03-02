@@ -32,6 +32,7 @@
     "url": "https://github.com/Daudxu/eth-wallet-modal.git"
   },
   "dependencies": {
+    "@coinbase/wallet-sdk": "^3.0.1",
     "@metamask/detect-provider": "^1.2.0",
     "@walletconnect/web3-provider": "^1.7.1",
     "core-js": "^3.6.5",

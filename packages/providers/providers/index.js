@@ -3,6 +3,8 @@ import WalletConnectLogo from "../../assets/logos/walletconnect-circle.svg";
 
 import MetaMaskLogo from "../../assets/logos/metamask.svg";
 
+import CoinbaseLogo from "../../assets/logos/coinbase.svg";
+
 
 export const WALLETCONNECT = {
   id: "walletconnect",
@@ -21,4 +23,13 @@ export const METAMASK = {
   logo: MetaMaskLogo,
   type: "metamask",
   check: "isMetaMask"
+};
+
+
+export const COINBASE = {
+  id: "coinbase",
+  name: "Coinbase",
+  logo: CoinbaseLogo,
+  type: "coinbase",
+  check: "isCoinbase"
 };

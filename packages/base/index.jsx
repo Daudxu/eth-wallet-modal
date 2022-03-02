@@ -31,8 +31,10 @@ export class Base {
     if (localStorage.getItem("injected")) {
       provider = await this.toLink(localStorage.getItem("injected"))
     } else {
+
       $("#ETH_DAPP_WALLET_CONNECT_MODAL").show()
       provider = await this.monitoClick()
+
     }
     if (provider) {
       $("#ETH_DAPP_WALLET_CONNECT_MODAL").hide()
@@ -40,7 +42,7 @@ export class Base {
     return provider
   }
 
-   on(event, callback) {
+  on (event, callback) {
     this.eventController.on({
       event,
       callback
@@ -53,7 +55,7 @@ export class Base {
       });
   }
 
-   off(event, callback) {
+  off (event, callback) {
     this.eventController.off({
       event,
       callback
@@ -66,6 +68,7 @@ export class Base {
     })
   }
   monitoClick = () => {
+    console.log(123123123)
     var _this = this
     return new Promise((resolve) => {
       $('#ETH_DAPP_WALLET_CONNECT_MODAL .connect').click(function () {
@@ -92,7 +95,15 @@ export class Base {
         }).catch((err) => {
           reject(err)
         })
+      } else if (name.toLowerCase() === 'coinbase') {
+        connectors.coinbase(_this.opts.coinbase).then((res) => {
+          _this.provider = res
+          resolve(res)
+        }).catch((err) => {
+          reject(err)
+        })
       }
+
     })
     var res = await awaitPromise
     return res
@@ -111,11 +122,10 @@ export class Base {
 
 
   renderModal () {
-    console.log(this.opts.sysOptions)
     const el = document.createElement("div");
     el.id = ETH_DAPP_WALLET_CONNECT_MODAL;
     document.body.appendChild(el);
-    console.log('aaa',this.opts.sysOptions)
+    console.log('providers', providers)
     var htmllet =
       `<div class="eth-warp">
             <div class="eth-main">
@@ -140,6 +150,13 @@ export class Base {
                       WalletConnect
                     </button>
                   </div>
+                  <div class="cl-connect ${CONNECT_EVENT}" >
+                  <button class="cl-connect-btu" alt='${providers.COINBASE.name}'>
+                    <img src="https://raw.githubusercontent.com/Daudxu/eth-wallet-modal/72bec08aaebc80169fdc004f8c664503628e2fbd/packages/assets/logos/coinbase.svg" width="30px"
+                          class="img-WalletConnect">
+                          Coinbase Wallet
+                  </button>
+                </div>
               </div>
             </div>
         </div>

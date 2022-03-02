@@ -6,8 +6,11 @@
     </p>
     <div class="ex-main">
       <div class="ex-main-box">
-        <button @click="handleClickConnect">Click Connect</button>
-        <button @click="handleClickDisconnect">Click disconnect</button>
+
+        <button v-show="provider === ''"
+                @click="handleClickConnect">Click Connect</button>
+        <button v-show="provider"
+                @click="handleClickDisconnect">Click disconnect</button>
       </div>
     </div>
 
@@ -21,7 +24,7 @@ import Base from '../../packages/index'
 // import getUrlParameters from 'webpack-build-tools-test';
 // import Base from 'eth-wallet-modal';
 
-import WalletConnectLogo from "../assets/images.png";
+import WalletConnectLogo from "../assets/walletconnect-circle.svg";
 
 export default {
   name: 'HelloWorld',
@@ -43,23 +46,32 @@ export default {
           },
           chainId: 4,
           bridge: 'https://bridge.walletconnect.org'
+        },
+        coinbase: {
+          infuraId: '9aa3d95b3bc440fa88ea12eaa4456161',
+          chainId: 4,
+          appName: 'Digi',
+          appLogoUrl: 'https://www.logodesign.net/logo/abstract-line-forming-two-trees-51ld.png?size=2&industry=nature',
+          darkMode: false
         }
       }
     }
   },
   created () {
-    console.log(Base)
     this.baseModel = new Base(this.providerOptions)
   },
   methods: {
     async handleClickConnect () {
-      console.log("provider", 123123)
       var provider = await this.baseModel.connect()
-      this.provider = provider
-      console.log("provider", provider)
+      console.log('provider', provider)
+      if (provider) {
+        this.provider = provider
+      }
+
     },
     handleClickDisconnect () {
       this.baseModel.disconnect(this.provider)
+      this.provider = ''
     },
   }
 }
@@ -75,7 +87,7 @@ export default {
 .ex-main .ex-main-box {
   width: 300px;
   display: flex;
-  justify-content: space-between;
+  justify-content: center;
 }
 .ex-main .ex-main-box button {
   height: 30px;

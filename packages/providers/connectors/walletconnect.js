@@ -1,7 +1,8 @@
 import { getChainId } from "../../tools";
 import $ from 'jquery';
 import WalletConnectProvider from "@walletconnect/web3-provider";
-const ConnectToWalletConnect = (
+
+const ConnectToWalletConnect = async (
   opts
 ) => {
   return new Promise((resolve, reject) => {
