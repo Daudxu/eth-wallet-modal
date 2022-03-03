@@ -82,8 +82,7 @@ export class Base {
         });
       }
     });
-    // var connector = this.getProvider('walletconnect').connector;
-    // console.log('connector', connector(this.walletOptions['walletconnect'].options))
+
     // const providerList = [];
 
     // defaultProviderList.forEach((id) => {
@@ -167,30 +166,21 @@ export class Base {
         } else {
           document.getElementById('ETH_WALLET_MODAL').style.display = 'block'
           var elements = document.getElementsByClassName('connect')
-          var sa = null
           Array.from(elements).forEach(function (element) {
-            element.addEventListener('click', sa = _this.addAndRemove(element), { passive: false });
+            element.onclick = function () {
+              var name = element.querySelector('.cl-connect-btu').attributes["alt"].value
+              _this.connectTo(name).then((res) => {
+                resolve(res)
+              }).catch((error) => {
+                reject(error)
+              })
+            } 
+
           });
-          console.log('sa', sa)
-          // $('#ETH_WALLET_MODAL .connect').click(async function () {
-          // var name = $(this).find('.cl-connect-btu').attr('alt')
-          // _this.connectTo(name).then((res) => {
-          //   resolve(res)
-          // }).catch((error) => {
-          //   reject(error)
-          // })
-          // })
         }
       })().catch(e => console.log("error: " + e));
     });
   }
-  removeEventListener () {
-    var elements = document.getElementsByClassName('connect')
-    Array.from(elements).forEach(function (element) {
-      element.removeEventListener('click', () => { console.log('removeEventListener') });
-    });
-  }
-
 
   async connectTo (name) {
     return await new Promise((resolve, reject) => {
@@ -201,7 +191,7 @@ export class Base {
           document.getElementById('ETH_WALLET_MODAL').style.display = "none"
           var elements = document.getElementsByClassName('connect')
           Array.from(elements).forEach(function (element) {
-            element.removeEventListener('click', _this.addAndRemove(element));
+            element.removeEventListener('click');
           });
           localStorage.setItem("injected", name)
           resolve(res)
@@ -209,27 +199,13 @@ export class Base {
           document.getElementById('ETH_WALLET_MODAL').style.display = "none"
           var elements = document.getElementsByClassName('connect')
           Array.from(elements).forEach(function (element) {
-            element.removeEventListener('click', this.addAndRemove(element));
+            element.removeEventListener('click');
           });
           localStorage.removeItem('injected')
           reject(error)
         })
       })().catch(error => reject(error));
     });
-  }
-  addAndRemove () {
-    console.log(11111111)
-    return 111
-    // console.log('add');
-    // console.log('remove');
-    // element.addEventListener('click', () => {
-    //   var name = element.querySelector('.cl-connect-btu').attributes["alt"].value
-    //   this.connectTo(name).then((res) => {
-    //     // resolve(res)
-    //   }).catch((error) => {
-    //     // reject(error)
-    //   })
-    // });
   }
 
   disconnect = async (provider) => {
