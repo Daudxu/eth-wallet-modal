@@ -12,9 +12,6 @@ export const WALLETCONNECT = {
   logo: WalletConnectLogo,
   type: "qrcode",
   check: "isWalletConnect",
-  package: {
-    required: [["infuraId", "rpc"]]
-  }
 };
 
 export const METAMASK = {

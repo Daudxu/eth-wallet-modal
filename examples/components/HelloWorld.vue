@@ -26,6 +26,10 @@ import Base from '../../packages/index'
 
 import WalletConnectLogo from "../assets/walletconnect-circle.svg";
 
+import MetaMaskLogo from "../assets/logos/metamask.svg";
+
+import CoinbaseLogo from "../assets/logos/coinbase.svg";
+
 export default {
   name: 'HelloWorld',
   props: {
@@ -37,42 +41,42 @@ export default {
       provider: '',
       providerOptions: {
         logo: WalletConnectLogo,
-        chainId : 4,
+        chainId: 4,
         walletOptions: {
-            metamask:{
-               displayView: {
-                  logo: WalletConnectLogo,
-                  name: "metamask",
-              },
-              options:{}
+          metamask: {
+            displayView: {
+              logo: MetaMaskLogo,
+              name: "metamask",
             },
-            walletconnect: {
-              displayView: {
-                  logo: WalletConnectLogo,
-                  name: "walletconnect",
-              },
-              options:{
-                rpc: {
-                  1: 'https://mainnet.infura.io/v3/9aa3d95b3bc440fa88ea12eaa4456161',
-                  4: 'https://rinkeby.infura.io/v3/9aa3d95b3bc440fa88ea12eaa4456161'
-                },
-                chainId: 4,
-                bridge: 'https://bridge.walletconnect.org'
-              }
+            options: {}
+          },
+          walletconnect: {
+            displayView: {
+              logo: WalletConnectLogo,
+              name: "walletconnect",
             },
-            coinbase: {
-              displayView: {
-                  logo: WalletConnectLogo,
-                  name: "coinbase",
+            options: {
+              rpc: {
+                1: 'https://mainnet.infura.io/v3/9aa3d95b3bc440fa88ea12eaa4456161',
+                4: 'https://rinkeby.infura.io/v3/9aa3d95b3bc440fa88ea12eaa4456161'
               },
-               options:{
-                  infuraId: '9aa3d95b3bc440fa88ea12eaa4456161',
-                  chainId: 4,
-                  appName: 'Digi',
-                  appLogoUrl: WalletConnectLogo,
-                  darkMode: false
-               }
+              chainId: 4,
+              bridge: 'https://bridge.walletconnect.org'
             }
+          },
+          coinbase: {
+            displayView: {
+              logo: CoinbaseLogo,
+              name: "coinbase",
+            },
+            options: {
+              infuraId: '9aa3d95b3bc440fa88ea12eaa4456161',
+              chainId: 4,
+              appName: 'Digi',
+              appLogoUrl: WalletConnectLogo,
+              darkMode: false
+            }
+          }
         },
 
       }
