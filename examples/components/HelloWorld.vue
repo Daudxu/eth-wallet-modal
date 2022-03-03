@@ -24,7 +24,7 @@ import Base from '../../packages/index'
 // import getUrlParameters from 'webpack-build-tools-test';
 // import Base from 'eth-wallet-modal';
 
-import WalletConnectLogo from "../assets/walletconnect-circle.svg";
+import WalletConnectLogo from "../assets/logos/walletconnect-circle.svg";
 
 import MetaMaskLogo from "../assets/logos/metamask.svg";
 

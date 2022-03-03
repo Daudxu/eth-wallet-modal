@@ -249,6 +249,7 @@ export class Base {
       <style> 
       #ETH_WALLET_MODAL{
         display:none
+        
       }
       .eth-warp {
         position: fixed;
@@ -256,6 +257,7 @@ export class Base {
         left: 0;
         right: 0;
         bottom: 0;
+        z-index:99999;
         background: rgb(30, 30, 30, 0.8);
         display: flex;
         align-items: center;
