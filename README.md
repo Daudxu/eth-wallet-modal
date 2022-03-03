@@ -90,17 +90,9 @@ const web3 = new Web3(provider);
 </template>
 
  <script>
-// import '../../lib/eth-wallet-modal.css'
-// import Base from '../../lib/eth-wallet-modal.umd.min.js'
-import Base from '../../packages/index'
-// import getUrlParameters from 'webpack-build-tools-test';
-// import Base from 'eth-wallet-modal';
 
-import WalletConnectLogo from "../assets/walletconnect-circle.svg";
+import Base from 'eth-wallet-modal';
 
-import MetaMaskLogo from "../assets/logos/metamask.svg";
-
-import CoinbaseLogo from "../assets/logos/coinbase.svg";
 
 export default {
   name: 'HelloWorld',
