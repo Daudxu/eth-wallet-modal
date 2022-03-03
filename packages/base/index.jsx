@@ -1,5 +1,3 @@
-
-// import $ from 'jquery';
 import { providers, connectors } from "../providers";
 
 import bgBtShow from "../assets/images/bgBtHide.png";

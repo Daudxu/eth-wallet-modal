@@ -38,7 +38,6 @@
     "@metamask/detect-provider": "^1.2.0",
     "@walletconnect/web3-provider": "^1.7.1",
     "core-js": "^3.6.5",
-    "jquery": "^1.9.1",
     "vue": "^3.0.0"
   },
   "devDependencies": {
