@@ -293,8 +293,8 @@ provider.on("disconnect", (error: { code: number; message: string }) => {
 
 ## Features
 
-- [x] Built for Ethereum using [Web3](https://github.com/ethereum/web3.js/).
-- [x] Implements [Graph Protocol](https://github.com/graphprotocol) to read blockchain.
+- [v] Built for Ethereum using [Web3](https://github.com/ethereum/web3.js/).
+- [v] Implements [Graph Protocol](https://github.com/graphprotocol) to read blockchain.
 
 ## Changelog
 
