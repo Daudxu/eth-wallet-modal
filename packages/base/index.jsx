@@ -154,66 +154,48 @@ export class Base {
         $("#ETH_WALLET_MODAL .eth-close-box").click(function () {
           $("#ETH_WALLET_MODAL").hide()
         })
+        var _this = this
         if (localStorage.getItem("injected")) {
-          await this.toLink(localStorage.getItem("injected")).then((res) => {
+          var name = localStorage.getItem("injected")
+          _this.connectTo(name).then((res) => {
             resolve(res)
-          }).catch((e) => {
-            reject(e)
+          }).catch((error) => {
+            reject(error)
           })
         } else {
-          var _this = this
           $("#ETH_WALLET_MODAL").show()
           $('#ETH_WALLET_MODAL .connect').click(async function () {
             var name = $(this).find('.cl-connect-btu').attr('alt')
-            var connector = _this.getProvider(name).connector;
-            connector(_this.walletOptions[name].options).then((res) => {
-              console.log(1, res)
+            _this.connectTo(name).then((res) => {
+              resolve(res)
             }).catch((error) => {
-              $("#ETH_WALLET_MODAL").hide()
-              $('#ETH_WALLET_MODAL .connect').unbind();
               reject(error)
             })
-            resolve(name)
           })
         }
       })().catch(e => console.log("error: " + e));
     });
   }
 
-  async toLink (name) {
-    return new Promise((resolve) => {
-      resolve(this.connectTo(name))
-    })
-  }
-  connectTo = async (name) => {
-    var _this = this
-    var awaitPromise = new Promise(function (resolve, reject) {
-      if (name.toLowerCase() === 'metamask') {
-        connectors.metamask().then((res) => {
-          _this.provider = res
-          resolve(res)
-        }).catch((err) => {
-          reject(err)
-        })
-      } else if (name.toLowerCase() === 'walletconnect') {
-        connectors.walletconnect(_this.opts.walletconnect).then((res) => {
-          _this.provider = res
-          resolve(res)
-        }).catch((err) => {
-          reject(err)
-        })
-      } else if (name.toLowerCase() === 'coinbase') {
-        connectors.coinbase(_this.opts.coinbase).then((res) => {
-          _this.provider = res
-          resolve(res)
-        }).catch((err) => {
-          reject(err)
-        })
-      }
 
-    })
-    var res = await awaitPromise
-    return res
+  async connectTo (name) {
+    return await new Promise((resolve, reject) => {
+      (async () => {
+        var _this = this
+        var connector = _this.getProvider(name).connector;
+        connector(_this.walletOptions[name].options).then((res) => {
+          $("#ETH_WALLET_MODAL").hide()
+          $('#ETH_WALLET_MODAL .connect').unbind();
+          localStorage.setItem("injected", name)
+          resolve(res)
+        }).catch((error) => {
+          $("#ETH_WALLET_MODAL").hide()
+          $('#ETH_WALLET_MODAL .connect').unbind();
+          localStorage.removeItem('injected')
+          reject(error)
+        })
+      })().catch(error => reject(error));
+    });
   }
 
   disconnect = async (provider) => {
