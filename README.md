@@ -74,22 +74,33 @@ const web3 = new Web3(provider);
   <div class="hello">
     <h1>{{ msg }}</h1>
     <p>
-      Dapp ETH Wallet Model plugin.
+      Dapp ETH Wallet Modal plugin.
     </p>
     <div class="ex-main">
       <div class="ex-main-box">
-        <button @click="handleClickConnect">Click Connect</button>
-        <button @click="handleClickDisconnect">Click disconnect</button>
+
+        <button v-show="provider === ''"
+                @click="handleClickConnect">Click Connect</button>
+        <button v-show="provider"
+                @click="handleClickDisconnect">Click disconnect</button>
       </div>
     </div>
 
   </div>
 </template>
 
-<script>
-import ethWalletModeal from 'eth-wallet-modal'
+ <script>
+// import '../../lib/eth-wallet-modal.css'
+// import Base from '../../lib/eth-wallet-modal.umd.min.js'
+import Base from '../../packages/index'
+// import getUrlParameters from 'webpack-build-tools-test';
+// import Base from 'eth-wallet-modal';
 
 import WalletConnectLogo from "../assets/walletconnect-circle.svg";
+
+import MetaMaskLogo from "../assets/logos/metamask.svg";
+
+import CoinbaseLogo from "../assets/logos/coinbase.svg";
 
 export default {
   name: 'HelloWorld',
@@ -101,37 +112,67 @@ export default {
       baseModel: '',
       provider: '',
       providerOptions: {
-        sysOptions: {
-          logp: WalletConnectLogo
-        },
-        walletconnect: {
-          rpc: {
-            1: 'https://mainnet.infura.io/v3/9aa3d95b3bc440fa88ea12eaa4456161',
-            4: 'https://rinkeby.infura.io/v3/9aa3d95b3bc440fa88ea12eaa4456161'
+        logo: WalletConnectLogo,
+        chainId: 4,
+        walletOptions: {
+          metamask: {
+            displayView: {
+              logo: MetaMaskLogo,
+              name: "metamask",
+            },
+            options: {}
           },
-          chainId: 4,
-          bridge: 'https://bridge.walletconnect.org'
-        }
+          walletconnect: {
+            displayView: {
+              logo: WalletConnectLogo,
+              name: "walletconnect",
+            },
+            options: {
+              rpc: {
+                1: 'https://mainnet.infura.io/v3/9aa3d95b3bc440fa88ea12eaa4456161',
+                4: 'https://rinkeby.infura.io/v3/9aa3d95b3bc440fa88ea12eaa4456161'
+              },
+              chainId: 4,
+              bridge: 'https://bridge.walletconnect.org'
+            }
+          },
+          coinbase: {
+            displayView: {
+              logo: CoinbaseLogo,
+              name: "coinbase",
+            },
+            options: {
+              infuraId: '9aa3d95b3bc440fa88ea12eaa4456161',
+              chainId: 4,
+              appName: 'Digi',
+              appLogoUrl: WalletConnectLogo,
+              darkMode: false
+            }
+          }
+        },
+
       }
     }
   },
   created () {
-    this.baseModel = new eth-wallet-modal(this.providerOptions)
+    this.baseModel = new Base(this.providerOptions)
   },
   methods: {
     async handleClickConnect () {
       var provider = await this.baseModel.connect()
-      this.provider = provider
-      console.log("provider", provider)
+      console.log('provider', provider)
+      if (provider) {
+        this.provider = provider
+      }
+
     },
     handleClickDisconnect () {
       this.baseModel.disconnect(this.provider)
+      this.provider = ''
     },
   }
 }
 </script>
-
-<!-- Add "scoped" attribute to limit CSS to this component only -->
 <style scoped>
 .ex-main {
   width: 100%;
@@ -143,7 +184,7 @@ export default {
 .ex-main .ex-main-box {
   width: 300px;
   display: flex;
-  justify-content: space-between;
+  justify-content: center;
 }
 .ex-main .ex-main-box button {
   height: 30px;
@@ -165,7 +206,6 @@ a {
 }
 </style>
 
-
 ```
 
 ## Options
@@ -180,18 +220,48 @@ providerOptions providerOptions
 
 ```
 eg:
-  providerOptions: {
-        sysOptions: {
-          logp: WalletConnectLogo
-        },
-        walletconnect: {
-          rpc: {
-            1: 'https://mainnet.infura.io/v3/9aa3d95b3bc440fa88ea12eaa4456161',
-            4: 'https://rinkeby.infura.io/v3/9aa3d95b3bc440fa88ea12eaa4456161'
+ providerOptions: {
+        logo: "your logo",
+        chainId: 4,
+        walletOptions: {
+          metamask: {
+            displayView: {
+              logo: 'metamask logo',
+              name: "metamask",
+            },
+            options: {}
           },
-          chainId: 4,
-          bridge: 'https://bridge.walletconnect.org'
-        }
+          walletconnect: {
+            displayView: {
+              logo: 'walletconnect logo',
+              name: "walletconnect",
+            },
+            options: {
+              rpc: {
+                1: 'https://mainnet.infura.io/v3/9aa3d95b3bc440fa88ea12eaa4456161',
+                4: 'https://rinkeby.infura.io/v3/9aa3d95b3bc440fa88ea12eaa4456161'
+              },
+              chainId: 4,
+              bridge: 'https://bridge.walletconnect.org'
+            }
+          },
+          coinbase: {
+            displayView: {
+              logo: 'coinbase logo',,
+              name: "coinbase",
+            },
+            options: {
+              infuraId: '9aa3d95b3bc440fa88ea12eaa4456161',
+              chainId: 4,
+              appName:  your app name,
+              appLogoUrl: coinbase app logo,
+              darkMode: false
+            }
+          }
+          ....
+        },
+
+      }
         ....
 
  walletconnect  config reference resources  https://docs.walletconnect.com/quick-start/dapps/web3-provider
