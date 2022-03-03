@@ -187,18 +187,10 @@ export class Base {
         var connector = _this.getProvider(name).connector;
         connector(_this.walletOptions[name].options).then((res) => {
           document.getElementById('ETH_WALLET_MODAL').style.display = "none"
-          var elements = document.getElementsByClassName('connect')
-          Array.from(elements).forEach(function (element) {
-            element.removeEventListener('click');
-          });
           localStorage.setItem("injected", name)
           resolve(res)
         }).catch((error) => {
           document.getElementById('ETH_WALLET_MODAL').style.display = "none"
-          var elements = document.getElementsByClassName('connect')
-          Array.from(elements).forEach(function (element) {
-            element.removeEventListener('click');
-          });
           localStorage.removeItem('injected')
           reject(error)
         })
