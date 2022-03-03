@@ -1,5 +1,5 @@
 
-import $ from 'jquery';
+// import $ from 'jquery';
 import { providers, connectors } from "../providers";
 
 import bgBtShow from "../assets/images/bgBtHide.png";
@@ -147,13 +147,15 @@ export class Base {
   }
 
 
+
   connect = async () => {
-    // this.addOnClose()
     return await new Promise((resolve, reject) => {
       (async () => {
-        $("#ETH_WALLET_MODAL .eth-close-box").click(function () {
-          $("#ETH_WALLET_MODAL").hide()
-        })
+        var closeBtn = document.getElementById("eth-close-box");
+        closeBtn.onclick = function () {
+          // $('#ETH_WALLET_MODAL .connect').unbind();
+          document.getElementById('ETH_WALLET_MODAL').style.display = "none"
+        }
         var _this = this
         if (localStorage.getItem("injected")) {
           var name = localStorage.getItem("injected")
@@ -163,17 +165,29 @@ export class Base {
             reject(error)
           })
         } else {
-          $("#ETH_WALLET_MODAL").show()
-          $('#ETH_WALLET_MODAL .connect').click(async function () {
-            var name = $(this).find('.cl-connect-btu').attr('alt')
-            _this.connectTo(name).then((res) => {
-              resolve(res)
-            }).catch((error) => {
-              reject(error)
-            })
-          })
+          document.getElementById('ETH_WALLET_MODAL').style.display = 'block'
+          var elements = document.getElementsByClassName('connect')
+          var sa = null
+          Array.from(elements).forEach(function (element) {
+            element.addEventListener('click', sa = _this.addAndRemove(element), { passive: false });
+          });
+          console.log('sa', sa)
+          // $('#ETH_WALLET_MODAL .connect').click(async function () {
+          // var name = $(this).find('.cl-connect-btu').attr('alt')
+          // _this.connectTo(name).then((res) => {
+          //   resolve(res)
+          // }).catch((error) => {
+          //   reject(error)
+          // })
+          // })
         }
       })().catch(e => console.log("error: " + e));
+    });
+  }
+  removeEventListener () {
+    var elements = document.getElementsByClassName('connect')
+    Array.from(elements).forEach(function (element) {
+      element.removeEventListener('click', () => { console.log('removeEventListener') });
     });
   }
 
@@ -184,18 +198,38 @@ export class Base {
         var _this = this
         var connector = _this.getProvider(name).connector;
         connector(_this.walletOptions[name].options).then((res) => {
-          $("#ETH_WALLET_MODAL").hide()
-          $('#ETH_WALLET_MODAL .connect').unbind();
+          document.getElementById('ETH_WALLET_MODAL').style.display = "none"
+          var elements = document.getElementsByClassName('connect')
+          Array.from(elements).forEach(function (element) {
+            element.removeEventListener('click', _this.addAndRemove(element));
+          });
           localStorage.setItem("injected", name)
           resolve(res)
         }).catch((error) => {
-          $("#ETH_WALLET_MODAL").hide()
-          $('#ETH_WALLET_MODAL .connect').unbind();
+          document.getElementById('ETH_WALLET_MODAL').style.display = "none"
+          var elements = document.getElementsByClassName('connect')
+          Array.from(elements).forEach(function (element) {
+            element.removeEventListener('click', this.addAndRemove(element));
+          });
           localStorage.removeItem('injected')
           reject(error)
         })
       })().catch(error => reject(error));
     });
+  }
+  addAndRemove () {
+    console.log(11111111)
+    return 111
+    // console.log('add');
+    // console.log('remove');
+    // element.addEventListener('click', () => {
+    //   var name = element.querySelector('.cl-connect-btu').attributes["alt"].value
+    //   this.connectTo(name).then((res) => {
+    //     // resolve(res)
+    //   }).catch((error) => {
+    //     // reject(error)
+    //   })
+    // });
   }
 
   disconnect = async (provider) => {
@@ -220,7 +254,7 @@ export class Base {
       `<div class="eth-warp">
             <div class="eth-main">
               <div class="eth-close"> 
-                  <span class="eth-close-box" > </span>
+                  <span id="eth-close-box" > </span>
               </div>
               <div class="eth-main-wallet">
               `;
@@ -233,7 +267,7 @@ export class Base {
     }
     userWalletProviderList.forEach((item) => {
       htmllet += `
-                  <div class="cl-connect connect" >
+                  <div class="cl-connect connect" alt='${item.name}' >
                     <button class="cl-connect-btu" alt='${item.name}'>
                       <img src="${item.logo}" width="30px"
                             class="img-MetaMask">
