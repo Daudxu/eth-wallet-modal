@@ -6,8 +6,11 @@
 [![node][node]][node-url]
 
 <h2 align="center">
-  Ethereum provider solution for metamask/walletconnect Wallets
+Ethereum provider solution for  Wallets and Dapp
 </h2>
+
+## Current support
+metamask, walletconnect, coinbase,  blockmallet
 
 ## Preview
 

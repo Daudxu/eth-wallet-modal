@@ -30,6 +30,8 @@ import MetaMaskLogo from "../assets/logos/metamask.svg";
 
 import CoinbaseLogo from "../assets/logos/coinbase.svg";
 
+import BlockWalletLogo from "../assets/logos/BlockWallet.png";
+
 export default {
   name: 'HelloWorld',
   props: {
@@ -76,6 +78,13 @@ export default {
               appLogoUrl: WalletConnectLogo,
               darkMode: false
             }
+          },
+          blockmallet: {
+            displayView: {
+              logo: BlockWalletLogo,
+              name: "blockmallet",
+            },
+            options: {}
           }
         },
 
