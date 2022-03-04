@@ -1,12 +1,15 @@
 
-import WalletConnectLogo from "../../assets/logos/walletconnect-circle.svg";
-
 import MetaMaskLogo from "../../assets/logos/metamask.svg";
+
+import WalletConnectLogo from "../../assets/logos/walletconnect-circle.svg";
 
 import CoinbaseLogo from "../../assets/logos/coinbase.svg";
 
 import BlockWalletLogo from "../../assets/logos/BlockWallet.png";
 
+import FortmaticLogo from "../../assets/logos/fortmatic.svg";
+
+import BinanceChainWalletLogo from "../../assets/logos/binancechainwallet.svg";
 
 export const WALLETCONNECT = {
   id: "walletconnect",
@@ -39,4 +42,20 @@ export const BLOCKWALLET = {
   logo: BlockWalletLogo,
   type: "blockmallet",
   check: "isBlockWallet "
+};
+
+export const FORTMATIC = {
+  id: "fortmatic",
+  name: "Fortmatic",
+  logo: FortmaticLogo,
+  type: "fortmatic",
+  check: "isFortmatic"
+};
+
+export const BINANCECHAINWALLET = {
+  id: "binancechainwallet",
+  name: "Binance Chain",
+  logo: BinanceChainWalletLogo,
+  type: "injected",
+  check: "isBinanceChainWallet"
 };
