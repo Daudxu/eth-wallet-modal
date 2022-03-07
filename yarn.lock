@@ -4626,6 +4626,17 @@ eth-sig-util@^1.4.2:
     ethereumjs-abi "git+https://github.com/ethereumjs/ethereumjs-abi.git"
     ethereumjs-util "^5.1.1"
 
+eth-wallet-modal@^1.1.0:
+  version "1.1.0"
+  resolved "https://registry.npmjs.org/eth-wallet-modal/-/eth-wallet-modal-1.1.0.tgz#3aa3a152e6e1df5cc25b510681fecc6f86ae472b"
+  integrity sha512-Res1Wxq2+SSQFYxGkx2Y+vd+bXjYkSeoz6K0glQNaJZCKJtTgmzxgMxuzcnNfY4pqr9z3DDIM+pAR72U0112wA==
+  dependencies:
+    "@coinbase/wallet-sdk" "^3.0.1"
+    "@metamask/detect-provider" "^1.2.0"
+    "@walletconnect/web3-provider" "^1.7.1"
+    core-js "^3.6.5"
+    vue "^3.0.0"
+
 ethereum-bloom-filters@^1.0.6:
   version "1.0.10"
   resolved "https://registry.npmjs.org/ethereum-bloom-filters/-/ethereum-bloom-filters-1.0.10.tgz#3ca07f4aed698e75bd134584850260246a5fed8a"

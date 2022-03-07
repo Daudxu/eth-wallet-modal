@@ -20,9 +20,9 @@
  <script>
 // import '../../lib/eth-wallet-modal.css'
 // import Base from '../../lib/eth-wallet-modal.umd.min.js'
-import Base from '../../packages/index'
+// import Base from '../../packages/index'
 // import getUrlParameters from 'webpack-build-tools-test';
-// import Base from 'eth-wallet-modal';
+import Base from 'eth-wallet-modal';
 
 import WalletConnectLogo from "../assets/logos/walletconnect-circle.svg";
 
