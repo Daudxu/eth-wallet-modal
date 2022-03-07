@@ -25,7 +25,9 @@ const ConnectToFortmatic = async (opts) => {
         reject('Missing Fortmatic key')
         throw new Error("Missing Fortmatic key");
       }
-    })().catch(e => console.log("Caught: " + e));
+    })().catch((e) => {
+      reject("error:", e)
+    });
   });
 };
 

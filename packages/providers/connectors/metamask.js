@@ -20,7 +20,9 @@ const ConnectToMetamask = async () => {
         throw new Error("No Web3 Provider found");
       }
       resolve(provider);
-    })().catch(e => console.log("Caught: " + e));
+    })().catch((e) => {
+      reject("error:", e)
+    });
   });
 
 };

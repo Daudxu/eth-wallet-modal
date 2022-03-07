@@ -29,7 +29,9 @@ const ConnectToWalletLink = (
       } catch (e) {
         reject(e);
       }
-    })().catch(e => console.log("Caught: " + e));
+    })().catch((e) => {
+      reject("error:", e)
+    });
 
   });
 };

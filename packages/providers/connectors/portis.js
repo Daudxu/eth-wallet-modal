@@ -18,7 +18,9 @@ const ConnectToPortis = async (opts) => {
       } else {
         return reject(new Error("Missing Portis Id"));
       }
-    })().catch(e => console.log("Caught: " + e));
+    })().catch((e) => {
+      reject("error:", e)
+    });
   });
 };
 
