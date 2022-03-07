@@ -1,5 +1,3 @@
-
-import $ from 'jquery';
 import { providers, connectors } from "../providers";
 
 import bgBtShow from "../assets/images/bgBtHide.png";
@@ -82,8 +80,7 @@ export class Base {
         });
       }
     });
-    // var connector = this.getProvider('walletconnect').connector;
-    // console.log('connector', connector(this.walletOptions['walletconnect'].options))
+
     // const providerList = [];
 
     // defaultProviderList.forEach((id) => {
@@ -147,13 +144,15 @@ export class Base {
   }
 
 
+
   connect = async () => {
-    // this.addOnClose()
     return await new Promise((resolve, reject) => {
       (async () => {
-        $("#ETH_WALLET_MODAL .eth-close-box").click(function () {
-          $("#ETH_WALLET_MODAL").hide()
-        })
+        var closeBtn = document.getElementById("eth-close-box");
+        closeBtn.onclick = function () {
+          // $('#ETH_WALLET_MODAL .connect').unbind();
+          document.getElementById('ETH_WALLET_MODAL').style.display = "none"
+        }
         var _this = this
         if (localStorage.getItem("injected")) {
           var name = localStorage.getItem("injected")
@@ -163,20 +162,23 @@ export class Base {
             reject(error)
           })
         } else {
-          $("#ETH_WALLET_MODAL").show()
-          $('#ETH_WALLET_MODAL .connect').click(async function () {
-            var name = $(this).find('.cl-connect-btu').attr('alt')
-            _this.connectTo(name).then((res) => {
-              resolve(res)
-            }).catch((error) => {
-              reject(error)
-            })
-          })
+          document.getElementById('ETH_WALLET_MODAL').style.display = 'block'
+          var elements = document.getElementsByClassName('connect')
+          Array.from(elements).forEach(function (element) {
+            element.onclick = function () {
+              var name = element.querySelector('.cl-connect-btu').attributes["alt"].value
+              _this.connectTo(name).then((res) => {
+                resolve(res)
+              }).catch((error) => {
+                reject(error)
+              })
+            } 
+
+          });
         }
       })().catch(e => console.log("error: " + e));
     });
   }
-
 
   async connectTo (name) {
     return await new Promise((resolve, reject) => {
@@ -184,13 +186,11 @@ export class Base {
         var _this = this
         var connector = _this.getProvider(name).connector;
         connector(_this.walletOptions[name].options).then((res) => {
-          $("#ETH_WALLET_MODAL").hide()
-          $('#ETH_WALLET_MODAL .connect').unbind();
+          document.getElementById('ETH_WALLET_MODAL').style.display = "none"
           localStorage.setItem("injected", name)
           resolve(res)
         }).catch((error) => {
-          $("#ETH_WALLET_MODAL").hide()
-          $('#ETH_WALLET_MODAL .connect').unbind();
+          document.getElementById('ETH_WALLET_MODAL').style.display = "none"
           localStorage.removeItem('injected')
           reject(error)
         })
@@ -220,7 +220,7 @@ export class Base {
       `<div class="eth-warp">
             <div class="eth-main">
               <div class="eth-close"> 
-                  <span class="eth-close-box" > </span>
+                  <span id="eth-close-box" > </span>
               </div>
               <div class="eth-main-wallet">
               `;
@@ -233,7 +233,7 @@ export class Base {
     }
     userWalletProviderList.forEach((item) => {
       htmllet += `
-                  <div class="cl-connect connect" >
+                  <div class="cl-connect connect" alt='${item.name}' >
                     <button class="cl-connect-btu" alt='${item.name}'>
                       <img src="${item.logo}" width="30px"
                             class="img-MetaMask">
@@ -249,6 +249,7 @@ export class Base {
       <style> 
       #ETH_WALLET_MODAL{
         display:none
+        
       }
       .eth-warp {
         position: fixed;
@@ -256,6 +257,7 @@ export class Base {
         left: 0;
         right: 0;
         bottom: 0;
+        z-index:99999;
         background: rgb(30, 30, 30, 0.8);
         display: flex;
         align-items: center;

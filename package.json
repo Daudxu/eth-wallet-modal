@@ -1,6 +1,6 @@
 {
   "name": "eth-wallet-modal",
-  "version": "1.0.5",
+  "version": "1.1.0",
   "private": false,
   "scripts": {
     "dev": "vue-cli-service serve",
@@ -8,7 +8,9 @@
     "build": "vue-cli-service build",
     "lint": "vue-cli-service lint",
     "lib": "vue-cli-service build --target lib --name eth-wallet-modal --dest lib packages/index.js",
-    "tonpm": "npm run lib && npm version patch && npm publish"
+    "tonpm": "npm run lib && npm version patch && npm publish",
+    "addv": "npm version patch",
+    "go": "npm publish"
   },
   "keyword": [
     "Dapp",
@@ -34,10 +36,12 @@
   "dependencies": {
     "@coinbase/wallet-sdk": "^3.0.1",
     "@metamask/detect-provider": "^1.2.0",
+    "@portis/web3": "^4.0.7",
     "@walletconnect/web3-provider": "^1.7.1",
     "core-js": "^3.6.5",
-    "jquery": "^3.6.0",
-    "vue": "^3.0.0"
+    "fortmatic": "^2.2.1",
+    "vue": "^3.0.0",
+    "web3": "^1.7.1"
   },
   "devDependencies": {
     "@vue/cli-plugin-babel": "~4.5.15",

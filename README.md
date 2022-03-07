@@ -6,8 +6,11 @@
 [![node][node]][node-url]
 
 <h2 align="center">
-  Ethereum provider solution for metamask/walletconnect Wallets
+Ethereum provider solution for  Wallets and Dapp
 </h2>
+
+## Current support
+metamask, walletconnect, coinbase,  blockmallet
 
 ## Preview
 
@@ -44,20 +47,47 @@ import ethWalletModal from 'eth-wallet-modal';
 import Web3 from "web3";
 import ethWalletModal from "eth-wallet-modal";
 
-const providerOptions = {
-       sysOptions: {
-          logp: 'your logo'
-        },
-        walletconnect: {
-          rpc: {
-            1: 'https://mainnet.infura.io/v3/9aa3d95b3bc440fa88ea12eaa4456161',
-            4: 'https://rinkeby.infura.io/v3/9aa3d95b3bc440fa88ea12eaa4456161'
+const  providerOptions = {
+        logo: WalletConnectLogo,
+        chainId: 4,
+        walletOptions: {
+          metamask: {
+            displayView: {
+              logo: MetaMaskLogo,
+              name: "metamask",
+            },
+            options: {}
           },
-          chainId: 4,
-          bridge: 'https://bridge.walletconnect.org'
-        }
-        ....
-};
+          walletconnect: {
+            displayView: {
+              logo: WalletConnectLogo,
+              name: "walletconnect",
+            },
+            options: {
+              rpc: {
+                1: 'https://mainnet.infura.io/v3/9aa3d95b3bc440fa88ea12eaa4456161',
+                4: 'https://rinkeby.infura.io/v3/9aa3d95b3bc440fa88ea12eaa4456161'
+              },
+              chainId: 4,
+              bridge: 'https://bridge.walletconnect.org'
+            }
+          },
+          coinbase: {
+            displayView: {
+              logo: CoinbaseLogo,
+              name: "coinbase",
+            },
+            options: {
+              infuraId: '9aa3d95b3bc440fa88ea12eaa4456161',
+              chainId: 4,
+              appName: 'Digi',
+              appLogoUrl: WalletConnectLogo,
+              darkMode: false
+            }
+          }
+        },
+
+      }
 
 const eth-wallet-modal = new eth-wallet-modal(providerOptions);
 

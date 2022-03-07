@@ -24,11 +24,13 @@ import Base from '../../packages/index'
 // import getUrlParameters from 'webpack-build-tools-test';
 // import Base from 'eth-wallet-modal';
 
-import WalletConnectLogo from "../assets/walletconnect-circle.svg";
+import WalletConnectLogo from "../assets/logos/walletconnect-circle.svg";
 
 import MetaMaskLogo from "../assets/logos/metamask.svg";
 
 import CoinbaseLogo from "../assets/logos/coinbase.svg";
+
+import BlockWalletLogo from "../assets/logos/BlockWallet.png";
 
 export default {
   name: 'HelloWorld',
@@ -76,6 +78,13 @@ export default {
               appLogoUrl: WalletConnectLogo,
               darkMode: false
             }
+          },
+          blockmallet: {
+            displayView: {
+              logo: BlockWalletLogo,
+              name: "blockmallet",
+            },
+            options: {}
           }
         },
 
