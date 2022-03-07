@@ -20,9 +20,9 @@
  <script>
 // import '../../lib/eth-wallet-modal.css'
 // import Base from '../../lib/eth-wallet-modal.umd.min.js'
-// import Base from '../../packages/index'
+import Base from '../../packages/index'
 // import getUrlParameters from 'webpack-build-tools-test';
-import Base from 'eth-wallet-modal';
+// import Base from 'eth-wallet-modal';
 
 import WalletConnectLogo from "../assets/logos/walletconnect-circle.svg";
 
@@ -93,8 +93,16 @@ export default {
       }
     }
   },
-  created () {
+  mounted () {
     this.baseModel = new Base(this.providerOptions)
+    const walletType = localStorage.getItem("injected")
+    var _this = this
+    if (walletType && typeof (walletType) !== 'undefined') {
+      setTimeout(function () {
+        console.log('lai le')
+        _this.handleClickConnect()
+      }, 3000)
+    }
   },
   methods: {
     async handleClickConnect () {
@@ -103,7 +111,6 @@ export default {
       if (provider) {
         this.provider = provider
       }
-
     },
     handleClickDisconnect () {
       this.baseModel.disconnect(this.provider)
