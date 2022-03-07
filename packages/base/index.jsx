@@ -67,10 +67,9 @@ export class Base {
   getUserOptions () {
     const providerList = this.providers.map(({ id }) => id);
     const userOptions = [];
-
     providerList.forEach((id) => {
       let provider = this.getProvider(id);
-      if (typeof provider !== "undefined") {
+      if (typeof (this.walletOptions[id]) !== 'undefined') {
         const { id, name, logo, connector } = provider;
         userOptions.push({
           id,
@@ -80,7 +79,6 @@ export class Base {
         });
       }
     });
-
     // const providerList = [];
 
     // defaultProviderList.forEach((id) => {
@@ -172,7 +170,7 @@ export class Base {
               }).catch((error) => {
                 reject(error)
               })
-            } 
+            }
 
           });
         }
@@ -233,8 +231,8 @@ export class Base {
     }
     userWalletProviderList.forEach((item) => {
       htmllet += `
-                  <div class="cl-connect connect" alt='${item.name}' >
-                    <button class="cl-connect-btu" alt='${item.name}'>
+                  <div class="cl-connect connect" alt='${item.id}' >
+                    <button class="cl-connect-btu" alt='${item.id}'>
                       <img src="${item.logo}" width="30px"
                             class="img-MetaMask">
                             ${item.name}

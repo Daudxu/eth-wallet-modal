@@ -32,6 +32,8 @@ import CoinbaseLogo from "../assets/logos/coinbase.svg";
 
 import BlockWalletLogo from "../assets/logos/BlockWallet.png";
 
+const CHAINID = 4;
+
 export default {
   name: 'HelloWorld',
   props: {
@@ -43,37 +45,37 @@ export default {
       provider: '',
       providerOptions: {
         logo: WalletConnectLogo,
-        chainId: 4,
+        chainId: CHAINID,
         walletOptions: {
           metamask: {
             displayView: {
               logo: MetaMaskLogo,
-              name: "metamask",
+              name: "MetaMask",
             },
             options: {}
           },
           walletconnect: {
             displayView: {
               logo: WalletConnectLogo,
-              name: "walletconnect",
+              name: "WalletConnect",
             },
             options: {
               rpc: {
                 1: 'https://mainnet.infura.io/v3/9aa3d95b3bc440fa88ea12eaa4456161',
                 4: 'https://rinkeby.infura.io/v3/9aa3d95b3bc440fa88ea12eaa4456161'
               },
-              chainId: 4,
+              chainId: CHAINID,
               bridge: 'https://bridge.walletconnect.org'
             }
           },
           coinbase: {
             displayView: {
               logo: CoinbaseLogo,
-              name: "coinbase",
+              name: "Coinbase Wallet",
             },
             options: {
               infuraId: '9aa3d95b3bc440fa88ea12eaa4456161',
-              chainId: 4,
+              chainId: CHAINID,
               appName: 'Digi',
               appLogoUrl: WalletConnectLogo,
               darkMode: false
@@ -82,7 +84,7 @@ export default {
           blockmallet: {
             displayView: {
               logo: BlockWalletLogo,
-              name: "blockmallet",
+              name: "BlockWallet",
             },
             options: {}
           }
