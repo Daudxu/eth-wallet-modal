@@ -45,6 +45,8 @@ export default {
       provider: '',
       providerOptions: {
         logo: WalletConnectLogo,
+        bgColor:'#000',
+        borderColor:'#000',
         chainId: CHAINID,
         walletOptions: {
           metamask: {
