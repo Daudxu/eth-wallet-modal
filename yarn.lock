@@ -6951,11 +6951,6 @@
   "resolved" "https://registry.npmmirror.com/kind-of/-/kind-of-6.0.3.tgz"
   "version" "6.0.3"
 
-"l@^0.6.0":
-  "integrity" "sha1-HawOBirJTSmCf6zY0BZqpfGWxW8= sha512-rB5disIyfKRBQ1xcedByHCcAmPWy2NPnjWo5u4mVVIPtathROHyfHjkloqSBT49mLnSRnupkpoIUOFCL7irCVQ=="
-  "resolved" "https://registry.npmmirror.com/L/-/L-0.6.0.tgz"
-  "version" "0.6.0"
-
 "launch-editor-middleware@^2.2.1":
   "integrity" "sha512-GJR64trLdFFwCoL9DMn/d1SZX0OzTDPixu4mcfWTShQ4tIqCHCGvlg9fOEYQXyBlrSMQwylsJfUWncheShfV2w=="
   "resolved" "https://registry.npmmirror.com/launch-editor-middleware/-/launch-editor-middleware-2.3.0.tgz"
