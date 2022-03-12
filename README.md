@@ -56,44 +56,81 @@ import Web3 from "web3";
 import ethWalletModal from "eth-wallet-modal";
 
 const  providerOptions = {
-        logo: WalletConnectLogo,
-        chainId: 4,
+        logo: LOGO,
+        maskColor:'rgb(30, 30, 30, 0.8)',
+        bgColor:'#363636',
+        borderColor:'#faba30',
+        chainId: CHAINID,
         walletOptions: {
           metamask: {
             displayView: {
               logo: MetaMaskLogo,
-              name: "metamask",
+              name: "MetaMask",
             },
             options: {}
           },
           walletconnect: {
             displayView: {
               logo: WalletConnectLogo,
-              name: "walletconnect",
+              name: "WalletConnect",
             },
             options: {
               rpc: {
-                1: 'https://mainnet.infura.io/v3/9aa3d95b3bc440fa88ea12eaa4456161',
-                4: 'https://rinkeby.infura.io/v3/9aa3d95b3bc440fa88ea12eaa4456161'
+                1: 'https://mainnet.infura.io/v3/9aa3d95b3bc440fa88ea12eaa414516161',
+                4: 'https://rinkeby.infura.io/v3/9aa3d95b3bc440fa88ea12ea221a4456161'
               },
-              chainId: 4,
+              chainId: CHAINID,
               bridge: 'https://bridge.walletconnect.org'
             }
           },
           coinbase: {
             displayView: {
               logo: CoinbaseLogo,
-              name: "coinbase",
+              name: "Coinbase Wallet",
             },
             options: {
-              infuraId: '9aa3d95b3bc440fa88ea12eaa4456161',
-              chainId: 4,
+              infuraId: '9aa3d95b3bxxxc440fa88ea12eaa4456161',
+              chainId: CHAINID,
               appName: 'Digi',
               appLogoUrl: WalletConnectLogo,
               darkMode: false
             }
+          },
+          blockmallet: {
+            displayView: {
+              logo: BlockWalletLogo,
+              name: "BlockWallet",
+            },
+            options: {}
+          },
+          fortmatic: {
+            displayView: {
+              logo: FortmaticLogo,
+              name: "Fortmatic",
+            },
+            options: {
+              chainId: CHAINID,
+              key:'pk_test_E652xxxxz525CA4198573'
+            }
+          },
+          binancechainwallet: {
+            displayView: {
+              logo: BinancechainwalletLogo,
+              name: "Binance Wallet",
+            },
+            options: {}
+          },
+          portis: {
+            displayView: {
+              logo: PortisLogo,
+              name: "Portis",
+            },
+            options: {
+                chainName: 'rinkeby', //mainnet,ropsten,rinkeby,goerli ...
+                id:'c668f1f8-xxxx-493e-86a1-b5c41d721ad9'
+            }
           }
-        },
+        }
 
       }
 
@@ -103,6 +140,116 @@ const provider = await eth-wallet-modal.connect();
 
 const web3 = new Web3(provider);
 
+```
+
+## Options
+
+| name            | type     | description           |
+| --------------- | -------- | --------------------- |
+| providerOptions | object   | see description below |
+| connect         | function | return  provider      |
+| disconnect      | function | provider or null      |
+
+
+
+providerOptions parameter
+
+| name            | type     | description           |
+| --------------- | -------- | --------------------- |
+| logo            | string   | Your logo path address|
+| maskColor       | string   | mask Color            |
+| bgColor         | string   | Modal background color|
+| borderColor     | string   | Modal border color    |
+| chainId         | int      | chain Id              |
+| walletOptions   | array    | See the table below   |
+
+walletOptions parameter
+
+| name            | type     | description           |
+| --------------- | -------- | --------------------- |
+| metamask        | array    | See the metamask  below|
+| walletconnect       | array   | See the walletconnect  below |
+| coinbase         | array   | See the coinbase  below|
+| blockmallet     | array   | See the blockmallet  below|
+| fortmatic         | array      | See the fortmatic  below|
+| binancechainwallet   | array    | See the binancechainwallet  below|
+| portis          | array    | See the metamaskportis  below |
+
+```
+eg:
+const CHAINID = 4
+  walletOptions: {
+          metamask: {
+            displayView: {
+              logo: MetaMaskLogo,
+              name: "MetaMask",
+            },
+            options: {}
+          },
+          walletconnect: {
+            displayView: {
+              logo: WalletConnectLogo,
+              name: "WalletConnect",
+            },
+            options: {
+              rpc: {
+                1: 'https://mainnet.infura.io/v3/9aa3d95b3bc440fa88ea12eaa414511116161',
+                4: 'https://rinkeby.infura.io/v3/9aa3d95b3bc440fa88ea12ea221a4422256161'
+              },
+              chainId: CHAINID,
+              bridge: 'https://bridge.walletconnect.org'
+            }
+          },
+          coinbase: {
+            displayView: {
+              logo: CoinbaseLogo,
+              name: "Coinbase Wallet",
+            },
+            options: {
+              infuraId: '9aa3d95b3b1xxxc4401313fa88ea12eaa4456161',
+              chainId: CHAINID,
+              appName: 'Digi',
+              appLogoUrl: WalletConnectLogo,
+              darkMode: false
+            }
+          },
+          blockmallet: {
+            displayView: {
+              logo: BlockWalletLogo,
+              name: "BlockWallet",
+            },
+            options: {}
+          },
+          fortmatic: {
+            displayView: {
+              logo: FortmaticLogo,
+              name: "Fortmatic",
+            },
+            options: {
+              chainId: CHAINID,
+              key:'pk_test_E652x23xxa1z525CA4198573'
+            }
+          },
+          binancechainwallet: {
+            displayView: {
+              logo: BinancechainwalletLogo,
+              name: "Binance Wallet",
+            },
+            options: {}
+          },
+          portis: {
+            displayView: {
+              logo: PortisLogo,
+              name: "Portis",
+            },
+            options: {
+                chainName: 'rinkeby', //mainnet,ropsten,rinkeby,goerli ...
+                id:'c668f1f8-a12zx-493e-86a1-b5c41d721ad9'
+            }
+          }
+        }
+
+ walletconnect  config reference resources  https://docs.walletconnect.com/quick-start/dapps/web3-provider
 ```
 
 ## demo
@@ -297,64 +444,7 @@ a {
 
 ```
 
-## Options
 
-| name            | type     | description           |
-| --------------- | -------- | --------------------- |
-| providerOptions | object   | see description below |
-| connect         | function |                       |
-| disconnect      | function | provider              |
-
-providerOptions providerOptions
-
-```
-eg:
- providerOptions: {
-        logo: "your logo",
-        chainId: 4,
-        walletOptions: {
-          metamask: {
-            displayView: {
-              logo: 'metamask logo',
-              name: "metamask",
-            },
-            options: {}
-          },
-          walletconnect: {
-            displayView: {
-              logo: 'walletconnect logo',
-              name: "walletconnect",
-            },
-            options: {
-              rpc: {
-                1: 'https://mainnet.infura.io/v3/9aa3d95b3bc440fa88ea12eaa4456161',
-                4: 'https://rinkeby.infura.io/v3/9aa3d95b3bc440fa88ea12eaa4456161'
-              },
-              chainId: 4,
-              bridge: 'https://bridge.walletconnect.org'
-            }
-          },
-          coinbase: {
-            displayView: {
-              logo: 'coinbase logo',,
-              name: "coinbase",
-            },
-            options: {
-              infuraId: '9aa3d95b3bc440fa88ea12eaa4456161',
-              chainId: 4,
-              appName:  your app name,
-              appLogoUrl: coinbase app logo,
-              darkMode: false
-            }
-          }
-          ....
-        },
-
-      }
-        ....
-
- walletconnect  config reference resources  https://docs.walletconnect.com/quick-start/dapps/web3-provider
-```
 
 ## Provider subscription Events
 
