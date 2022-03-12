@@ -32,6 +32,12 @@ import CoinbaseLogo from "../assets/logos/coinbase.svg";
 
 import BlockWalletLogo from "../assets/logos/BlockWallet.png";
 
+import FortmaticLogo from "../assets/logos/fortmatic.svg";
+
+import BinancechainwalletLogo from "../assets/logos/binancechainwallet.svg";
+
+import PortisLogo from "../assets/logos/portis.svg";
+
 const CHAINID = 4;
 
 export default {
@@ -45,6 +51,7 @@ export default {
       provider: '',
       providerOptions: {
         logo: WalletConnectLogo,
+        maskColor:'#000',
         bgColor:'#000',
         borderColor:'#000',
         chainId: CHAINID,
@@ -89,6 +96,33 @@ export default {
               name: "BlockWallet",
             },
             options: {}
+          },
+          fortmatic: {
+            displayView: {
+              logo: FortmaticLogo,
+              name: "Fortmatic",
+            },
+            options: {
+              chainId: CHAINID,
+              key:'pk_test_E652525CA4198573'
+            }
+          },
+          binancechainwallet: {
+            displayView: {
+              logo: BinancechainwalletLogo,
+              name: "Binance Wallet",
+            },
+            options: {}
+          },
+          portis: {
+            displayView: {
+              logo: PortisLogo,
+              name: "Portis",
+            },
+            options: {
+                chainName: 'rinkeby', //mainnet,ropsten,rinkeby,goerli ...
+                id:'c668f1f8-ffc6-493e-86a1-b5c41d721ad9'
+            }
           }
         },
 

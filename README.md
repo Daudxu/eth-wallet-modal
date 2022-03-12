@@ -2,15 +2,15 @@
    ETH Wallet Modal
 </h1>
 
-[![npm][npm]][npm-url]
-[![node][node]][node-url]
+[![npm][npm]][npm-url] [![node][node]][node-url]
+
 
 <h2 align="center">
 Ethereum provider solution for  Wallets and Dapp
 </h2>
 
 ## Current support
-metamask, walletconnect, coinbase,  blockmallet
+metamask, walletconnect, coinbase,  blockmallet, fortmatic, binance, portis
 
 ## Preview
 
@@ -322,7 +322,15 @@ provider.on("disconnect", (error: { code: number; message: string }) => {
 
 ### 2022.02.21
 
-> v1.0.0 \* init
+> v1.0.0   
+ init project
+
+### 2022.03.12
+> v1.1.3   
+ add fortmatic, binance, portis 
+ Mask background color customization
+ Modal box background color customization
+ Modal box border color customization
 
 ## other
 

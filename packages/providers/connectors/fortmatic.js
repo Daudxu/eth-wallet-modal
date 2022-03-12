@@ -1,12 +1,12 @@
 import Fortmatic from 'fortmatic';
 
-const ConnectToFortmatic = async (opts) => {
+const ConnectToFortmatic = async (options) => {
   return new Promise((resolve, reject) => {
     (async () => {
-      if (opts && opts.key) {
+      if (options && options.key) {
         try {
-          const key = opts.key;
-          const fm = new Fortmatic(key, opts.network);
+          const key = options.key;
+          const fm = new Fortmatic(key, options.network);
           const provider = await fm.getProvider();
           provider.fm = fm;
           await fm.user.login();

@@ -233,7 +233,7 @@ export class Base {
       htmllet += `
                   <div class="cl-connect connect" alt='${item.id}' >
                     <button class="cl-connect-btu" alt='${item.id}'>
-                      <img src="${item.logo}" width="30px"
+                      <img src="${item.logo}" width="30px" height="30px"
                             class="img-MetaMask">
                             ${item.name}
                     </button>

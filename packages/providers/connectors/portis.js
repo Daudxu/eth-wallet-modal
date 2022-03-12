@@ -1,14 +1,17 @@
 import Portis from '@portis/web3';
 
-const ConnectToPortis = async (opts) => {
+const ConnectToPortis = async (options) => {
   return new Promise((resolve, reject) => {
     (async () => {
-      if (opts && opts.id) {
+      if (options && options.id) {
         try {
-          const id = opts.id;
-          const network = opts.network || "mainnet";
-          const config = opts.config;
-          const pt = new Portis(id, network, config);
+          const id = options.id;
+          const chainName = options.chainName || "mainnet";
+          var config = ''
+          if(typeof(options.config) !== undefined){
+             config = options.config;
+          }
+          const pt = new Portis(id, chainName, config);
           await pt.provider.enable();
           pt.provider._portis = pt;
           resolve(pt.provider);

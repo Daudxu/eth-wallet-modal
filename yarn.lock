@@ -6669,6 +6669,11 @@ kind-of@^6.0.0, kind-of@^6.0.2:
   resolved "https://registry.npmjs.org/kind-of/-/kind-of-6.0.3.tgz#07c05034a6c349fa06e24fa35aa76db4580ce4dd"
   integrity sha512-dcS1ul+9tmeD95T+x28/ehLgd9mENa3LsvDTtzm3vyBEO7RPptvAD+t44WVXaUjTBRcrpFeFlC8WCruUR456hw==
 
+l@^0.6.0:
+  version "0.6.0"
+  resolved "https://registry.npmjs.org/l/-/l-0.6.0.tgz#1dac0e062ac94d29827facd8d0166aa5f196c56f"
+  integrity sha1-HawOBirJTSmCf6zY0BZqpfGWxW8=
+
 launch-editor-middleware@^2.2.1:
   version "2.3.0"
   resolved "https://registry.npmjs.org/launch-editor-middleware/-/launch-editor-middleware-2.3.0.tgz#edd0ed45a46f5f1cf27540f93346b5de9e8c3be0"
