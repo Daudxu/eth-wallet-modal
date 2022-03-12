@@ -21,8 +21,8 @@ jobs:
         with:
           node-version: 16.13.1
       # 安装依赖
-      - name: npm  install
-        run: npm install
+      - name: npm  install --registry=http://registry.npm.taobao.org/
+        run: npm install --registry=http://registry.npm.taobao.org/
       # 打包
       - name: npm run build
         run: npm run build
