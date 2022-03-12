@@ -10,13 +10,14 @@ Ethereum provider solution for  Wallets and Dapp
 </h2>
 
 ## Current support
-<img src="https://raw.githubusercontent.com/Daudxu/eth-wallet-modal/724fd2238f6b4878dfcdc819da442bfcbb109733/examples/assets/logos/metamask.svg" width="30" height="30" alt="metamask"/>
-<img src="https://raw.githubusercontent.com/Daudxu/eth-wallet-modal/724fd2238f6b4878dfcdc819da442bfcbb109733/examples/assets/logos/walletconnect.svg" width="30" height="30" alt="walletconnect"/>
-<img src="https://raw.githubusercontent.com/Daudxu/eth-wallet-modal/724fd2238f6b4878dfcdc819da442bfcbb109733/examples/assets/logos/coinbase.svg" width="30" height="30" alt="coinbase"/>
-<img src="https://raw.githubusercontent.com/Daudxu/eth-wallet-modal/master/examples/assets/logos/BlockWallet.png" width="30" height="30" alt="coinbase"/>
-<img src="https://raw.githubusercontent.com/Daudxu/eth-wallet-modal/724fd2238f6b4878dfcdc819da442bfcbb109733/examples/assets/logos/fortmatic.svg" width="30" height="30" alt="blockmallet"/>
-<img src="https://raw.githubusercontent.com/Daudxu/eth-wallet-modal/724fd2238f6b4878dfcdc819da442bfcbb109733/examples/assets/logos/binancechainwallet.svg" width="30" height="30" alt="binance"/>
-<img src="https://raw.githubusercontent.com/Daudxu/eth-wallet-modal/724fd2238f6b4878dfcdc819da442bfcbb109733/examples/assets/logos/portis.svg" width="30" height="30" alt="portis"/>
+| <img src="https://raw.githubusercontent.com/Daudxu/eth-wallet-modal/724fd2238f6b4878dfcdc819da442bfcbb109733/examples/assets/logos/metamask.svg" width="30" height="30" alt="metamask"/> | <img src="https://raw.githubusercontent.com/Daudxu/eth-wallet-modal/724fd2238f6b4878dfcdc819da442bfcbb109733/examples/assets/logos/walletconnect.svg" width="30" height="30" alt="walletconnect"/> | <img src="https://raw.githubusercontent.com/Daudxu/eth-wallet-modal/724fd2238f6b4878dfcdc819da442bfcbb109733/examples/assets/logos/coinbase.svg" width="30" height="30" alt="coinbase"/>| <img src="https://raw.githubusercontent.com/Daudxu/eth-wallet-modal/master/examples/assets/logos/BlockWallet.png" width="30" height="30" alt="coinbase"/> |<img src="https://raw.githubusercontent.com/Daudxu/eth-wallet-modal/724fd2238f6b4878dfcdc819da442bfcbb109733/examples/assets/logos/fortmatic.svg" width="30" height="30" alt="blockmallet"/>| <img src="https://raw.githubusercontent.com/Daudxu/eth-wallet-modal/724fd2238f6b4878dfcdc819da442bfcbb109733/examples/assets/logos/binancechainwallet.svg" width="30" height="30" alt="binance"/>  |<img src="https://raw.githubusercontent.com/Daudxu/eth-wallet-modal/724fd2238f6b4878dfcdc819da442bfcbb109733/examples/assets/logos/portis.svg" width="30" height="30" alt="portis"/>     
+
+
+
+
+
+
+
 
 
 ## Preview
