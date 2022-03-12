@@ -10,7 +10,14 @@ Ethereum provider solution for  Wallets and Dapp
 </h2>
 
 ## Current support
-metamask, walletconnect, coinbase,  blockmallet, fortmatic, binance, portis
+<img src="https://raw.githubusercontent.com/Daudxu/eth-wallet-modal/724fd2238f6b4878dfcdc819da442bfcbb109733/examples/assets/logos/metamask.svg" width="30" height="30" alt="metamask"/>
+<img src="https://raw.githubusercontent.com/Daudxu/eth-wallet-modal/724fd2238f6b4878dfcdc819da442bfcbb109733/examples/assets/logos/walletconnect.svg" width="30" height="30" alt="walletconnect"/>
+<img src="https://raw.githubusercontent.com/Daudxu/eth-wallet-modal/724fd2238f6b4878dfcdc819da442bfcbb109733/examples/assets/logos/coinbase.svg" width="30" height="30" alt="coinbase"/>
+<img src="https://raw.githubusercontent.com/Daudxu/eth-wallet-modal/master/examples/assets/logos/BlockWallet.png" width="30" height="30" alt="coinbase"/>
+<img src="https://raw.githubusercontent.com/Daudxu/eth-wallet-modal/724fd2238f6b4878dfcdc819da442bfcbb109733/examples/assets/logos/fortmatic.svg" width="30" height="30" alt="blockmallet"/>
+<img src="https://raw.githubusercontent.com/Daudxu/eth-wallet-modal/724fd2238f6b4878dfcdc819da442bfcbb109733/examples/assets/logos/binancechainwallet.svg" width="30" height="30" alt="binance"/>
+<img src="https://raw.githubusercontent.com/Daudxu/eth-wallet-modal/724fd2238f6b4878dfcdc819da442bfcbb109733/examples/assets/logos/portis.svg" width="30" height="30" alt="portis"/>
+
 
 ## Preview
 
@@ -123,6 +130,21 @@ const web3 = new Web3(provider);
 
 import Base from 'eth-wallet-modal';
 
+import WalletConnectLogo from "../assets/logos/walletconnect-circle.svg";
+
+import MetaMaskLogo from "../assets/logos/metamask.svg";
+
+import CoinbaseLogo from "../assets/logos/coinbase.svg";
+
+import BlockWalletLogo from "../assets/logos/BlockWallet.png";
+
+import FortmaticLogo from "../assets/logos/fortmatic.svg";
+
+import BinancechainwalletLogo from "../assets/logos/binancechainwallet.svg";
+
+import PortisLogo from "../assets/logos/portis.svg";
+
+const CHAINID = 4;
 
 export default {
   name: 'HelloWorld',
@@ -135,40 +157,77 @@ export default {
       provider: '',
       providerOptions: {
         logo: WalletConnectLogo,
-        chainId: 4,
+        maskColor:'rgb(30, 30, 30, 0.8)',
+        bgColor:'#363636',
+        borderColor:'#faba30',
+        chainId: CHAINID,
         walletOptions: {
           metamask: {
             displayView: {
               logo: MetaMaskLogo,
-              name: "metamask",
+              name: "MetaMask",
             },
             options: {}
           },
           walletconnect: {
             displayView: {
               logo: WalletConnectLogo,
-              name: "walletconnect",
+              name: "WalletConnect",
             },
             options: {
               rpc: {
-                1: 'https://mainnet.infura.io/v3/9aa3d95b3bc440fa88ea12eaa4456161',
-                4: 'https://rinkeby.infura.io/v3/9aa3d95b3bc440fa88ea12eaa4456161'
+                1: 'https://mainnet.infura.io/v3/9aa3d95b3bc440fa88ea12eaa414516161',
+                4: 'https://rinkeby.infura.io/v3/9aa3d95b3bc440fa88ea12ea221a4456161'
               },
-              chainId: 4,
+              chainId: CHAINID,
               bridge: 'https://bridge.walletconnect.org'
             }
           },
           coinbase: {
             displayView: {
               logo: CoinbaseLogo,
-              name: "coinbase",
+              name: "Coinbase Wallet",
             },
             options: {
-              infuraId: '9aa3d95b3bc440fa88ea12eaa4456161',
-              chainId: 4,
+              infuraId: '9aa3d95b3bxxxc440fa88ea12eaa4456161',
+              chainId: CHAINID,
               appName: 'Digi',
               appLogoUrl: WalletConnectLogo,
               darkMode: false
+            }
+          },
+          blockmallet: {
+            displayView: {
+              logo: BlockWalletLogo,
+              name: "BlockWallet",
+            },
+            options: {}
+          },
+          fortmatic: {
+            displayView: {
+              logo: FortmaticLogo,
+              name: "Fortmatic",
+            },
+            options: {
+              chainId: CHAINID,
+              key:'pk_test_E652xxxxz525CA4198573'
+            }
+          },
+          binancechainwallet: {
+            displayView: {
+              logo: BinancechainwalletLogo,
+              name: "Binance Wallet",
+            },
+            options: {}
+          },
+          portis: {
+            displayView: {
+              logo: PortisLogo,
+              name: "Portis",
+            },
+            options: {
+                chainName: 'rinkeby', //mainnet,ropsten,rinkeby,goerli ...
+                id:'c668f1f8-xxxx-493e-86a1-b5c41d721ad9'
             }
           }
         },
@@ -176,8 +235,16 @@ export default {
       }
     }
   },
-  created () {
+  mounted () {
     this.baseModel = new Base(this.providerOptions)
+    const walletType = localStorage.getItem("injected")
+    var _this = this
+    if (walletType && typeof (walletType) !== 'undefined') {
+      setTimeout(function () {
+        console.log('lai le')
+        _this.handleClickConnect()
+      }, 3000)
+    }
   },
   methods: {
     async handleClickConnect () {
@@ -186,7 +253,6 @@ export default {
       if (provider) {
         this.provider = provider
       }
-
     },
     handleClickDisconnect () {
       this.baseModel.disconnect(this.provider)
