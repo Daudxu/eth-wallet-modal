@@ -20,8 +20,11 @@ export class Base {
   walletOptions = [];
 
   constructor(options = defaultOpt) {
-    this.options = options
-    this.walletOptions = options.walletOptions
+    this.options = options;
+    this.walletOptions = options.walletOptions;
+    this.maskColor = options.maskColor ? options.maskColor : "rgb(30, 30, 30, 0.8)";
+    this.bgColor = options.bgColor ? options.bgColor : "#363636";
+    this.borderColor = options.borderColor ? options.borderColor : "#faba30";
     this.providers = Object.keys(connectors).map((id) => {
       let providerInfo;
       providerInfo = this.getProviderInfoById(id);
@@ -256,7 +259,7 @@ export class Base {
         right: 0;
         bottom: 0;
         z-index:99999;
-        background: rgb(30, 30, 30, 0.8);
+        background: ${this.maskColor};
         display: flex;
         align-items: center;
         justify-content: center;
@@ -264,11 +267,11 @@ export class Base {
       .eth-warp .eth-main {
         position: relative;
         display: flex;
-        border: 1px solid #faba30;
+        border: 1px solid ${this.borderColor};
         border-radius: 18px;
         width: 450px;
         padding: 30px;
-        background: #363636;
+        background: ${this.bgColor};
         display: flex;
         justify-content: center;
     }

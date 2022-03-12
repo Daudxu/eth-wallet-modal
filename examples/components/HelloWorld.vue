@@ -51,9 +51,9 @@ export default {
       provider: '',
       providerOptions: {
         logo: WalletConnectLogo,
-        maskColor:'#000',
-        bgColor:'#000',
-        borderColor:'#000',
+        maskColor:'rgb(30, 30, 30, 0.8)',
+        bgColor:'#363636',
+        borderColor:'#faba30',
         chainId: CHAINID,
         walletOptions: {
           metamask: {
