@@ -20,6 +20,9 @@ jobs:
         uses: actions/setup-node@v1
         with:
           node-version: 16.13.1
+       # cache clean
+      - name: npm cache clean --force
+        run: npm cache clean --force
       # 安装依赖
       - name: npm  install --registry=http://registry.npm.taobao.org/
         run: npm install --registry=http://registry.npm.taobao.org/
