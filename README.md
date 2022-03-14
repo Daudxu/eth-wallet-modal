@@ -2,7 +2,7 @@
    ETH Wallet Modal
 </h1>
 
-[![npm][npm]][npm-url] [![node][node]][node-url]
+[![npm][npm]][npm-url] [![node][node]][node-url]![NPM Stats](https://img.shields.io/endpoint?url=https://www.npmjs.com/package/eth-wallet-modal)
 
 
 <h2 align="center">
