@@ -2,7 +2,7 @@
    ETH Wallet Modal
 </h1>
 
-[![npm][npm]][npm-url] [![node][node]][node-url] ![NPM](https://img.shields.io/npm/l/eth-wallet-modal) ![npm](https://img.shields.io/npm/dt/eth-wallet-modal?label=NPM%20Downloads)
+[![npm][npm]][npm-url] [![node][node]][node-url] ![NPM](https://img.shields.io/npm/l/eth-wallet-modal) ![npm](https://img.shields.io/npm/dt/eth-wallet-modal?color=4D88DB&label=NPM%20Downloads&style=plastic)
 
 
 <h2 align="center">
