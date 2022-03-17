@@ -157,7 +157,7 @@ URL：https://rpcapi.fantom.network
 新增 URL：https://rpc-mumbai.matic.today
 
 ChainID：80001
-
+领取地址：  https://faucet.polygon.technology/
 14.ParaState测试网
 
 新的RPC URL：https://rpc.parastate.io:8545
