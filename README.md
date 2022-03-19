@@ -13,13 +13,16 @@ Ethereum provider solution for  Wallets and Dapp
 
 ## Current support
 <p float="left">
-<img src="https://raw.githubusercontent.com/Daudxu/eth-wallet-modal/724fd2238f6b4878dfcdc819da442bfcbb109733/examples/assets/logos/metamask.svg" width="30" height="30" alt="metamask"/>
-<img src="https://raw.githubusercontent.com/Daudxu/eth-wallet-modal/724fd2238f6b4878dfcdc819da442bfcbb109733/examples/assets/logos/walletconnect.svg" width="30" height="30" alt="walletconnect"/>
-<img src="https://raw.githubusercontent.com/Daudxu/eth-wallet-modal/724fd2238f6b4878dfcdc819da442bfcbb109733/examples/assets/logos/coinbase.svg" width="30" height="30" alt="coinbase"/>
+<img src="https://raw.githubusercontent.com/Daudxu/eth-wallet-modal/master/examples/assets/logos/metamask.svg" width="30" height="30" alt="metamask"/>
+<img src="https://raw.githubusercontent.com/Daudxu/eth-wallet-modal/master/examples/assets/logos/walletconnect.svg" width="30" height="30" alt="walletconnect"/>
+<img src="https://raw.githubusercontent.com/Daudxu/eth-wallet-modal/master/examples/assets/logos/coinbase.svg" width="30" height="30" alt="coinbase"/>
 <img src="https://raw.githubusercontent.com/Daudxu/eth-wallet-modal/master/examples/assets/logos/BlockWallet.png" width="30" height="30" alt="coinbase"/>
-<img src="https://raw.githubusercontent.com/Daudxu/eth-wallet-modal/724fd2238f6b4878dfcdc819da442bfcbb109733/examples/assets/logos/fortmatic.svg" width="30" height="30" alt="blockmallet"/>
-<img src="https://raw.githubusercontent.com/Daudxu/eth-wallet-modal/724fd2238f6b4878dfcdc819da442bfcbb109733/examples/assets/logos/binancechainwallet.svg" width="30" height="30" alt="binance"/>
-<img src="https://raw.githubusercontent.com/Daudxu/eth-wallet-modal/724fd2238f6b4878dfcdc819da442bfcbb109733/examples/assets/logos/portis.svg" width="30" height="30" alt="portis"/>
+<img src="https://raw.githubusercontent.com/Daudxu/eth-wallet-modal/master/examples/assets/logos/fortmatic.svg" width="30" height="30" alt="blockmallet"/>
+<img src="https://raw.githubusercontent.com/Daudxu/eth-wallet-modal/master/examples/assets/logos/binancechainwallet.svg" width="30" height="30" alt="binance"/>
+<img src="https://raw.githubusercontent.com/Daudxu/eth-wallet-modal/master/examples/assets/logos/portis.svg" width="30" height="30" alt="portis"/>
+<img src="https://raw.githubusercontent.com/Daudxu/eth-wallet-modal/master/examples/assets/logos/burnerwallet.png" width="30" height="30" alt="burnerwallet"/>
+<img src="https://raw.githubusercontent.com/Daudxu/eth-wallet-modal/master/examples/assets/logos/torus.svg" width="30" height="30" alt="torus"/>
+<img src="https://raw.githubusercontent.com/Daudxu/eth-wallet-modal/master/examples/assets/logos/authereum.svg" width="30" height="30" alt="authereum"/>
 </p>
 
 ## Preview
@@ -176,6 +179,9 @@ walletOptions parameter
 | fortmatic         | array      | See the fortmatic  below|
 | binancechainwallet   | array    | See the binancechainwallet  below|
 | portis          | array    | See the metamaskportis  below |
+| burnerconnect      | array | See the burnerconnect below     |
+| torus              | array | See the torus below     |
+| authereum          | array | See the authereum below     |
 
 ```
 eg:

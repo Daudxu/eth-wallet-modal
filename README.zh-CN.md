@@ -158,15 +158,18 @@ providerOptions parameter
 
 walletOptions parameter
 
-| name               | type  | description                      |
+| 名称               | 类型   | 描述                      |
 | ------------------ | ----- | -------------------------------- |
-| metamask           | array | See the metamask below           |
-| walletconnect      | array | See the walletconnect below      |
-| coinbase           | array | See the coinbase below           |
-| blockmallet        | array | See the blockmallet below        |
-| fortmatic          | array | See the fortmatic below          |
-| binancechainwallet | array | See the binancechainwallet below |
-| portis             | array | See the metamaskportis below     |
+| metamask           | 数组 | See the metamask below           |
+| walletconnect      | 数组 | See the walletconnect below      |
+| coinbase           | 数组 | See the coinbase below           |
+| blockmallet        | 数组 | See the blockmallet below        |
+| fortmatic          | 数组 | See the fortmatic below          |
+| binancechainwallet | 数组 | See the binancechainwallet below |
+| portis             | 数组 | See the portis below     |
+| burnerconnect      | 数组 | See the burnerconnect below     |
+| torus              | 数组 | See the torus below     |
+| authereum          | 数组 | See the authereum below     |
 
 ```
 eg:
@@ -245,7 +248,7 @@ const CHAINID = 4
  walletconnect  config reference resources  https://docs.walletconnect.com/quick-start/dapps/web3-provider
 ```
 
-## demo
+### VUE演示案例代码
 
 ```
 <template>
@@ -437,7 +440,7 @@ a {
 
 ```
 
-## Provider subscription Events
+## 提供商订阅事件
 
 ```
 // Subscribe to accounts change
@@ -461,25 +464,34 @@ provider.on("disconnect", (error: { code: number; message: string }) => {
 });
 ```
 
+
+### 更新日志
+
+#### 2022.02.21
+
+> v1.0.0  
+> 初始化项目版本
+> 支持 MetaMask，WalletConnect
+
+#### 2022.03.12
+
+> v1.1.3 
+> 添加支持 fortmatic, binance, portis
+> 增加对遮罩背景色定制
+> 模态框背景色自定义
+> 模态框边框颜色自定义
+
+#### 2022.03.19
+
+> v1.1.6 
+> 添加支持 fortmatic, binance, portis
+
+
 ## Features
 
 - [v] Built for Ethereum using [Web3](https://github.com/ethereum/web3.js/).
 - [v] Implements [Graph Protocol](https://github.com/graphprotocol) to read blockchain.
 
-## Changelog
-
-### 2022.02.21
-
-> v1.0.0  
->  init project
-
-### 2022.03.12
-
-> v1.1.3  
->  add fortmatic, binance, portis
-> Mask background color customization
-> Modal box background color customization
-> Modal box border color customization
 
 ## other
 
@@ -487,6 +499,7 @@ provider.on("disconnect", (error: { code: number; message: string }) => {
 - Infura: https://infura.io/
 - ETH Gas Station: https://docs.ethgasstation.info/
 - Imgix: https://www.imgix.com/
+
 
 [npm]: https://img.shields.io/npm/v/postcss-load-config.svg
 [npm-url]: https://npmjs.com/package/postcss-load-config
