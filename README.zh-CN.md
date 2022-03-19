@@ -241,6 +241,7 @@ blockmallet  配置
 ```
 
 fortmatic  配置
+配置文档地址: https://docs.fortmatic.com/
 ```
          coinbase: {
             displayView: {
@@ -258,6 +259,7 @@ fortmatic  配置
 ```
 
 binancechainwallet  配置
+配置文档地址: https://www.binance.com/en/wallet-direct
 ```
          coinbase: {
             displayView: {
@@ -275,6 +277,7 @@ binancechainwallet  配置
 ```
 
 portis  配置
+配置文档地址: https://docs.portis.io/#/
 ```
          coinbase: {
             displayView: {
@@ -292,6 +295,8 @@ portis  配置
 ```
 
 burnerconnect  配置
+配置文档地址:   https://burnerfactory.com/mywallets
+项目地址:   https://github.com/burner-wallet/burner-connect-provider
 ```
          coinbase: {
             displayView: {
@@ -330,6 +335,7 @@ torus  配置
 ```
 
 authereum  配置
+配置文档地址: https://docs.authereum.com/integration
 ```
          coinbase: {
             displayView: {
