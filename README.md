@@ -1,16 +1,17 @@
 English | [简体中文](./README.zh-CN.md)
 
 <h1 align="center">
-   ETH Wallet Modal
+   ETH Wallet Modal 
 </h1>
 
 [![npm][npm]][npm-url]  ![NPM](https://img.shields.io/npm/l/eth-wallet-modal) ![npm](https://img.shields.io/npm/dt/eth-wallet-modal?color=4D88DB&label=NPM%20Downloads)
 
 
 <h3 align="center">
-Ethereum provider solution for  Wallets and Dapp
+  An Ethereum Provider Solution for Integrated Wallets and Dapps
 </h3>
-
+<h4 align="center">
+If you need to reduce unnecessary imports and load drivers on demand, please go to the <a href="https://github.com/Daudxu/dapp-wallet-modal">dapp-wallet-modal</a> project</h4>
 ## Current support
 <p float="left">
 <img src="https://raw.githubusercontent.com/Daudxu/eth-wallet-modal/master/examples/assets/logos/metamask.svg" width="30" height="30" alt="metamask"/>
