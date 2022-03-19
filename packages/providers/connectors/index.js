@@ -5,6 +5,9 @@ import blockmallet from "./blockmallet";
 import fortmatic from "./fortmatic";
 import binancechainwallet from "./binancechainwallet";
 import portis from "./portis";
+import burnerconnect from "./burnerconnect";
+import torus from "./torus";
+import authereum from "./authereum";
 
 export {
   metamask,
@@ -14,4 +17,7 @@ export {
   fortmatic,
   binancechainwallet,
   portis,
+  burnerconnect,
+  torus,
+  authereum,
 };

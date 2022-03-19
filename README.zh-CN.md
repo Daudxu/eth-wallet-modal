@@ -6,20 +6,23 @@
 
 [![npm][npm]][npm-url] ![NPM](https://img.shields.io/npm/l/eth-wallet-modal) ![npm](https://img.shields.io/npm/dt/eth-wallet-modal?color=4D88DB&label=NPM%20Downloads)
 
-<h2 align="center">
+<h4 align="center">
     以太坊钱包和Dapp提供商解决方案, 集成多Dapp钱包，可以轻松接入你的网站
-</h2>
+</h4>
 
 ## 现在支持的 Dapp 钱包
 
 <p float="left">
-<img src="https://raw.githubusercontent.com/Daudxu/eth-wallet-modal/724fd2238f6b4878dfcdc819da442bfcbb109733/examples/assets/logos/metamask.svg" width="30" height="30" alt="metamask"/>
-<img src="https://raw.githubusercontent.com/Daudxu/eth-wallet-modal/724fd2238f6b4878dfcdc819da442bfcbb109733/examples/assets/logos/walletconnect.svg" width="30" height="30" alt="walletconnect"/>
-<img src="https://raw.githubusercontent.com/Daudxu/eth-wallet-modal/724fd2238f6b4878dfcdc819da442bfcbb109733/examples/assets/logos/coinbase.svg" width="30" height="30" alt="coinbase"/>
+<img src="https://raw.githubusercontent.com/Daudxu/eth-wallet-modal/master/examples/assets/logos/metamask.svg" width="30" height="30" alt="metamask"/>
+<img src="https://raw.githubusercontent.com/Daudxu/eth-wallet-modal/master/examples/assets/logos/walletconnect.svg" width="30" height="30" alt="walletconnect"/>
+<img src="https://raw.githubusercontent.com/Daudxu/eth-wallet-modal/master/examples/assets/logos/coinbase.svg" width="30" height="30" alt="coinbase"/>
 <img src="https://raw.githubusercontent.com/Daudxu/eth-wallet-modal/master/examples/assets/logos/BlockWallet.png" width="30" height="30" alt="coinbase"/>
-<img src="https://raw.githubusercontent.com/Daudxu/eth-wallet-modal/724fd2238f6b4878dfcdc819da442bfcbb109733/examples/assets/logos/fortmatic.svg" width="30" height="30" alt="blockmallet"/>
-<img src="https://raw.githubusercontent.com/Daudxu/eth-wallet-modal/724fd2238f6b4878dfcdc819da442bfcbb109733/examples/assets/logos/binancechainwallet.svg" width="30" height="30" alt="binance"/>
-<img src="https://raw.githubusercontent.com/Daudxu/eth-wallet-modal/724fd2238f6b4878dfcdc819da442bfcbb109733/examples/assets/logos/portis.svg" width="30" height="30" alt="portis"/>
+<img src="https://raw.githubusercontent.com/Daudxu/eth-wallet-modal/master/examples/assets/logos/fortmatic.svg" width="30" height="30" alt="blockmallet"/>
+<img src="https://raw.githubusercontent.com/Daudxu/eth-wallet-modal/master/examples/assets/logos/binancechainwallet.svg" width="30" height="30" alt="binance"/>
+<img src="https://raw.githubusercontent.com/Daudxu/eth-wallet-modal/master/examples/assets/logos/portis.svg" width="30" height="30" alt="portis"/>
+<img src="https://raw.githubusercontent.com/Daudxu/eth-wallet-modal/master/examples/assets/logos/burnerwallet.png" width="30" height="30" alt="burnerwallet"/>
+<img src="https://raw.githubusercontent.com/Daudxu/eth-wallet-modal/master/examples/assets/logos/torus.svg" width="30" height="30" alt="torus"/>
+<img src="https://raw.githubusercontent.com/Daudxu/eth-wallet-modal/master/examples/assets/logos/authereum.svg" width="30" height="30" alt="authereum"/>
 </p>
 
 ## 预览展示
