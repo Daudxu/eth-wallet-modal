@@ -177,6 +177,188 @@ walletOptions parameter
 | authereum          | array | See the authereum below     |
 
 
+metamask  config
+Document address: https://docs.metamask.io/guide/
+```
+         metamask: {
+            displayView: {
+              logo: 'https://raw.org/metamask.svg'  // 你自己定义的 metamask logo 地址用于显示,   
+              name: 'metamask'  // 你自己定义的 metamask 前端显示的名字 ,
+            },
+            options: {}   //无需传参
+          },
+
+```
+
+walletconnect  config
+Document address: https://docs.walletconnect.com/
+```
+        walletconnect: {
+          displayView: {
+            logo: 'https://raw.org/walletconnect.svg'  // 你自己定义的 walletconnect logo 地址用于显示,   
+            name: "WalletConnect",  // 你自己定义的 WalletConnect 前端显示的名字 ,
+          },
+          options: {
+            rpc: {
+              1: 'https://mainnet.infura.io/v3/9aa3d95b3bc440fa88ea12eaa414516161',
+              4: 'https://rinkeby.infura.io/v3/9aa3d95b3bc440fa88ea12ea221a4456161'
+            },
+            chainId: 区块网络链ID,
+            bridge: 'https://bridge.walletconnect.org'
+          }
+        },
+```
+
+coinbase  config
+Document address: https://docs.cloud.coinbase.com/wallet-sdk/docs/installing
+```
+         coinbase: {
+            displayView: {
+            logo: 'https://raw.org/coinbase.svg'  // 你自己定义的 Coinbase Wallet logo 地址用于显示,   
+            name: "Coinbase Wallet",  // 你自己定义的 Coinbase Wallet 前端显示的名字 ,
+            },
+            options: {
+              infuraId: '你的 infuraId ID',
+              chainId: 区块网络链ID,
+              appName: '你定义的应用名称',
+              appLogoUrl: WalletConnectLogo,
+              darkMode: false
+            }
+          },
+```
+
+blockmallet  config
+Document address: https://help.blockwallet.io/hc/en-us/articles/4437032129169-How-to-Integrate-BlockWallet-With-Your-DApp
+```
+         coinbase: {
+            displayView: {
+            logo: 'https://raw.org/blockmallet.svg'  // 你自己定义的 blockmallet Wallet logo 地址用于显示,   
+            name: "blockmallet",  // 你自己定义的 blockmallet Wallet 前端显示的名字 ,
+            },
+            options: {
+              infuraId: '你的 infuraId ID',
+              chainId: 区块网络链ID,
+              appName: '你定义的应用名称',
+              appLogoUrl: WalletConnectLogo,
+              darkMode: false
+            }
+          },
+```
+
+fortmatic  config
+Document address: https://docs.fortmatic.com/
+```
+         coinbase: {
+            displayView: {
+            logo: 'https://raw.org/fortmatic.svg'  // 你自己定义的 fortmatic Wallet logo 地址用于显示,   
+            name: "fortmatic",  // 你自己定义的 fortmatic Wallet 前端显示的名字 ,
+            },
+            options: {
+              infuraId: '你的 infuraId ID',
+              chainId: 区块网络链ID,
+              appName: '你定义的应用名称',
+              appLogoUrl: WalletConnectLogo,
+              darkMode: false
+            }
+          },
+```
+
+binancechainwallet  config
+Document address: https://www.binance.com/en/wallet-direct
+```
+         coinbase: {
+            displayView: {
+            logo: 'https://raw.org/binancechainwallet.svg'  // 你自己定义的 binancechainwallet  logo 地址用于显示,   
+            name: "binancechainwallet",  // 你自己定义的 binancechainwallet 前端显示的名字 ,
+            },
+            options: {
+              infuraId: '你的 infuraId ID',
+              chainId: 区块网络链ID,
+              appName: '你定义的应用名称',
+              appLogoUrl: WalletConnectLogo,
+              darkMode: false
+            }
+          },
+```
+
+portis  config
+Document address: https://docs.portis.io/#/
+```
+         coinbase: {
+            displayView: {
+            logo: 'https://raw.org/portis.svg'  // 你自己定义的 portis  logo 地址用于显示,   
+            name: "portis",  // 你自己定义的 portis 前端显示的名字 ,
+            },
+            options: {
+              infuraId: '你的 infuraId ID',
+              chainId: 区块网络链ID,
+              appName: '你定义的应用名称',
+              appLogoUrl: WalletConnectLogo,
+              darkMode: false
+            }
+          },
+```
+
+burnerconnect  config
+Document address: https://burnerfactory.com/mywallets
+progect address: https://github.com/burner-wallet/burner-connect-provider
+```
+         coinbase: {
+            displayView: {
+            logo: 'https://raw.org/burnerconnect.svg'  // 你自己定义的 burnerconnect  logo 地址用于显示,   
+            name: "burnerconnect",  // 你自己定义的 burnerconnect 前端显示的名字 ,
+            },
+            options: {
+              infuraId: '你的 infuraId ID',
+              chainId: 区块网络链ID,
+              appName: '你定义的应用名称',
+              appLogoUrl: WalletConnectLogo,
+              darkMode: false
+            }
+          },
+```
+
+
+
+torus  config
+Document address: https://docs.tor.us/integration-builder/?b=wallet&chain=Ethereum&lang=Vue
+```
+         coinbase: {
+            displayView: {
+            logo: 'https://raw.org/coinbase.svg'  // 你自己定义的 Coinbase Wallet logo 地址用于显示,   
+            name: "Coinbase Wallet",  // 你自己定义的 Coinbase Wallet 前端显示的名字 ,
+            },
+            options: {
+              infuraId: '你的 infuraId ID',
+              chainId: 区块网络链ID,
+              appName: '你定义的应用名称',
+              appLogoUrl: WalletConnectLogo,
+              darkMode: false
+            }
+          },
+       
+```
+
+authereum  config
+Document address: https://docs.authereum.com/integration
+```
+         coinbase: {
+            displayView: {
+            logo: 'https://raw.org/authereum.svg'  // 你自己定义的 authereum  logo 地址用于显示,   
+            name: "authereum",  // 你自己定义的 authereum 前端显示的名字 ,
+            },
+            options: {
+              infuraId: '你的 infuraId ID',
+              chainId: 区块网络链ID,
+              appName: '你定义的应用名称',
+              appLogoUrl: WalletConnectLogo,
+              darkMode: false
+            }
+          },
+```
+
+
+
 
 ## Provider subscription Events
 
