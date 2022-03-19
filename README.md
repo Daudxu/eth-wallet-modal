@@ -132,9 +132,9 @@ const  providerOptions = {
 
       }
 
-const eth-wallet-modal = new eth-wallet-modal(providerOptions);
+const walletModal = new ethWalletModal(providerOptions);
 
-const provider = await eth-wallet-modal.connect();
+const provider = await walletModal.connect();
 
 const web3 = new Web3(provider);
 
