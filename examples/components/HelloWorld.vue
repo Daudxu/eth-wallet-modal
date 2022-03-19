@@ -38,6 +38,12 @@ import BinancechainwalletLogo from "../assets/logos/binancechainwallet.svg";
 
 import PortisLogo from "../assets/logos/portis.svg";
 
+import BurnerwalletLogo from "../assets/logos/burnerwallet.png";
+
+import TorusLogo from "../assets/logos/torus.svg";
+
+import AuthereumLogo from "../assets/logos/authereum.svg";
+
 const CHAINID = 4;
 
 export default {
@@ -120,10 +126,40 @@ export default {
               name: "Portis",
             },
             options: {
-                chainName: 'rinkeby', //mainnet,ropsten,rinkeby,goerli ...
+                chainName: 'rinkeby', 
                 id:'c668f1f8-ffc6-493e-86a1-b5c41d721ad9'
             }
-          }
+          },
+          burnerconnect: {
+            displayView: {
+              logo: BurnerwalletLogo,
+              name: "burner connect",
+            },
+            options: {
+                chainName: 'rinkeby', 
+                id:'c668f1f8-ffc6-493e-86a1-b5c41d721ad9'
+            }
+          },
+          torus: {
+            displayView: {
+              logo: TorusLogo,
+              name: "torus",
+            },
+            options: {
+                chainName: 'rinkeby',
+                id:'c668f1f8-ffc6-493e-86a1-b5c41d721ad9'
+            }
+          },
+          authereum: {
+            displayView: {
+              logo: AuthereumLogo,
+              name: "authereum",
+            },
+            options: {
+                chainName: 'rinkeby', 
+                id:'c668f1f8-ffc6-493e-86a1-b5c41d721ad9'
+            }
+          },
         },
 
       }

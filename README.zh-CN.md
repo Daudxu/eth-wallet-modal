@@ -202,6 +202,7 @@ walletconnect  配置
           }
         },
 ```
+
 coinbase  配置
 ```
          coinbase: {
@@ -218,6 +219,131 @@ coinbase  配置
             }
           },
 ```
+
+blockmallet  配置
+```
+         coinbase: {
+            displayView: {
+            logo: 'https://raw.org/blockmallet.svg'  // 你自己定义的 blockmallet Wallet logo 地址用于显示,   
+            name: "blockmallet",  // 你自己定义的 blockmallet Wallet 前端显示的名字 ,
+            },
+            options: {
+              infuraId: '你的 infuraId ID',
+              chainId: 区块网络链ID,
+              appName: '你定义的应用名称',
+              appLogoUrl: WalletConnectLogo,
+              darkMode: false
+            }
+          },
+```
+
+fortmatic  配置
+```
+         coinbase: {
+            displayView: {
+            logo: 'https://raw.org/fortmatic.svg'  // 你自己定义的 fortmatic Wallet logo 地址用于显示,   
+            name: "fortmatic",  // 你自己定义的 fortmatic Wallet 前端显示的名字 ,
+            },
+            options: {
+              infuraId: '你的 infuraId ID',
+              chainId: 区块网络链ID,
+              appName: '你定义的应用名称',
+              appLogoUrl: WalletConnectLogo,
+              darkMode: false
+            }
+          },
+```
+
+binancechainwallet  配置
+```
+         coinbase: {
+            displayView: {
+            logo: 'https://raw.org/binancechainwallet.svg'  // 你自己定义的 binancechainwallet  logo 地址用于显示,   
+            name: "binancechainwallet",  // 你自己定义的 binancechainwallet 前端显示的名字 ,
+            },
+            options: {
+              infuraId: '你的 infuraId ID',
+              chainId: 区块网络链ID,
+              appName: '你定义的应用名称',
+              appLogoUrl: WalletConnectLogo,
+              darkMode: false
+            }
+          },
+```
+
+portis  配置
+```
+         coinbase: {
+            displayView: {
+            logo: 'https://raw.org/portis.svg'  // 你自己定义的 portis  logo 地址用于显示,   
+            name: "portis",  // 你自己定义的 portis 前端显示的名字 ,
+            },
+            options: {
+              infuraId: '你的 infuraId ID',
+              chainId: 区块网络链ID,
+              appName: '你定义的应用名称',
+              appLogoUrl: WalletConnectLogo,
+              darkMode: false
+            }
+          },
+```
+
+burnerconnect  配置
+```
+         coinbase: {
+            displayView: {
+            logo: 'https://raw.org/burnerconnect.svg'  // 你自己定义的 burnerconnect  logo 地址用于显示,   
+            name: "burnerconnect",  // 你自己定义的 burnerconnect 前端显示的名字 ,
+            },
+            options: {
+              infuraId: '你的 infuraId ID',
+              chainId: 区块网络链ID,
+              appName: '你定义的应用名称',
+              appLogoUrl: WalletConnectLogo,
+              darkMode: false
+            }
+          },
+```
+
+
+
+torus  配置
+配置文档地址:   https://docs.tor.us/integration-builder/?b=wallet&chain=Ethereum&lang=Vue
+```
+         coinbase: {
+            displayView: {
+            logo: 'https://raw.org/coinbase.svg'  // 你自己定义的 Coinbase Wallet logo 地址用于显示,   
+            name: "Coinbase Wallet",  // 你自己定义的 Coinbase Wallet 前端显示的名字 ,
+            },
+            options: {
+              infuraId: '你的 infuraId ID',
+              chainId: 区块网络链ID,
+              appName: '你定义的应用名称',
+              appLogoUrl: WalletConnectLogo,
+              darkMode: false
+            }
+          },
+       
+```
+
+authereum  配置
+```
+         coinbase: {
+            displayView: {
+            logo: 'https://raw.org/authereum.svg'  // 你自己定义的 authereum  logo 地址用于显示,   
+            name: "authereum",  // 你自己定义的 authereum 前端显示的名字 ,
+            },
+            options: {
+              infuraId: '你的 infuraId ID',
+              chainId: 区块网络链ID,
+              appName: '你定义的应用名称',
+              appLogoUrl: WalletConnectLogo,
+              darkMode: false
+            }
+          },
+```
+
+
 
 ## 提供商订阅事件
 
