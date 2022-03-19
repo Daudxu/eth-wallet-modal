@@ -173,6 +173,7 @@ walletOptions parameter
 
 
 metamask  配置
+文档配置地址：https://docs.metamask.io/guide/
 ```
          metamask: {
             displayView: {
@@ -184,8 +185,8 @@ metamask  配置
 
 ```
 
-
 walletconnect  配置
+文档配置地址：https://docs.walletconnect.com/
 ```
         walletconnect: {
           displayView: {
@@ -204,6 +205,7 @@ walletconnect  配置
 ```
 
 coinbase  配置
+文档配置地址：https://docs.cloud.coinbase.com/wallet-sdk/docs/installing
 ```
          coinbase: {
             displayView: {
@@ -221,6 +223,7 @@ coinbase  配置
 ```
 
 blockmallet  配置
+文档配置地址：https://help.blockwallet.io/hc/en-us/articles/4437032129169-How-to-Integrate-BlockWallet-With-Your-DApp
 ```
          coinbase: {
             displayView: {
