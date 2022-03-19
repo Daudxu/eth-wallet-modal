@@ -7,9 +7,9 @@ English | [简体中文](./README.zh-CN.md)
 [![npm][npm]][npm-url]  ![NPM](https://img.shields.io/npm/l/eth-wallet-modal) ![npm](https://img.shields.io/npm/dt/eth-wallet-modal?color=4D88DB&label=NPM%20Downloads)
 
 
-<h2 align="center">
+<h3 align="center">
 Ethereum provider solution for  Wallets and Dapp
-</h2>
+</h3>
 
 ## Current support
 <p float="left">

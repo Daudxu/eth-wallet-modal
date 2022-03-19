@@ -6,11 +6,11 @@
 
 [![npm][npm]][npm-url] ![NPM](https://img.shields.io/npm/l/eth-wallet-modal) ![npm](https://img.shields.io/npm/dt/eth-wallet-modal?color=4D88DB&label=NPM%20Downloads)
 
-<h4 align="center">
+<h3 align="center">
     以太坊钱包和Dapp提供商解决方案, 集成多Dapp钱包，可以轻松接入你的网站
-</h4>
+</h3>
 
-## 现在支持的 Dapp 钱包
+### 现在支持的 Dapp 钱包
 
 <p float="left">
 <img src="https://raw.githubusercontent.com/Daudxu/eth-wallet-modal/master/examples/assets/logos/metamask.svg" width="30" height="30" alt="metamask"/>
