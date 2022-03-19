@@ -10,9 +10,12 @@ English | [简体中文](./README.zh-CN.md)
 <h3 align="center">
   An Ethereum Provider Solution for Integrated Wallets and Dapps
 </h3>
-<h4 align="center">
-If you need to reduce unnecessary imports and load drivers on demand, please go to the <a href="https://github.com/Daudxu/dapp-wallet-modal">dapp-wallet-modal</a> project</h4>
-## Current support
+
+#### ⚠️ Notice ⚠️
+
+If you need to reduce unnecessary imports and load drivers on demand, please go to the <a href="https://github.com/Daudxu/dapp-wallet-modal">dapp-wallet-modal</a> project
+
+## ✔️ Current support 🚀
 <p float="left">
 <img src="https://raw.githubusercontent.com/Daudxu/eth-wallet-modal/master/examples/assets/logos/metamask.svg" width="30" height="30" alt="metamask"/>
 <img src="https://raw.githubusercontent.com/Daudxu/eth-wallet-modal/master/examples/assets/logos/walletconnect.svg" width="30" height="30" alt="walletconnect"/>
@@ -26,36 +29,25 @@ If you need to reduce unnecessary imports and load drivers on demand, please go 
 <img src="https://raw.githubusercontent.com/Daudxu/eth-wallet-modal/master/examples/assets/logos/authereum.svg" width="30" height="30" alt="authereum"/>
 </p>
 
-## Preview
+
+## 🎉 Preview 🎉
 
 ![preview](./images/preview.png)
 
-## example
+##  💻 example  💻
 https://daudxu.github.io/eth-wallet-modal/
 
-## Usage
+##  🚩 Usage  🚩
 
-### 1. Install eth-wallet-modal NPM package
+### 1️⃣ Install eth-wallet-modal NPM package
 
 ```
-
 npm install --save eth-wallet-modal
-
 # OR
-
 yarn add eth-wallet-modal
-
 ```
 
-### 2. Install Provider packages
-
-```
-import ethWalletModal from 'eth-wallet-modal';
-
-
-```
-
-### 3. Then you can add eth-wallet-modal to your Dapp as follows
+### 2️⃣ Then you can add eth-wallet-modal to your Dapp as follows
 
 ```
 import Web3 from "web3";
@@ -183,275 +175,6 @@ walletOptions parameter
 | burnerconnect      | array | See the burnerconnect below     |
 | torus              | array | See the torus below     |
 | authereum          | array | See the authereum below     |
-
-```
-eg:
-const CHAINID = 4
-  walletOptions: {
-          metamask: {
-            displayView: {
-              logo: MetaMaskLogo,
-              name: "MetaMask",
-            },
-            options: {}
-          },
-          walletconnect: {
-            displayView: {
-              logo: WalletConnectLogo,
-              name: "WalletConnect",
-            },
-            options: {
-              rpc: {
-                1: 'https://mainnet.infura.io/v3/9aa3d95b3bc440fa88ea12eaa414511116161',
-                4: 'https://rinkeby.infura.io/v3/9aa3d95b3bc440fa88ea12ea221a4422256161'
-              },
-              chainId: CHAINID,
-              bridge: 'https://bridge.walletconnect.org'
-            }
-          },
-          coinbase: {
-            displayView: {
-              logo: CoinbaseLogo,
-              name: "Coinbase Wallet",
-            },
-            options: {
-              infuraId: '9aa3d95b3b1xxxc4401313fa88ea12eaa4456161',
-              chainId: CHAINID,
-              appName: 'Digi',
-              appLogoUrl: WalletConnectLogo,
-              darkMode: false
-            }
-          },
-          blockmallet: {
-            displayView: {
-              logo: BlockWalletLogo,
-              name: "BlockWallet",
-            },
-            options: {}
-          },
-          fortmatic: {
-            displayView: {
-              logo: FortmaticLogo,
-              name: "Fortmatic",
-            },
-            options: {
-              chainId: CHAINID,
-              key:'pk_test_E652x23xxa1z525CA4198573'
-            }
-          },
-          binancechainwallet: {
-            displayView: {
-              logo: BinancechainwalletLogo,
-              name: "Binance Wallet",
-            },
-            options: {}
-          },
-          portis: {
-            displayView: {
-              logo: PortisLogo,
-              name: "Portis",
-            },
-            options: {
-                chainName: 'rinkeby', //mainnet,ropsten,rinkeby,goerli ...
-                id:'c668f1f8-a12zx-493e-86a1-b5c41d721ad9'
-            }
-          }
-        }
-
- walletconnect  config reference resources  https://docs.walletconnect.com/quick-start/dapps/web3-provider
-```
-
-## demo
-
-```
-<template>
-  <div class="hello">
-    <h1>{{ msg }}</h1>
-    <p>
-      Dapp ETH Wallet Modal plugin.
-    </p>
-    <div class="ex-main">
-      <div class="ex-main-box">
-
-        <button v-show="provider === ''"
-                @click="handleClickConnect">Click Connect</button>
-        <button v-show="provider"
-                @click="handleClickDisconnect">Click disconnect</button>
-      </div>
-    </div>
-
-  </div>
-</template>
-
- <script>
-
-import Base from 'eth-wallet-modal';
-
-import WalletConnectLogo from "../assets/logos/walletconnect-circle.svg";
-
-import MetaMaskLogo from "../assets/logos/metamask.svg";
-
-import CoinbaseLogo from "../assets/logos/coinbase.svg";
-
-import BlockWalletLogo from "../assets/logos/BlockWallet.png";
-
-import FortmaticLogo from "../assets/logos/fortmatic.svg";
-
-import BinancechainwalletLogo from "../assets/logos/binancechainwallet.svg";
-
-import PortisLogo from "../assets/logos/portis.svg";
-
-const CHAINID = 4;
-
-export default {
-  name: 'HelloWorld',
-  props: {
-    msg: String
-  },
-  data () {
-    return {
-      baseModel: '',
-      provider: '',
-      providerOptions: {
-        logo: WalletConnectLogo,
-        maskColor:'rgb(30, 30, 30, 0.8)',
-        bgColor:'#363636',
-        borderColor:'#faba30',
-        chainId: CHAINID,
-        walletOptions: {
-          metamask: {
-            displayView: {
-              logo: MetaMaskLogo,
-              name: "MetaMask",
-            },
-            options: {}
-          },
-          walletconnect: {
-            displayView: {
-              logo: WalletConnectLogo,
-              name: "WalletConnect",
-            },
-            options: {
-              rpc: {
-                1: 'https://mainnet.infura.io/v3/9aa3d95b3bc440fa88ea12eaa414516161',
-                4: 'https://rinkeby.infura.io/v3/9aa3d95b3bc440fa88ea12ea221a4456161'
-              },
-              chainId: CHAINID,
-              bridge: 'https://bridge.walletconnect.org'
-            }
-          },
-          coinbase: {
-            displayView: {
-              logo: CoinbaseLogo,
-              name: "Coinbase Wallet",
-            },
-            options: {
-              infuraId: '9aa3d95b3bxxxc440fa88ea12eaa4456161',
-              chainId: CHAINID,
-              appName: 'Digi',
-              appLogoUrl: WalletConnectLogo,
-              darkMode: false
-            }
-          },
-          blockmallet: {
-            displayView: {
-              logo: BlockWalletLogo,
-              name: "BlockWallet",
-            },
-            options: {}
-          },
-          fortmatic: {
-            displayView: {
-              logo: FortmaticLogo,
-              name: "Fortmatic",
-            },
-            options: {
-              chainId: CHAINID,
-              key:'pk_test_E652xxxxz525CA4198573'
-            }
-          },
-          binancechainwallet: {
-            displayView: {
-              logo: BinancechainwalletLogo,
-              name: "Binance Wallet",
-            },
-            options: {}
-          },
-          portis: {
-            displayView: {
-              logo: PortisLogo,
-              name: "Portis",
-            },
-            options: {
-                chainName: 'rinkeby', //mainnet,ropsten,rinkeby,goerli ...
-                id:'c668f1f8-xxxx-493e-86a1-b5c41d721ad9'
-            }
-          }
-        },
-
-      }
-    }
-  },
-  mounted () {
-    this.baseModel = new Base(this.providerOptions)
-    const walletType = localStorage.getItem("injected")
-    var _this = this
-    if (walletType && typeof (walletType) !== 'undefined') {
-      setTimeout(function () {
-        console.log('lai le')
-        _this.handleClickConnect()
-      }, 3000)
-    }
-  },
-  methods: {
-    async handleClickConnect () {
-      var provider = await this.baseModel.connect()
-      console.log('provider', provider)
-      if (provider) {
-        this.provider = provider
-      }
-    },
-    handleClickDisconnect () {
-      this.baseModel.disconnect(this.provider)
-      this.provider = ''
-    },
-  }
-}
-</script>
-<style scoped>
-.ex-main {
-  width: 100%;
-  margin: 0 auto;
-  text-align: center;
-  display: flex;
-  justify-content: center;
-}
-.ex-main .ex-main-box {
-  width: 300px;
-  display: flex;
-  justify-content: center;
-}
-.ex-main .ex-main-box button {
-  height: 30px;
-  background: #42b983;
-}
-h3 {
-  margin: 40px 0 0;
-}
-ul {
-  list-style-type: none;
-  padding: 0;
-}
-li {
-  display: inline-block;
-  margin: 0 10px;
-}
-a {
-  color: #42b983;
-}
-</style>
-
-```
 
 
 
