@@ -5,8 +5,7 @@ const ConnectToAuthereum = (options) => {
       (async () => {
         try {
         const authereum = new Authereum({
-            ...options,
-            networkName: options.networkName || options.network,
+            networkName: options.chainName,
         })
         const provider = authereum.getProvider()
         provider.authereum = authereum

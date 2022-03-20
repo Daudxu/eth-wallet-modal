@@ -146,7 +146,7 @@ const web3 = new Web3(provider);
 
 ##### metamask 
 
-Official Doc: <a href="https://docs.metamask.io/guide/" target="view_window"> Click to view </a>  
+Official Doc: <a href="https://docs.metamask.io/guide/" target="view_window"> View Doc </a>  
 
 ```
          metamask: {
@@ -159,7 +159,7 @@ Official Doc: <a href="https://docs.metamask.io/guide/" target="view_window"> Cl
 
 ##### walletconnect
 
-Official Doc: <a href="https://docs.walletconnect.com" target="view_window"> Click to view </a>  
+Official Doc: <a href="https://docs.walletconnect.com" target="view_window"> View Doc </a>  
 
 ```
         walletconnect: {
@@ -182,7 +182,7 @@ Official Doc: <a href="https://docs.walletconnect.com" target="view_window"> Cli
 
 #####  coinbase  
 
-Official Doc: <a href="https://docs.cloud.coinbase.com/wallet-sdk/docs/installing" target="view_window"> Click to view </a>  
+Official Doc: <a href="https://docs.cloud.coinbase.com/wallet-sdk/docs/installing" target="view_window"> View Doc </a>  
 
 ```
          coinbase: {
@@ -204,7 +204,7 @@ Official Doc: <a href="https://docs.cloud.coinbase.com/wallet-sdk/docs/installin
 
 ##### blockmallet 
 
-Official Doc: <a href="https://help.blockwallet.io/hc/en-us/articles/4437032129169-How-to-Integrate-BlockWallet-With-Your-DApp" target="view_window"> Click to view </a>  
+Official Doc: <a href="https://help.blockwallet.io/hc/en-us/articles/4437032129169-How-to-Integrate-BlockWallet-With-Your-DApp" target="view_window"> View Doc </a>  
 
 ```
          coinbase: {
@@ -217,7 +217,7 @@ Official Doc: <a href="https://help.blockwallet.io/hc/en-us/articles/44370321291
 
 #####  fortmatic 
 
-Official Doc: <a href=" https://docs.fortmatic.com/" target="view_window"> Click to view </a>  
+Official Doc: <a href=" https://docs.fortmatic.com/" target="view_window"> View Doc </a>  
 
 ```
          fortmatic: {
@@ -236,7 +236,7 @@ Official Doc: <a href=" https://docs.fortmatic.com/" target="view_window"> Click
 
 #####  binancechainwallet 
 
-Official Doc <a href=" https://docs.binance.org/smart-chain/wallet/wallet_api.html" target="view_window"> Click to view </a>  
+Official Doc <a href=" https://docs.binance.org/smart-chain/wallet/wallet_api.html" target="view_window"> View Doc </a>  
 
 ```
          binancechainwallet: {
@@ -250,7 +250,7 @@ Official Doc <a href=" https://docs.binance.org/smart-chain/wallet/wallet_api.ht
 
 #####  portis
 
-Official Doc: <a href=" https://docs.portis.io/#/" target="view_window"> Click to view </a>  
+Official Doc: <a href=" https://docs.portis.io/#/" target="view_window"> View Doc </a>  
 
 ```
          portis: {
@@ -294,9 +294,9 @@ Official Doc: <a href=" https://docs.portis.io/#/" target="view_window"> Click t
 
 ##### burnerconnect
 
-Official Doc: <a href=" https://medium.com/gitcoin/burner-modules-c6737cf06fe" target="view_window"> Click to view </a>  
+Official Doc: <a href=" https://medium.com/gitcoin/burner-modules-c6737cf06fe" target="view_window"> View Doc </a>  
 
-Progect address: <a href=" https://github.com/burner-wallet/burner-connect-provider" target="view_window"> Click to view </a>
+Progect address: <a href=" https://github.com/burner-wallet/burner-connect-provider" target="view_window"> View Doc </a>
 
 ```
          burnerconnect: {
@@ -315,20 +315,13 @@ Progect address: <a href=" https://github.com/burner-wallet/burner-connect-provi
 
 ##### torus
 
-Official Doc: <a href=" https://docs.tor.us/integration-builder/?b=wallet&chain=Ethereum&lang=Vue" target="view_window"> Click to view </a>  
+Official Doc: <a href=" https://docs.tor.us/integration-builder/?b=wallet&chain=Ethereum&lang=Vue" target="view_window"> View Doc</a>  
 
 ```
-         coinbase: {
+         torus: {
             displayView: {
-            logo: 'https://raw.org/coinbase.svg'  // The logo address you define to display your wallet.  
-            name: "Coinbase Wallet",  //  The name displayed on the front of your own wallet.
-            },
-            options: {
-              infuraId: '你的 infuraId ID',
-              chainId: 区块网络链ID,
-              appName: '你定义的应用名称',
-              appLogoUrl: WalletConnectLogo,
-              darkMode: false
+            logo: 'https://raw.org/torus.svg'  // The logo address you define to display your wallet.  
+            name: "torus Wallet",  //  The name displayed on the front of your own wallet.
             }
           },
        
@@ -336,7 +329,7 @@ Official Doc: <a href=" https://docs.tor.us/integration-builder/?b=wallet&chain=
 
 ##### authereum
 
-Official Doc: <a href=" https://docs.authereum.com/integration" target="view_window"> Click to view </a>  
+Official Doc: <a href=" https://docs.authereum.com/integration" target="view_window"> View Doc </a>  
 
 ```
          authereum: {
@@ -345,15 +338,35 @@ Official Doc: <a href=" https://docs.authereum.com/integration" target="view_win
             name: "authereum",  // The name displayed on the front of your own wallet.
             },
             options: {
-              infuraId: 'your infuraId ID',
-              chainId:  Blockchain network ID,
-              appName: 'Your app name',
-              appLogoUrl: WalletConnectLogo,
-              darkMode: false
+               chainName: 'rinkeby',  // Need to pass in the chain Name eg： kova, rinkeby, mainne
             }
           },
-```
 
+// ⚠️ Configuration reference official documentation     
+```
+ options chainName list
+| Network	| Description 	|	Default Gas Relay Hub	|
+| --------------- | -------- | --------------------- |
+| mainnet |	Ethereum - main network|	0xD216153c06E857cD7f72665E0aF1d7D82172F494|
+| ropsten	|Ethereum - ropsten network	|0xD216153c06E857cD7f72665E0aF1d7D82172F494 |
+| rinkeby|	Ethereum - rinkeby network|	0xD216153c06E857cD7f72665E0aF1d7D82172F494 |
+| goerli|	Ethereum - goerli network |	0xD216153c06E857cD7f72665E0aF1d7D82172F494|
+|ubiq|	UBQ - main network|	-|
+|thundercoreTestnet|	TT| - test network	-|
+|orchid|	RootStock - main network|	-|
+|orchidTestnet|	RootStock - test network|	-|
+|kovan|	Ethereum - kovan network|	0xD216153c06E857cD7f72665E0aF1d7D82172F494|
+|classic|	Ethereum Classic - |main network	-|
+|sokol|	POA - test network|	-|
+|core|	POA - main network|	-|
+|xdai|	xDai - main network	0xD216153c06E857cD7f72665E0aF1d7D82172F494|
+|thundercore|	TT - main network|	-|
+|fuse|	Fuse - main network	|-|
+|lightstreams|	Lightstreams |- main network	-|
+|matic|	MATIC - main network|	-|
+|maticMumbai	|MATIC - mumbai test network|	-|
+|maticAlpha|	MATIC - alpha network	|-|
+|maticTestnet|	MATIC - test network|	-|
 
 
 
@@ -399,6 +412,11 @@ provider.on("disconnect", (error: { code: number; message: string }) => {
  Mask background color customization
  Modal box background color customization
  Modal box border color customization
+
+##### 2022.03.20
+> v1.1.6   
+Add fortmatic, binance and Portis wallet support
+
 
 ## ✈️ other
 

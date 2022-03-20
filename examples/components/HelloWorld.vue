@@ -144,10 +144,6 @@ export default {
             displayView: {
               logo: TorusLogo,
               name: "torus",
-            },
-            options: {
-                chainName: 'rinkeby',
-                id:'c668f1f8-ffc6-493e-86a1-b5c41d721ad9'
             }
           },
           authereum: {
@@ -157,7 +153,6 @@ export default {
             },
             options: {
                 chainName: 'rinkeby', 
-                id:'c668f1f8-ffc6-493e-86a1-b5c41d721ad9'
             }
           },
         },
