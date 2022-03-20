@@ -294,7 +294,7 @@ Official Doc: <a href=" https://docs.portis.io/#/" target="view_window"> Click t
 
 ##### burnerconnect
 
-Official Doc: <a href=" https://burnerfactory.com/mywallets" target="view_window"> Click to view </a>  
+Official Doc: <a href=" https://medium.com/gitcoin/burner-modules-c6737cf06fe" target="view_window"> Click to view </a>  
 
 Progect address: <a href=" https://github.com/burner-wallet/burner-connect-provider" target="view_window"> Click to view </a>
 
@@ -305,11 +305,8 @@ Progect address: <a href=" https://github.com/burner-wallet/burner-connect-provi
             name: "burnerconnect",   //  The name displayed on the front of your own wallet.
             },
             options: {
-              infuraId: '你的 infuraId ID',
-              chainId: 区块网络链ID,
-              appName: '你定义的应用名称',
-              appLogoUrl: WalletConnectLogo,
-              darkMode: false
+              defaultNetwork: default Blockchain network ID,
+              chainId: Blockchain network ID
             }
           },
 ```

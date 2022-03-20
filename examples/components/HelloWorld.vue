@@ -136,8 +136,8 @@ export default {
               name: "burner connect",
             },
             options: {
-                chainName: 'rinkeby', 
-                id:'c668f1f8-ffc6-493e-86a1-b5c41d721ad9'
+              defaultNetwork: 4,
+              chainId: 4
             }
           },
           torus: {
