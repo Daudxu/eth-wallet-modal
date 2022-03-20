@@ -107,7 +107,7 @@ const web3 = new Web3(provider);
 
 ```
 
-##📝 Options
+## 📝 Options
 
 | name            | type     | description           |
 | --------------- | -------- | --------------------- |
