@@ -149,10 +149,9 @@ Doc address: <a href="https://docs.metamask.io/guide/" target="view_window"> Cli
 ```
          metamask: {
             displayView: {
-              logo: 'https://raw.org/metamask.svg'  // 你自己定义的 metamask logo 地址用于显示,   
-              name: 'metamask'  // 你自己定义的 metamask 前端显示的名字 ,
+              logo: 'https://raw.org/metamask.svg' // The logo address you define to display your wallet.  
+              name: 'metamask'  //  The name displayed on the front of your own wallet.
             },
-            options: {}   //无需传参
           },
 
 ```
@@ -162,8 +161,8 @@ Doc address: <a href="https://docs.walletconnect.com" target="view_window"> Clic
 ```
         walletconnect: {
           displayView: {
-            logo: 'https://raw.org/walletconnect.svg'  // 你自己定义的 walletconnect logo 地址用于显示,   
-            name: "WalletConnect",  // 你自己定义的 WalletConnect 前端显示的名字 ,
+            logo: 'https://raw.org/walletconnect.svg' // The logo address you define to display your wallet.  
+            name: "WalletConnect",   //  The name displayed on the front of your own wallet.
           },
           options: {
             rpc: {
@@ -181,8 +180,8 @@ Doc address: <a href="https://docs.cloud.coinbase.com/wallet-sdk/docs/installing
 ```
          coinbase: {
             displayView: {
-            logo: 'https://raw.org/coinbase.svg'  // 你自己定义的 Coinbase Wallet logo 地址用于显示,   
-            name: "Coinbase Wallet",  // 你自己定义的 Coinbase Wallet 前端显示的名字 ,
+            logo: 'https://raw.org/coinbase.svg' // The logo address you define to display your wallet.  
+            name: "Coinbase Wallet",  //  The name displayed on the front of your own wallet.
             },
             options: {
               infuraId: '你的 infuraId ID',
@@ -199,8 +198,8 @@ Doc address: <a href="https://help.blockwallet.io/hc/en-us/articles/443703212916
 ```
          coinbase: {
             displayView: {
-            logo: 'https://raw.org/blockmallet.svg'  // 你自己定义的 blockmallet Wallet logo 地址用于显示,   
-            name: "blockmallet",  // 你自己定义的 blockmallet Wallet 前端显示的名字 ,
+            logo: 'https://raw.org/blockmallet.svg' // The logo address you define to display your wallet.   
+            name: "blockmallet",  //  The name displayed on the front of your own wallet.
             },
             options: {
               infuraId: '你的 infuraId ID',
@@ -217,8 +216,8 @@ Doc address: <a href=" https://docs.fortmatic.com/" target="view_window"> Click 
 ```
          coinbase: {
             displayView: {
-            logo: 'https://raw.org/fortmatic.svg'  // 你自己定义的 fortmatic Wallet logo 地址用于显示,   
-            name: "fortmatic",  // 你自己定义的 fortmatic Wallet 前端显示的名字 ,
+            logo: 'https://raw.org/fortmatic.svg' // The logo address you define to display your wallet.  
+            name: "fortmatic",  //  The name displayed on the front of your own wallet.
             },
             options: {
               infuraId: '你的 infuraId ID',
@@ -235,8 +234,8 @@ Doc address: <a href=" https://www.binance.com/en/wallet-direct" target="view_wi
 ```
          coinbase: {
             displayView: {
-            logo: 'https://raw.org/binancechainwallet.svg'  // 你自己定义的 binancechainwallet  logo 地址用于显示,   
-            name: "binancechainwallet",  // 你自己定义的 binancechainwallet 前端显示的名字 ,
+            logo: 'https://raw.org/binancechainwallet.svg' // The logo address you define to display your wallet.  
+            name: "binancechainwallet",  //  The name displayed on the front of your own wallet.
             },
             options: {
               infuraId: '你的 infuraId ID',
@@ -254,8 +253,8 @@ Doc address: <a href=" https://docs.portis.io/#/" target="view_window"> Click to
 ```
          coinbase: {
             displayView: {
-            logo: 'https://raw.org/portis.svg'  // 你自己定义的 portis  logo 地址用于显示,   
-            name: "portis",  // 你自己定义的 portis 前端显示的名字 ,
+            logo: 'https://raw.org/portis.svg' // The logo address you define to display your wallet.  
+            name: "portis",  //  The name displayed on the front of your own wallet.
             },
             options: {
               infuraId: '你的 infuraId ID',
@@ -273,8 +272,8 @@ Progect address: <a href=" https://github.com/burner-wallet/burner-connect-provi
 ```
          coinbase: {
             displayView: {
-            logo: 'https://raw.org/burnerconnect.svg'  // 你自己定义的 burnerconnect  logo 地址用于显示,   
-            name: "burnerconnect",  // 你自己定义的 burnerconnect 前端显示的名字 ,
+            logo: 'https://raw.org/burnerconnect.svg'  // The logo address you define to display your wallet.  
+            name: "burnerconnect",   //  The name displayed on the front of your own wallet.
             },
             options: {
               infuraId: '你的 infuraId ID',
@@ -293,8 +292,8 @@ Doc address: <a href=" https://docs.tor.us/integration-builder/?b=wallet&chain=E
 ```
          coinbase: {
             displayView: {
-            logo: 'https://raw.org/coinbase.svg'  // 你自己定义的 Coinbase Wallet logo 地址用于显示,   
-            name: "Coinbase Wallet",  // 你自己定义的 Coinbase Wallet 前端显示的名字 ,
+            logo: 'https://raw.org/coinbase.svg'  // The logo address you define to display your wallet.  
+            name: "Coinbase Wallet",  //  The name displayed on the front of your own wallet.
             },
             options: {
               infuraId: '你的 infuraId ID',
@@ -310,15 +309,15 @@ Doc address: <a href=" https://docs.tor.us/integration-builder/?b=wallet&chain=E
 authereum
 Doc address: <a href=" https://docs.authereum.com/integration" target="view_window"> Click to view </a>  
 ```
-         coinbase: {
+         authereum: {
             displayView: {
-            logo: 'https://raw.org/authereum.svg'  // 你自己定义的 authereum  logo 地址用于显示,   
-            name: "authereum",  // 你自己定义的 authereum 前端显示的名字 ,
+            logo: 'https://raw.org/authereum.svg'  // The logo address you define to display your wallet.   
+            name: "authereum",  // The name displayed on the front of your own wallet.
             },
             options: {
-              infuraId: '你的 infuraId ID',
-              chainId: 区块网络链ID,
-              appName: '你定义的应用名称',
+              infuraId: 'your infuraId ID',
+              chainId:  Blockchain network ID,
+              appName: 'Your app name',
               appLogoUrl: WalletConnectLogo,
               darkMode: false
             }
