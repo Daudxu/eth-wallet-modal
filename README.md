@@ -1,4 +1,4 @@
-English | [简体中文](./README.zh-CN.md)
+English | [简体中文](./README.zh-CN.md) | [日本](./README.ja-JP.md) 
 
 <h1 align="center">
    ETH Wallet Modal 
