@@ -146,7 +146,7 @@ const web3 = new Web3(provider);
 
 ##### metamask 
 
-Doc address: <a href="https://docs.metamask.io/guide/" target="view_window"> Click to view </a>  
+Official Doc: <a href="https://docs.metamask.io/guide/" target="view_window"> Click to view </a>  
 
 ```
          metamask: {
@@ -154,13 +154,12 @@ Doc address: <a href="https://docs.metamask.io/guide/" target="view_window"> Cli
               logo: 'https://raw.org/metamask.svg' // The logo address you define to display your wallet.  
               name: 'metamask'  //  The name displayed on the front of your own wallet.
             },
-          },
-
+          }
 ```
 
 ##### walletconnect
 
-Doc address: <a href="https://docs.walletconnect.com" target="view_window"> Click to view </a>  
+Official Doc: <a href="https://docs.walletconnect.com" target="view_window"> Click to view </a>  
 
 ```
         walletconnect: {
@@ -170,20 +169,20 @@ Doc address: <a href="https://docs.walletconnect.com" target="view_window"> Clic
           },
           options: {
             rpc: {
-              1: 'https://mainnet.infura.io/v3/9aa3d95b3bc440fa88ea12eaa414516161',
-              4: 'https://rinkeby.infura.io/v3/9aa3d95b3bc440fa88ea12ea221a4456161'
+              1: 'Your infra 1 chain address',
+              4: 'Your infra 4(test Network) chain address'
             },
-            chainId: 区块网络链ID,
+            chainId: Blockchain network ID,
             bridge: 'https://bridge.walletconnect.org'
           }
-        },
+        }
 
-
+// ⚠️ Configuration reference official documentation 
 ```
 
 #####  coinbase  
 
-Doc address: <a href="https://docs.cloud.coinbase.com/wallet-sdk/docs/installing" target="view_window"> Click to view </a>  
+Official Doc: <a href="https://docs.cloud.coinbase.com/wallet-sdk/docs/installing" target="view_window"> Click to view </a>  
 
 ```
          coinbase: {
@@ -192,18 +191,20 @@ Doc address: <a href="https://docs.cloud.coinbase.com/wallet-sdk/docs/installing
             name: "Coinbase Wallet",  //  The name displayed on the front of your own wallet.
             },
             options: {
-              infuraId: '你的 infuraId ID',
-              chainId: 区块网络链ID,
-              appName: '你定义的应用名称',
-              appLogoUrl: WalletConnectLogo,
+              infuraId: 'your infuraId ID',
+              chainId: Blockchain network ID,
+              appName: 'Your app name',
+              appLogoUrl: Your app logo,
               darkMode: false
             }
-          },
+          }
+          
+  // ⚠️ Configuration reference official documentation 
 ```
 
 ##### blockmallet 
 
-Doc address: <a href="https://help.blockwallet.io/hc/en-us/articles/4437032129169-How-to-Integrate-BlockWallet-With-Your-DApp" target="view_window"> Click to view </a>  
+Official Doc: <a href="https://help.blockwallet.io/hc/en-us/articles/4437032129169-How-to-Integrate-BlockWallet-With-Your-DApp" target="view_window"> Click to view </a>  
 
 ```
          coinbase: {
@@ -211,84 +212,94 @@ Doc address: <a href="https://help.blockwallet.io/hc/en-us/articles/443703212916
             logo: 'https://raw.org/blockmallet.svg' // The logo address you define to display your wallet.   
             name: "blockmallet",  //  The name displayed on the front of your own wallet.
             },
-            options: {
-              infuraId: '你的 infuraId ID',
-              chainId: 区块网络链ID,
-              appName: '你定义的应用名称',
-              appLogoUrl: WalletConnectLogo,
-              darkMode: false
-            }
-          },
+          }
 ```
 
 #####  fortmatic 
 
-Doc address: <a href=" https://docs.fortmatic.com/" target="view_window"> Click to view </a>  
+Official Doc: <a href=" https://docs.fortmatic.com/" target="view_window"> Click to view </a>  
 
 ```
-         coinbase: {
+         fortmatic: {
             displayView: {
             logo: 'https://raw.org/fortmatic.svg' // The logo address you define to display your wallet.  
             name: "fortmatic",  //  The name displayed on the front of your own wallet.
             },
             options: {
-              infuraId: '你的 infuraId ID',
-              chainId: 区块网络链ID,
-              appName: '你定义的应用名称',
-              appLogoUrl: WalletConnectLogo,
-              darkMode: false
+              chainId: Blockchain network ID,
+              key:'your fortmatic key'
             }
-          },
+          }
+
+ // ⚠️ Configuration reference official documentation      
 ```
 
 #####  binancechainwallet 
 
-Doc address: <a href=" https://www.binance.com/en/wallet-direct" target="view_window"> Click to view </a>  
+Official Doc <a href=" https://docs.binance.org/smart-chain/wallet/wallet_api.html" target="view_window"> Click to view </a>  
 
 ```
-         coinbase: {
+         binancechainwallet: {
             displayView: {
             logo: 'https://raw.org/binancechainwallet.svg' // The logo address you define to display your wallet.  
             name: "binancechainwallet",  //  The name displayed on the front of your own wallet.
-            },
-            options: {
-              infuraId: '你的 infuraId ID',
-              chainId: 区块网络链ID,
-              appName: '你定义的应用名称',
-              appLogoUrl: WalletConnectLogo,
-              darkMode: false
             }
-          },
+          }
+
 ```
 
 #####  portis
 
-Doc address: <a href=" https://docs.portis.io/#/" target="view_window"> Click to view </a>  
+Official Doc: <a href=" https://docs.portis.io/#/" target="view_window"> Click to view </a>  
 
 ```
-         coinbase: {
+         portis: {
             displayView: {
             logo: 'https://raw.org/portis.svg' // The logo address you define to display your wallet.  
             name: "portis",  //  The name displayed on the front of your own wallet.
             },
             options: {
-              infuraId: '你的 infuraId ID',
-              chainId: 区块网络链ID,
-              appName: '你定义的应用名称',
-              appLogoUrl: WalletConnectLogo,
-              darkMode: false
+                chainName: 'rinkeby', //  chain Name if
+                id:'your protis key' 
             }
-          },
+          }
+
+// ⚠️ Configuration reference official documentation     
 ```
+ options chainName list
+| Network	| Description 	|	Default Gas Relay Hub	|
+| --------------- | -------- | --------------------- |
+| mainnet |	Ethereum - main network|	0xD216153c06E857cD7f72665E0aF1d7D82172F494|
+| ropsten	|Ethereum - ropsten network	|0xD216153c06E857cD7f72665E0aF1d7D82172F494 |
+| rinkeby|	Ethereum - rinkeby network|	0xD216153c06E857cD7f72665E0aF1d7D82172F494 |
+| goerli|	Ethereum - goerli network |	0xD216153c06E857cD7f72665E0aF1d7D82172F494|
+|ubiq|	UBQ - main network|	-|
+|thundercoreTestnet|	TT| - test network	-|
+|orchid|	RootStock - main network|	-|
+|orchidTestnet|	RootStock - test network|	-|
+|kovan|	Ethereum - kovan network|	0xD216153c06E857cD7f72665E0aF1d7D82172F494|
+|classic|	Ethereum Classic - |main network	-|
+|sokol|	POA - test network|	-|
+|core|	POA - main network|	-|
+|xdai|	xDai - main network	0xD216153c06E857cD7f72665E0aF1d7D82172F494|
+|thundercore|	TT - main network|	-|
+|fuse|	Fuse - main network	|-|
+|lightstreams|	Lightstreams |- main network	-|
+|matic|	MATIC - main network|	-|
+|maticMumbai	|MATIC - mumbai test network|	-|
+|maticAlpha|	MATIC - alpha network	|-|
+|maticTestnet|	MATIC - test network|	-|
+<a href="https://docs.portis.io/#/configuration">official doc configuration</a>
+
 
 ##### burnerconnect
 
-Doc address: <a href=" https://burnerfactory.com/mywallets" target="view_window"> Click to view </a>  
+Official Doc: <a href=" https://burnerfactory.com/mywallets" target="view_window"> Click to view </a>  
 
 Progect address: <a href=" https://github.com/burner-wallet/burner-connect-provider" target="view_window"> Click to view </a>
 
 ```
-         coinbase: {
+         burnerconnect: {
             displayView: {
             logo: 'https://raw.org/burnerconnect.svg'  // The logo address you define to display your wallet.  
             name: "burnerconnect",   //  The name displayed on the front of your own wallet.
@@ -307,7 +318,7 @@ Progect address: <a href=" https://github.com/burner-wallet/burner-connect-provi
 
 ##### torus
 
-Doc address: <a href=" https://docs.tor.us/integration-builder/?b=wallet&chain=Ethereum&lang=Vue" target="view_window"> Click to view </a>  
+Official Doc: <a href=" https://docs.tor.us/integration-builder/?b=wallet&chain=Ethereum&lang=Vue" target="view_window"> Click to view </a>  
 
 ```
          coinbase: {
@@ -328,7 +339,7 @@ Doc address: <a href=" https://docs.tor.us/integration-builder/?b=wallet&chain=E
 
 ##### authereum
 
-Doc address: <a href=" https://docs.authereum.com/integration" target="view_window"> Click to view </a>  
+Official Doc: <a href=" https://docs.authereum.com/integration" target="view_window"> Click to view </a>  
 
 ```
          authereum: {
