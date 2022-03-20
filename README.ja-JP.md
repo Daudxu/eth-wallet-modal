@@ -11,11 +11,11 @@
   イーサリアムプロバイダーのDappウォレット統合ソリューション
 </h3>
 
-#### ⚠️ Notice 
+#### ⚠️ 知らせ 
 
 不要なインポートを減らし、オンデマンドでドライバーをロードする必要がある場合は、次のWebサイトにアクセスしてください。 <a href="https://github.com/Daudxu/dapp-wallet-modal">dapp-wallet-modal</a> 事業
 
-## 🚀 Current support 
+## 🚀 現在のサポート 
 <p float="left">
 <img src="https://raw.githubusercontent.com/Daudxu/eth-wallet-modal/master/examples/assets/logos/metamask.svg" width="30" height="30" alt="metamask"/>
 <img src="https://raw.githubusercontent.com/Daudxu/eth-wallet-modal/master/examples/assets/logos/walletconnect.svg" width="30" height="30" alt="walletconnect"/>
@@ -30,16 +30,16 @@
 </p>
 
 
-## 🎉 Preview 
+## 🎉 プレビュー 
 
 ![preview](./images/preview.png)
 
-##  💻 example  
+##  💻 例  
 https://daudxu.github.io/eth-wallet-modal/
 
-##  🚩 Usage 
+##  🚩 使用方法 
 
-### 1️⃣ Install eth-wallet-modal NPM package
+### 1️⃣ eth-wallet-modal NPM パッケージをインストールします
 
 ```
 npm install --save eth-wallet-modal
@@ -47,7 +47,7 @@ npm install --save eth-wallet-modal
 yarn add eth-wallet-modal
 ```
 
-### 2️⃣ Then you can add eth-wallet-modal to your Dapp as follows
+### 2️⃣ 次に、次のように eth-wallet-modalを Dapp に追加できます。
 
 ```
 import Web3 from "web3";
@@ -107,7 +107,7 @@ const web3 = new Web3(provider);
 
 ```
 
-## 📝 Options
+## 📝 オプション
 
 | name            | type     | description           |
 | --------------- | -------- | --------------------- |
@@ -117,7 +117,7 @@ const web3 = new Web3(provider);
 
 
 
-#####  providerOptions parameter
+#####  providerOptions パラメータ
 
 | name            | type     | description           |
 | --------------- | -------- | --------------------- |
@@ -128,7 +128,7 @@ const web3 = new Web3(provider);
 | chainId         | int      | chain Id              |
 | walletOptions   | array    | See the table below   |
 
-#####  walletOptions parameter
+#####  walletOptions パラメータ
 
 | name            | type     | description           |
 | --------------- | -------- | --------------------- |
@@ -151,8 +151,8 @@ Official Doc: <a href="https://docs.metamask.io/guide/" target="view_window"> Vi
 ```
          metamask: {
             displayView: {
-              logo: 'https://raw.org/metamask.svg' // The logo address you define to display your wallet.  
-              name: 'metamask'  //  The name displayed on the front of your own wallet.
+              logo: 'https://raw.org/metamask.svg' // ウォレットを表示するために定義するロゴアドレス.  
+              name: 'metamask'  //  自分の財布の前面に表示されている名前.
             },
           }
 ```
@@ -164,8 +164,8 @@ Official Doc: <a href="https://docs.walletconnect.com" target="view_window"> Vie
 ```
         walletconnect: {
           displayView: {
-            logo: 'https://raw.org/walletconnect.svg' // The logo address you define to display your wallet.  
-            name: "WalletConnect",   //  The name displayed on the front of your own wallet.
+            logo: 'https://raw.org/walletconnect.svg' // ウォレットを表示するために定義するロゴアドレス.  
+            name: "WalletConnect",   //  自分の財布の前面に表示されている名前.
           },
           options: {
             rpc: {
@@ -177,7 +177,7 @@ Official Doc: <a href="https://docs.walletconnect.com" target="view_window"> Vie
           }
         }
 
-// ⚠️ Configuration reference official documentation 
+// ⚠️ 構成リファレンスの公式ドキュメント 
 ```
 
 #####  coinbase  
@@ -187,8 +187,8 @@ Official Doc: <a href="https://docs.cloud.coinbase.com/wallet-sdk/docs/installin
 ```
          coinbase: {
             displayView: {
-            logo: 'https://raw.org/coinbase.svg' // The logo address you define to display your wallet.  
-            name: "Coinbase Wallet",  //  The name displayed on the front of your own wallet.
+            logo: 'https://raw.org/coinbase.svg' // ウォレットを表示するために定義するロゴアドレス.  
+            name: "Coinbase Wallet",  //  自分の財布の前面に表示されている名前.
             },
             options: {
               infuraId: 'your infuraId ID',
@@ -199,7 +199,7 @@ Official Doc: <a href="https://docs.cloud.coinbase.com/wallet-sdk/docs/installin
             }
           }
           
-  // ⚠️ Configuration reference official documentation 
+  // ⚠️ 構成リファレンスの公式ドキュメント 
 ```
 
 ##### blockmallet 
@@ -209,8 +209,8 @@ Official Doc: <a href="https://help.blockwallet.io/hc/en-us/articles/44370321291
 ```
          coinbase: {
             displayView: {
-            logo: 'https://raw.org/blockmallet.svg' // The logo address you define to display your wallet.   
-            name: "blockmallet",  //  The name displayed on the front of your own wallet.
+            logo: 'https://raw.org/blockmallet.svg' // ウォレットを表示するために定義するロゴアドレス.   
+            name: "blockmallet",  //  自分の財布の前面に表示されている名前.
             },
           }
 ```
@@ -222,8 +222,8 @@ Official Doc: <a href=" https://docs.fortmatic.com/" target="view_window"> View 
 ```
          fortmatic: {
             displayView: {
-            logo: 'https://raw.org/fortmatic.svg' // The logo address you define to display your wallet.  
-            name: "fortmatic",  //  The name displayed on the front of your own wallet.
+            logo: 'https://raw.org/fortmatic.svg' // ウォレットを表示するために定義するロゴアドレス.  
+            name: "fortmatic",  //  自分の財布の前面に表示されている名前.
             },
             options: {
               chainId: Blockchain network ID,
@@ -231,7 +231,7 @@ Official Doc: <a href=" https://docs.fortmatic.com/" target="view_window"> View 
             }
           }
 
- // ⚠️ Configuration reference official documentation      
+ // ⚠️ 構成リファレンスの公式ドキュメント      
 ```
 
 #####  binancechainwallet 
@@ -241,8 +241,8 @@ Official Doc <a href=" https://docs.binance.org/smart-chain/wallet/wallet_api.ht
 ```
          binancechainwallet: {
             displayView: {
-            logo: 'https://raw.org/binancechainwallet.svg' // The logo address you define to display your wallet.  
-            name: "binancechainwallet",  //  The name displayed on the front of your own wallet.
+            logo: 'https://raw.org/binancechainwallet.svg' // ウォレットを表示するために定義するロゴアドレス.  
+            name: "binancechainwallet",  //  自分の財布の前面に表示されている名前.
             }
           }
 
@@ -255,8 +255,8 @@ Official Doc: <a href=" https://docs.portis.io/#/" target="view_window"> View Do
 ```
          portis: {
             displayView: {
-            logo: 'https://raw.org/portis.svg' // The logo address you define to display your wallet.  
-            name: "portis",  //  The name displayed on the front of your own wallet.
+            logo: 'https://raw.org/portis.svg' // ウォレットを表示するために定義するロゴアドレス.  
+            name: "portis",  //  自分の財布の前面に表示されている名前.
             },
             options: {
                 chainName: 'rinkeby', //  chain Name if
@@ -264,7 +264,7 @@ Official Doc: <a href=" https://docs.portis.io/#/" target="view_window"> View Do
             }
           }
 
-// ⚠️ Configuration reference official documentation     
+// ⚠️ 構成リファレンスの公式ドキュメント     
 ```
  options chainName list
 | Network	| Description 	|	Default Gas Relay Hub	|
@@ -301,8 +301,8 @@ Progect address: <a href=" https://github.com/burner-wallet/burner-connect-provi
 ```
          burnerconnect: {
             displayView: {
-            logo: 'https://raw.org/burnerconnect.svg'  // The logo address you define to display your wallet.  
-            name: "burnerconnect",   //  The name displayed on the front of your own wallet.
+            logo: 'https://raw.org/burnerconnect.svg'  // ウォレットを表示するために定義するロゴアドレス.  
+            name: "burnerconnect",   //  自分の財布の前面に表示されている名前.
             },
             options: {
               defaultNetwork: default Blockchain network ID,
@@ -320,8 +320,8 @@ Official Doc: <a href=" https://docs.tor.us/integration-builder/?b=wallet&chain=
 ```
          torus: {
             displayView: {
-            logo: 'https://raw.org/torus.svg'  // The logo address you define to display your wallet.  
-            name: "torus Wallet",  //  The name displayed on the front of your own wallet.
+            logo: 'https://raw.org/torus.svg'  // ウォレットを表示するために定義するロゴアドレス.  
+            name: "torus Wallet",  //  自分の財布の前面に表示されている名前.
             }
           },
        
@@ -334,15 +334,15 @@ Official Doc: <a href=" https://docs.authereum.com/integration" target="view_win
 ```
          authereum: {
             displayView: {
-            logo: 'https://raw.org/authereum.svg'  // The logo address you define to display your wallet.   
-            name: "authereum",  // The name displayed on the front of your own wallet.
+            logo: 'https://raw.org/authereum.svg'  // ウォレットを表示するために定義するロゴアドレス.   
+            name: "authereum",  // 自分の財布の前面に表示されている名前.
             },
             options: {
                chainName: 'rinkeby',  // Need to pass in the chain Name eg： kova, rinkeby, mainne
             }
           },
 
-// ⚠️ Configuration reference official documentation     
+// ⚠️ 構成リファレンスの公式ドキュメント     
 ```
  options chainName list
 | Network	| Description 	|	Default Gas Relay Hub	|
