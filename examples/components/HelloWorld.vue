@@ -24,6 +24,8 @@ import Base from '../../packages/index'
 // import getUrlParameters from 'webpack-build-tools-test';
 // import Base from 'eth-wallet-modal';
 
+import Bean from "../assets//Bean.gif";
+
 import WalletConnectLogo from "../assets/logos/walletconnect-circle.svg";
 
 import MetaMaskLogo from "../assets/logos/metamask.svg";
@@ -56,7 +58,7 @@ export default {
       baseModel: '',
       provider: '',
       providerOptions: {
-        logo: WalletConnectLogo,
+        logo: Bean,
         maskColor:'rgb(30, 30, 30, 0.8)',
         bgColor:'#363636',
         borderColor:'#faba30',
