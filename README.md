@@ -117,7 +117,7 @@ const web3 = new Web3(provider);
 
 
 
-providerOptions parameter
+#####  providerOptions parameter
 
 | name            | type     | description           |
 | --------------- | -------- | --------------------- |
@@ -128,7 +128,7 @@ providerOptions parameter
 | chainId         | int      | chain Id              |
 | walletOptions   | array    | See the table below   |
 
-walletOptions parameter
+#####  walletOptions parameter
 
 | name            | type     | description           |
 | --------------- | -------- | --------------------- |
@@ -144,8 +144,10 @@ walletOptions parameter
 | authereum          | array | See the authereum below     |
 
 
-metamask 
+##### metamask 
+
 Doc address: <a href="https://docs.metamask.io/guide/" target="view_window"> Click to view </a>  
+
 ```
          metamask: {
             displayView: {
@@ -156,8 +158,10 @@ Doc address: <a href="https://docs.metamask.io/guide/" target="view_window"> Cli
 
 ```
 
-walletconnect
+##### walletconnect
+
 Doc address: <a href="https://docs.walletconnect.com" target="view_window"> Click to view </a>  
+
 ```
         walletconnect: {
           displayView: {
@@ -173,10 +177,14 @@ Doc address: <a href="https://docs.walletconnect.com" target="view_window"> Clic
             bridge: 'https://bridge.walletconnect.org'
           }
         },
+
+
 ```
 
-coinbase  config
+#####  coinbase  
+
 Doc address: <a href="https://docs.cloud.coinbase.com/wallet-sdk/docs/installing" target="view_window"> Click to view </a>  
+
 ```
          coinbase: {
             displayView: {
@@ -193,8 +201,10 @@ Doc address: <a href="https://docs.cloud.coinbase.com/wallet-sdk/docs/installing
           },
 ```
 
-blockmallet 
+##### blockmallet 
+
 Doc address: <a href="https://help.blockwallet.io/hc/en-us/articles/4437032129169-How-to-Integrate-BlockWallet-With-Your-DApp" target="view_window"> Click to view </a>  
+
 ```
          coinbase: {
             displayView: {
@@ -211,8 +221,10 @@ Doc address: <a href="https://help.blockwallet.io/hc/en-us/articles/443703212916
           },
 ```
 
-fortmatic 
+#####  fortmatic 
+
 Doc address: <a href=" https://docs.fortmatic.com/" target="view_window"> Click to view </a>  
+
 ```
          coinbase: {
             displayView: {
@@ -229,8 +241,10 @@ Doc address: <a href=" https://docs.fortmatic.com/" target="view_window"> Click 
           },
 ```
 
-binancechainwallet 
+#####  binancechainwallet 
+
 Doc address: <a href=" https://www.binance.com/en/wallet-direct" target="view_window"> Click to view </a>  
+
 ```
          coinbase: {
             displayView: {
@@ -247,7 +261,8 @@ Doc address: <a href=" https://www.binance.com/en/wallet-direct" target="view_wi
           },
 ```
 
-portis
+#####  portis
+
 Doc address: <a href=" https://docs.portis.io/#/" target="view_window"> Click to view </a>  
 
 ```
@@ -266,9 +281,12 @@ Doc address: <a href=" https://docs.portis.io/#/" target="view_window"> Click to
           },
 ```
 
-burnerconnect
+##### burnerconnect
+
 Doc address: <a href=" https://burnerfactory.com/mywallets" target="view_window"> Click to view </a>  
+
 Progect address: <a href=" https://github.com/burner-wallet/burner-connect-provider" target="view_window"> Click to view </a>
+
 ```
          coinbase: {
             displayView: {
@@ -287,8 +305,10 @@ Progect address: <a href=" https://github.com/burner-wallet/burner-connect-provi
 
 
 
-torus
+##### torus
+
 Doc address: <a href=" https://docs.tor.us/integration-builder/?b=wallet&chain=Ethereum&lang=Vue" target="view_window"> Click to view </a>  
+
 ```
          coinbase: {
             displayView: {
@@ -306,8 +326,10 @@ Doc address: <a href=" https://docs.tor.us/integration-builder/?b=wallet&chain=E
        
 ```
 
-authereum
+##### authereum
+
 Doc address: <a href=" https://docs.authereum.com/integration" target="view_window"> Click to view </a>  
+
 ```
          authereum: {
             displayView: {
