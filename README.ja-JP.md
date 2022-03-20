@@ -207,7 +207,7 @@ Official Doc: <a href="https://docs.cloud.coinbase.com/wallet-sdk/docs/installin
 Official Doc: <a href="https://help.blockwallet.io/hc/en-us/articles/4437032129169-How-to-Integrate-BlockWallet-With-Your-DApp" target="view_window"> View Doc </a>  
 
 ```
-         coinbase: {
+         blockmallet: {
             displayView: {
             logo: 'https://raw.org/blockmallet.svg' // ウォレットを表示するために定義するロゴアドレス.   
             name: "blockmallet",  //  自分の財布の前面に表示されている名前.
