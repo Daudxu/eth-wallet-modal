@@ -7,10 +7,7 @@
     "serve": "vue-cli-service serve",
     "build": "vue-cli-service build",
     "lint": "vue-cli-service lint",
-    "lib": "vue-cli-service build --target lib --name eth-wallet-modal --dest lib packages/index.js",
-    "tonpm": "npm run lib && npm version patch && npm publish",
-    "addv": "npm version patch",
-    "go": "npm publish"
+    "lib": "vue-cli-service build --target lib --name eth-wallet-modal --dest lib packages/index.js"
   },
   "keyword": [
     "Dapp",
