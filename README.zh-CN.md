@@ -13,7 +13,7 @@
 
 #### ⚠️ 注意 
 
-不要なインポートを減らし、オンデマンドでドライバーをロードする必要がある場合は、次のWebサイトにアクセスしてください。 <a href="https://github.com/Daudxu/dapp-wallet-modal">dapp-wallet-modal</a> 事業
+如果您需要减少不必要的导入并按需加载驱动程序，请访问 <a href="https://github.com/Daudxu/dapp-wallet-modal">dapp-wallet-modal</a> 项目
 
 ## 🚀 当前支持
 <p float="left">
