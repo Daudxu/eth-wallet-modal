@@ -11,11 +11,11 @@ English | [简体中文](./README.zh-CN.md)
   An Ethereum Provider Solution for Integrated Wallets and Dapps
 </h3>
 
-#### ⚠️ Notice ⚠️
+#### ⚠️ Notice 
 
 If you need to reduce unnecessary imports and load drivers on demand, please go to the <a href="https://github.com/Daudxu/dapp-wallet-modal">dapp-wallet-modal</a> project
 
-## ✔️ Current support 🚀
+## 🚀 Current support 
 <p float="left">
 <img src="https://raw.githubusercontent.com/Daudxu/eth-wallet-modal/master/examples/assets/logos/metamask.svg" width="30" height="30" alt="metamask"/>
 <img src="https://raw.githubusercontent.com/Daudxu/eth-wallet-modal/master/examples/assets/logos/walletconnect.svg" width="30" height="30" alt="walletconnect"/>
@@ -30,14 +30,14 @@ If you need to reduce unnecessary imports and load drivers on demand, please go 
 </p>
 
 
-## 🎉 Preview 🎉
+## 🎉 Preview 
 
 ![preview](./images/preview.png)
 
-##  💻 example  💻
+##  💻 example  
 https://daudxu.github.io/eth-wallet-modal/
 
-##  🚩 Usage  🚩
+##  🚩 Usage 
 
 ### 1️⃣ Install eth-wallet-modal NPM package
 
@@ -107,7 +107,7 @@ const web3 = new Web3(provider);
 
 ```
 
-## Options
+##📝 Options
 
 | name            | type     | description           |
 | --------------- | -------- | --------------------- |
@@ -349,7 +349,7 @@ Doc address: <a href=" https://docs.authereum.com/integration" target="view_wind
 
 
 
-## Provider subscription Events
+## 📖 Provider subscription Events
 
 ```
 // Subscribe to accounts change
@@ -373,26 +373,26 @@ provider.on("disconnect", (error: { code: number; message: string }) => {
 });
 ```
 
-## Features
+## 🎾 Features
 
 - [v] Built for Ethereum using [Web3](https://github.com/ethereum/web3.js/).
 - [v] Implements [Graph Protocol](https://github.com/graphprotocol) to read blockchain.
 
-## Changelog
+## 📝 Changelog
 
-### 2022.02.21
+##### 2022.02.21
 
 > v1.0.0   
  init project
 
-### 2022.03.12
+##### 2022.03.12
 > v1.1.3   
  add fortmatic, binance, portis 
  Mask background color customization
  Modal box background color customization
  Modal box border color customization
 
-## other
+## ✈️ other
 
 - Etherscan: https://etherscan.io/apis
 - Infura: https://infura.io/
